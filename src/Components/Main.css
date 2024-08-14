@@ -1,0 +1,35 @@
+.home{
+ background-color: white;
+ box-sizing: border-box;
+}
+.block{
+    background-color: rgb(237, 253, 236);
+}
+.header{
+
+    height: 100vh;
+    width:68%;
+    background-image: url("./building.jpg");
+    background-size: cover;
+
+}
+
+.blue{
+    background-color: darkblue;
+    opacity: 0.9;
+    width:68%;
+    position: absolute;
+    height: 100vh;
+}
+.blacky{
+    display: flex;
+    flex-direction: column;
+    background-color: #222222;
+    width: 90%;
+    height: 100vh;
+    right:70%;
+}
+.person{
+    
+
+}
