@@ -1,6 +1,6 @@
 import react from 'react';
 import "./Main.css";
-
+import consultantImage from './consultant-01-free-img.png';
 
 function Main(){
  
@@ -10,10 +10,14 @@ function Main(){
         
             <div className='block'>
             <div  className="header">
+                
         <div className='blue'>        
             </div>
             <div className='blacky'>
             </div>
+            <div className='mid-img'>
+                <img className='mid-img-inner' src={consultantImage}/>  
+                    </div>
             </div>
             </div>
         </div>
