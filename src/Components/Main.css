@@ -11,7 +11,7 @@
     width:68%;
     background-image: url("./building.jpg");
     background-size: cover;
-
+    display: flex;
 }
 
 .blue{
@@ -27,9 +27,6 @@
     background-color: #222222;
     width: 90%;
     height: 100vh;
-    right:70%;
-}
-.person{
-    
-
+    left:114vh;
+    position:relative;
 }

@@ -12,8 +12,8 @@ function Main(){
             <div  className="header">
         <div className='blue'>        
             </div>
-            </div>
             <div className='blacky'>
+            </div>
             </div>
             </div>
         </div>
