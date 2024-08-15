@@ -1,6 +1,6 @@
 import React from 'react';
 import './Main.css';
-
+import rohan from "./rohan.jpeg"
 const Home = () => {
   return (
     <div className="home">
@@ -17,7 +17,7 @@ const Home = () => {
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
-        <button className="cta-button">Consultation</button>
+        <button className="cta-button">Consult Company</button>
       </header>
 
       <main>
@@ -70,7 +70,7 @@ const Home = () => {
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-logo">
-            <img src="https://websitedemos.net/real-estate-consultant-02/wp-content/uploads/sites/728/2020/11/logo-regular-free-img.png" alt="Logo" />
+            <img src={rohan} alt="Logo" />
           </div>
           <div className="footer-contact">
             <h4>Contact</h4>
