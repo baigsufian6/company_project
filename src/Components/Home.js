@@ -1,6 +1,6 @@
 import React from 'react';
 import './Main.css';
-import rohan from "./rohan.jpeg"
+import rohans from "./rohans.png"
 const Home = () => {
   return (
     <div className="home">
@@ -70,14 +70,16 @@ const Home = () => {
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-logo">
-            <img src={rohan} alt="Logo" />
+            <img classname="rohan-img" src={rohans} alt="Logo" />
           </div>
           <div className="footer-contact">
             <h4>Contact</h4>
             <p>929-242-6868</p>
-            <p>email@example.com</p>
+            <p>rohaninfrabuilderrs@gmail.com</p>
             <h4>Address</h4>
-            <p>123 Fifth Avenue, New York, NY 10160</p>
+            <p>#342, 2nd and 3rd floor, doctor rajkumar road</p>
+            <p>beside Beside AL-BEK Restaurant </p>
+            <p> 6th Block Rajajinagar Bengaluru - 560010</p>
           </div>
           <div className="footer-social">
             {/* Add social icons here */}
