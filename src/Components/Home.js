@@ -1,12 +1,13 @@
 import React from 'react';
 import './Main.css';
-import rohans from "./rohans.png"
+import rohans from "./images/rohans.png"
 const Home = () => {
   return (
-    <div className="home">
+    <div className="headpart">
       <header className="header">
         <div className="logo">
-          <img src="https://websitedemos.net/real-estate-consultant-02/wp-content/uploads/sites/728/2020/11/logo-regular-free-img-150x35.png" alt="Logo" />
+          <img src={rohans} alt=""></img>
+          <h3>RBID</h3>
         </div>
         <nav className="nav">
           <ul>
@@ -40,6 +41,11 @@ const Home = () => {
 
         <section className="services">
           <h2>How I Can Help</h2>
+         <div className="btn">
+          <h3> What are you looking for ?</h3>
+         <button>Plots</button>
+         <button>Construction</button>
+         </div>
           <div className="divider"></div>
           <div className="service-grid">
             {/* Add service items here */}
@@ -70,6 +76,7 @@ const Home = () => {
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-logo">
+            <h2>ROHAN INFRA</h2>
             <img classname="rohan-img" src={rohans} alt="Logo" />
           </div>
           <div className="footer-contact">
