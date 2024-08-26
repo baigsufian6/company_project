@@ -1,0 +1,616 @@
+/* General Styles */
+.construction-page, .packages {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Header Styles */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  z-index: 3;
+  position:relative
+}
+.cta-navbar-button {
+  background-color: #1a237e;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: 2px solid white;
+  border-radius: 10px;
+  /* font-size: 0px; */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+
+
+.logo img {
+  height: 65px;
+  margin-bottom: 0;
+}
+
+.nav-links{
+  align-items: center;
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+}
+.nav-links ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-links ul li {
+  margin-right: 4rem;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: #2b3990;
+  font-weight: bold;
+  align-items: center;
+}
+
+.hamburger {
+  order: 1; /* This pushes the hamburger to the left */
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: none;
+}
+
+.logo {
+  order: 2; /* This pushes the logo to the right */
+}
+
+.nav-links.open {
+  display: block;
+}
+
+@media (max-width: 767px) {
+
+
+  .nav-links ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  .nav-links ul li {
+    margin: 0.5rem 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+  .logo{
+    display: flex;
+    margin-right: 16rem;
+  }
+  .logo img{
+    display: flex;
+    justify-content: space-between;
+  }
+  .navbar{
+    justify-content: space-between;
+    z-index: 10;
+  }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff; /* Or your preferred background color */
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    display: none;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-links li {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  .cta-buttonss {
+    margin-top: 1rem;
+    width: 100%;
+  }
+  .navbar-container {
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.package-grid {
+  display: flex;
+  flex-direction: column;
+}
+.package{
+  width: 80% !important;
+}
+}
+
+
+.cta-button {
+  background-color: #2b3990;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hero Section Styles */
+.hero {
+  background-image: url('./imagess/build.jpg');
+  background-size: cover;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.hero-text{
+  margin-top:11rem;
+}
+
+
+.hero h1 {
+  font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+}
+.hero h1 span {
+  color: #ffd700;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #fac106;
+}
+/* Packages Section Styles */
+.packages {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.packages h2 {
+  color: #ffd700;
+  text-align: center;
+}
+
+.packages h3 {
+  color: #000080;
+  text-align: center;
+}
+
+.package-grid {
+  display: flex;
+  justify-content: space-around; /* Updated to maintain spacing consistency */
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.package {
+  background-color: #fff; /* Unified background color */
+  border-radius: 10px;
+  padding: 2rem; /* Harmonized padding */
+  width: 45%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.package h4 {
+  background-color: #ffa500;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.price {
+  font-size: 1.5rem; /* Unified font size */
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.price .original-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.package ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.package li {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+.feature-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expand-icon {
+  cursor: pointer;
+  color: #000080;
+}
+
+.dropdown {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.dropdown ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.dropdown li {
+  border-bottom: none;
+  padding: 5px 0;
+}
+
+.enquire-button {
+  background-color: #000080;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+}
+
+
+
+/* Cost Calculator Styles */
+.cost-calculator {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.cost-calculator h2 {
+  text-align: center;
+  color: #F9A825; /* Golden color */
+  font-weight: bold;
+}
+
+.cost-calculator h3 {
+  text-align: center;
+  color: #1A237E; /* Dark blue color */
+  margin-bottom: 30px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.form-group:last-child {
+  margin-right: 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group select,
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box; /* Ensures padding is included in width/height */
+  height: 48px; /* Standardize height across all input fields */
+}
+
+.form-group input[type="tel"] {
+  height: 48px; /* Ensures the phone number input is consistent with other fields */
+}
+
+
+.cost-button {
+  width: 100%;
+  padding: 15px;
+  background-color: #1A237E; /* Dark blue color */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cost-button:hover {
+  background-color: #0D47A1; /* Darker blue on hover */
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-group {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .form-group:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+/* Signature Designs Section */
+.signature-designs {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.design-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px; /* Space between the cards */
+  margin-top: 20px;
+}
+
+.design-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.design-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+}
+
+.design-card h4 {
+  margin: 16px 0 8px;
+  font-size: 18px;
+}
+
+.design-card p {
+  font-size: 14px;
+  color: #777;
+}
+
+.view-details {
+  margin-top: 12px;
+  background-color: #0044cc;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.view-details:hover {
+  background-color: #003399;
+}
+
+.view-all {
+  margin: 40px auto;
+  display: block;
+  background-color: #0044cc;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.view-all:hover {
+  background-color: #003399;
+}
+
+
+/* Footer page */
+
+footer {
+
+  color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2rem;
+}
+
+.footer-left, .footer-middle, .footer-right {
+  flex: 1;
+  margin: 0 1rem;
+}
+
+.footer-left img {
+  height: 65px;
+  margin-bottom: 1rem;
+}
+
+.footer-left p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.social-icons a {
+  color: white;
+  margin-right: 1rem;
+  font-size: 1.5rem;
+}
+
+.footer-middle ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-middle ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-middle ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-right p {
+  margin-bottom: 1rem;
+}
+
+.newsletter-form {
+  display: flex;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.newsletter-form button {
+  background-color: #ffd700;
+  color: #2b3990;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  border-top: 1px solid white;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+
+
+/* project navbar link page */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.project-construct {
+  height: 100vh;
+  background-image: url('./imagess/building.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+.content-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #FFA500;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.cta-button {
+  background-color: transparent;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.cta-button:hover {
+  background-color: white;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  h1, h2 {
+    font-size: 2.5rem;
+  }
+  
+  p {
+    font-size: 1.25rem;
+  }
+  
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+}

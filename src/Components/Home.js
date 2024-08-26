@@ -140,14 +140,12 @@
 
 
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Main.css';
 import rohans from './images/rohans.png';
 
 const Home = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="headpart">
       {/* Header Section */}
@@ -199,8 +197,8 @@ const Home = () => {
           <div className="service">
             <h3>What Are You Looking For?</h3>
             <div className="choice">
-              <button className="btns" onClick={() => navigate('/plots')}>Plots</button>
-              <button className="btns" onClick={() => navigate('/construction')}>Construction</button>
+              <button className='chambu'><Link to="/plots" className="btns">Plots</Link></button>
+              <button><Link to="/construction" className="btns">Construction</Link></button>
             </div>
           </div>
           <div className="divider"></div>
@@ -275,4 +273,3 @@ const Home = () => {
 };
 
 export default Home;
-

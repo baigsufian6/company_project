@@ -194,13 +194,14 @@
     display: flex;
     align-items: center;
      width:190px;
-     height:30px;
+     height:1px;
      padding:20px;
      border: none;
      background: linear-gradient(to right, #00c6ff, #0072ff);
      color:white;
      border-radius: 5px;
      font-size: large;
+     text-decoration: none;
   }
   .service{
     display: flex;
@@ -339,4 +340,10 @@
       flex-direction: column;
       align-items: center;
     }
+  }
+  .chambu {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
   }
