@@ -12,7 +12,8 @@
   padding: 1rem 2rem;
   background-color: white;
   z-index: 3;
-  position:relative
+  position:relative;
+  background-color: #f5f5f5;
 }
 .cta-navbar-button {
   background-color: #1a237e;
@@ -96,6 +97,7 @@
   .navbar{
     justify-content: space-between;
     z-index: 10;
+    width:93%
   }
   .nav-links {
     position: absolute;
@@ -206,7 +208,7 @@
   border-radius: 10px;
   padding: 2rem; /* Harmonized padding */
   width: 45%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .package h4 {
@@ -612,5 +614,221 @@ p {
   .cta-button {
     font-size: 1rem;
     padding: 0.5rem 1.5rem;
+  }
+}
+
+
+/* career construction page */
+.rightcon-career-main-page {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.rightcon-highlight {
+  color: #ffc107;
+}
+
+/* JoinUs component */
+.rightcon-join-us {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.rightcon-join-us__title {
+  font-size: 42px;
+  color: #1a237e;
+  margin-bottom: 10px;
+}
+
+.rightcon-join-us__subtitle {
+  font-size: 42px;
+  color: #1a237e;
+  margin-bottom: 20px;
+}
+
+.rightcon-join-us__description {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.rightcon-join-us__image-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.rightcon-join-us__image {
+  width: 45%;
+  max-width: 37rem;
+  height: auto;
+}
+
+/* CurrentJobOpenings component */
+.rightcon-job-openings {
+  padding: 40px 20px;
+}
+
+.rightcon-job-openings__title {
+  font-size: 42px;
+  color: #1a237e;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.rightcon-job-openings__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.rightcon-job-card {
+  background-color: #f5f5f5;;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.rightcon-job-card__title {
+  color: #1a237e;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: "Avenir Next", Sans-serif;
+  line-height: 1.3rem;
+}
+
+.rightcon-job-card__description {
+  margin-bottom: 0px;
+  font-size: 16px;
+  font-family: "Avenir Next", Sans-serif;
+  font-weight: 400;
+  line-height: 1.2rem;
+  flex-grow: 1;
+}
+.rightcon-job-card__experience {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.rightcon-job-card__apply-btn {
+  background-color: #1a237e;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  align-self: flex-start;
+}
+/* HowWeBuildOurTeam component */
+.rightcon-team-building {
+  padding: 40px 20px;
+  margin:70px 0px
+}
+
+
+.rightcon-team-building__title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a237e;
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: "Avenir Next", Sans-serif;
+}
+
+.rightcon-team-building__list {
+  list-style-type: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.rightcon-team-building__item {
+  margin-bottom: 15px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.rightcon-team-building__item::before {
+  content: "•";
+  color: #1a237e;
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+}
+
+/* NextChapter component */
+.rightcon-next-chapter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 20px;
+  background-color: #1a237e;
+  color: #fff;
+  width: 50%;
+}
+
+.flexing {
+  max-width: 50%;
+}
+
+
+.rightcon-next-chapter__title {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.rightcon-next-chapter__join-btn {
+  background-color: #ffc107;
+  color: #1a237e;
+  border: none;
+  padding: 10px 30px;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.rightcon-next-chapter__image {
+  max-width: 45%;
+  height: auto;
+  position: relative;
+  background-color: #1a237e;
+
+}
+.wraping{
+  display: flex;
+    height: 20rem;
+    margin-bottom: 2rem;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .rightcon-next-chapter {
+    flex-direction: column;
+    text-align: center;
+    width:100%
+  }
+
+  .wraping{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rightcon-job-openings__list{
+    gap:70px;
+  }
+
+  .rightcon-next-chapter__image {
+    max-width: 100%;
+    margin-top: 20px;
+    display: none;
   }
 }

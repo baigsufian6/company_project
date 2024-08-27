@@ -8,79 +8,83 @@ const Package = ({ title, originalPrice, discountedPrice, features }) => {
   const [expandedFeature, setExpandedFeature] = useState(null);
 
   const allDropdownContents = {
-    "Steel": [
-      "ISI standard FE-500/550TMT Steel will be used as per structural requirement.",
-      "Meenakshi , Sunvik or equivalent brands will be used",
-      "Steel Rods starting from 8mm upto 16mm will be used"
+    "Design & Drawings​": [
+      "Floor plan / 2D",
+      "Architectural Visualization / 3D",
+      "Electrical and Plumbing Drawings",
+      "Structural drawings",
+      "Upto 2 Iterations allowed"
     ],
-    "Cement": [
-      "ISI Standard 53 and 43 Grade cement will be used.",
-      "53-Grade will be used for Masonry and 43-Grade will be used for Plastering",
-      "ACC, Dalmia or equivalent Brands will be used"
+    "Core Construction Materials used": [
+      "Steel (500 TMT Bars)-Minakshi/Sunvik",
+      "Cement ( Grade 43/53 )- Dalmia/ACC",
+      "6″ and 4″ Concrete Blocks",
+      "Agrregates 20 mm and 40 mm",
+      "Concrete  M20 Grade RMC/Machine Mix",
+      "Waterproofing admixtures- Dr Fixit",
+      "2 Course of SSM under the peripheral plinth Beam",
+      "Primer+2 Coats of Brushbond Waterproof+Screed Concrete finish in terrace"
     ],
-    "Blocks/Bricks": [
-      "Standard Solid 6-inch and 4-inch concrete blocks will be used",
-      "6-inch blocks for External walls and 4-inch blocks for internal walls",
-      "Note : Clay-bricks can be used with Extra cost of Rs.90/-sqft",
-      "Wire-cut bricks for Rs.100/-sqft on the package",
+    "Elevation": [
+      "Allocation of 0.5 % of Built up area cost",
     ],
-    "Concrete": [
-      "RCC Design mix will be used as per structural requirement.",
+    "Sump, Parapet wall other Items": [
+      "UG Sump  6″ concrete blocks with waterproof plastering",
+      "Parapet wall 6″ concrete blocks of 3 feet height",
+      "Column-wall joints plastered with chicken mesh",
+      "Floor to Floor height- 10 feet"
     ],
-    "Aggregates": [
-      "20mm and 40mm will be used.",
+    "Flooring Works": [
+      "Living Room, Dining  Marble Finished Vitrified Tiles Rs 100/sft",
+      "Kitchen and Bedroom  Vitrified tiles Rs 70/sft",
+      "Staircase Granite Rs 75/sft",
+      "Balcony, sit-out, Foyer and outside passage area Antiskid tiles Rs 50/sft",
+      "Toilet Flooring tiles up to Rs 50/sft (Anti skid)",
+      "Parking area Tiles Rs 40/sft(Anti Skid)",
+      "Note: Material Selection/procurement as per clients/architects selection."
     ],
-    "Sand": [
-      "M-Sand will be used for Masonry and P Sand will be used for plastering",
+    "Walltiling works": [
+      "Ceramic wall tiles Upto Rs. 40/sft (2 Feet above kitchen Couter slab)",
+      "Toilet wall dadoing up to 7 feet up to Rs 50/sft",
+      "Kitchen countertop Upto Rs 100/sft",
     ],
-    "Waterpoofing": [
-      "Dr.Fixit Water proofing solution will be used.",
+    "Doors": [
+      "Main Door Teak door with teak frame of 5″ by 3″ , Worth upto Rs. 20,000/- including fixtures.",
+      "Door hardware  Europa/ Dorma",
+      "Standard number hinges and tower bolts used",
+    ],
+    "Windows": [
+      "3 Track uPVC Windows with 1 Mosquito mesh and MS grill worth Rs.400/sft",
+      "Opening percentage for Doors and Windows 22% of built up area",
     ],
     "Kitchen": [
-      "Cost of the Granite platform will be upto RS.100/sqft",
-      "Ceramic Wall tiles worth upto RS.40/sqft will be provided",
-      "Stainless Steel Single Bowl sink of worth up to RS.3000 will be provided.",
-      "Sink Faucet and Accessories worth up to Rs.1300 will be provided.",
+      "1 Number of SS Kitchen sink, Faucet and any additional accessories as per client’s requirement upto overall budget of Rs.10,000/-",
     ],
     "Bathroom": [
-      "Sanitary ware and CP fittings will be used of worth up to Rs.25000/-",
-      "Washbasin with Pillarcock, Wallmixer/Diverter , Health Faucet and Acessesories",
-      "Ceramic Wall tiles worth up to Rs.40/sqft and Floor tiles worth up to Rs.40/sqft",
-      "Ashirvad/Supreme brand CPVC and PVC will be used in Plumbing.",
-      "Bathroom Doors: WPC Doors and Frame."
+      "Sanitary ware and CP Fitting such as Wash basin, WC, Taps, and other accessories: Total Budget up to Rs 30,000/- per 1000 square foot of Built up area",
+      "Brand  Parryware or equivalent",
     ],
-    "Wood Work": [
-      "Main door will be provided worth of Rs.15000 including frame and Fixtures.",
-      "2-track Aluminum sliding windows with 5mm clear glass will be provided",
-      "Doors for internal rooms will be provided worth of Rs.8000 including frame and fixtures",
-      "SAL wood will be provided for Internal Door Frames.",
+    "Electrical Works": [
+      "Switch and light points as per the design by the architect.",
+      "Good quality conduits hidden in the walls and slabs",
+      "DB’s and MCB’s Are Included : Indo Asian Make.",
+      "Note:Electrical fixing like fabs, bulbs, motors, meter box etc.. are not included in the package, it will be counted as additional cost",
     ],
-    "Painting": [
-      "2-coats of JK wall putty will be done.",
-      "2-coats of Asian paints Ace Weatherproof paint will be provided.",
-      "2-coats of Asian Paints Enamel painting will be done for window grills,balcony and Staircase MS railings.",
+    "Plumbing Works": [
+      "Water inlet:Connection of Water inlet from the corporation",
+      "Water Outlet: Drainage septic tanks and outlet released to the site boundary",
+      "CPVC Pipes: Brands considered astral/ supreme or equivalent",
+      "Pvc Overhead Tank (Ganga/ Equivalent) based on per capita consumption",
     ],
-    "Flooring": [
-      "Living and Dining: Branded Vitrified tiles of worth up to Rs.50/-sqft will be provided.",
-      "Bedroom: Branded Vitrified tiles of worth up to Rs.50/- sqft will be provided.",
-      "Staircase: Sadarahalli granite of worth up to Rs.80/- sqft will be provided.",
-      "Balcony and Open areas: Anti-skid tiles of worth up to Rs.40/-sqft will be provided.",
-      "Parking: Anti-skid Parking tiles of worth up to Rs.40/-sqft will be provided."
+    "Painting Works": [
+      "Internal painting: JK Wall putty+primer coat+tractor emulsion",
+      "External painting : Primar coat + Apex weather proof paint",
+      "Brand: Asian",
+      "MS Grills- 2 Coat Enamle painting",
     ],
-    "Electrical": [
-      "Wires: Anchor brand Fire-proof wires will be provided.",
-      "Switches and Brands: Anchor/ROMA Brand Switches and Panel boards will be provided.",
-      "Note: Electrical fixing and fixtures like Fans, Bulbs, Motor, Meters, Meter Box etc.,are not included in the package. It will be of additional cost.",
-    ],
-    "Water Tanks": [
-      "ISI Standard Multi-layered Water Tank will be provided. Water tank capacity starts from 1000 liters and the capacity depends on the total built-up area.",
-      "Underground sump will be of 8” solid concrete blocks with waterproofing plastering Sump tank capacity starts from 5000 liters and the capacity depends on the total built-up area. It can be provided with the cost estimation.",
-    ],
-    "Fabrication": [
-      "Staircase and Balcony Railings: MS railings with Standard designs will be provided. Simple Designs will be provided. 16-gauge round /box pipes will be used.",
-    ],
-    "Parapet Wall": [
-      "Standard Parapet wall of height 3 feet will be provided. 4-inch Solid concrete blocks & both side plastering and painting will be done.",
+    "Fabrication works": [
+      "Main gate -MS Gate worth upto Rs.20,000/-",
+      "Staircase and Balcony Railings: MS railing upto Rs.200/sft.",
     ],
     "Contract Exclusions": [
       "Electrical Works: Fixtures, fittings(Like Geyser, exhaust,tubes,fans, bulbs, fancy fittings, auto Controller chimney etc.) Main panel board. Cable from BESCOM point to Main panel board,Earthing, Temporary connection.",
@@ -96,30 +100,154 @@ const Package = ({ title, originalPrice, discountedPrice, features }) => {
       "Grill work will be charged as per Market rate",
       "Gas Line, Solar Pipe line, CC Camera provision will be charged as per requirement",
       "Chain link steps/Staircase will be charged extra as per market rate",
-      "If soil bought by outside for Filling."
+      "If soil bought by outside for Filling.",
+      "Extra charges for additional slump depth",
+      "Compound wall height more than 4 feet costs extra.",
+      "Electricity and water at site to be provided by client.",
+      "Additional cost for BBMP/BDA approvals",
+      "Plinth height more than 2 feet costs further.",
+      "Interiors works (Kitchen cabins,wardrobes etc) are not included.",
+      "Work outside of site boundary is not included here.",
+      "Security fabrications are extra",
+      "Designer elevation and landscaping cost is additional cost",
+      "Supplementary item/work not under package cost extra"
     ],
-
-
-
-
-
-
-
-
-
-
-    // ... (include all other features here)
-    "Premium Flooring": [
-      "Imported marble flooring",
-      "Hardwood flooring in bedrooms",
-      "Anti-skid designer tiles in wet areas"
+    "Payment structure": [
+      "Custom payment schedule will be provided.",
     ],
-    "Smart Home Features": [
-      "Automated lighting system",
-      "Smart door locks",
-      "Voice-controlled home automation"
+    "Construction Guarantee and warranty": [
+      "Structural Warranty 10 years",
+      "Waterproofing warranty , 1 years"
     ],
-    // ... (add more premium features as needed)
+    
+
+
+
+
+    // ... (Premium Features)
+   "Design & Drawings ​": [
+      "Floor plan / 2D",
+      "Architectural Visualization / 3D",
+      "Electrical and Plumbing Drawings",
+      "Structural drawings",
+      "Upto 3 Iterations allowed",
+      "3D External Walkthrough of the House",
+      "3D Cut Floor Plans with Furniture Layout"
+    ],
+    "Core Construction Materials used ": [
+      "Steel (500-550 TMT Bars)-JSW steel",
+      "Cement ( Grade 43/53 )- Acc/Ultratech",
+      "6″ and 4″ Apco/Sobha Concrete Blocks",
+      "Agrregates – 20 mm and 40 mm",
+      "Concrete – M25 Grade RMC/Machine Mix",
+      "Waterproofing admixtures- Dr Fixit / FOSROC",
+      "2 Course of SSM under the peripheral plinth Beam",
+      "Primer+2 Coats of Brushbond Waterproof+Screed Concrete+Polyurethane Membrane in Terrace"
+    ],
+    "Elevation ": [
+      "Allocation of 1.5 % of Built up area cost",
+    ],
+    "Sump, Parapet wall other Items ": [
+      "UG Sump – RCC Retaining walls with waterproof plastering",
+      "4 Feet height compound wall – 4 Inch concrete blocks with plastering and painting as per the design.",
+      "Parapet wall – 6″ concrete blocks of 3 feet height",
+      "Column-wall joints plastered with chicken mesh",
+      "Floor to Floor height- 11 feet"
+    ],
+    "Flooring Works ": [
+      "Living, Rooms and Kitchen Flooring– Granite of value Up to Rs.140 per sqft",
+      "Foyer and Staircase area – Granite Rs.120/sft",
+      "Balcony, sit-out and outside passage area – Antiskid tiles Rs.80/sft",
+      "Parking- Tiles Shall be Button Tile Flooring/Interlock Flooring of value Rs.35 to 40 per sqft.",
+      "Toilet Flooring tiles up to Rs 85/sft (Anti skid)",
+      "Note: Material Selection/procurement as per clients/architects selection."
+    ],
+    "Walltiling works ": [
+      "Ceramic wall tiles – Upto Rs.80/ - Rs. 90/ sft (2 Feet above kitchen slab)",
+      "Toilet wall dadoing up to 7 feet up to Rs 50/sft",
+      "Kitchen sink, faucet and accessories worth upto Rs. 1500/ - Rs. 2000/",
+    ],
+    "Doors ": [
+      "Main Door and Pooja Door : Provision of 3.5*7ft door in teak wood upto Rs 60,000/- inclusive of all hardware fittings.",
+      "Internal Doors : Provision of 3*7ft door in WPC upto Rs.15,000/- per door inclusive of all hardware fittings.",
+      "Bathroom Door: Frame and shutter including all fittings up to Rs.10,000/- per door",
+      "Standard number hinges and tower bolts used as per clients wish"
+    ],
+    "Windows ": [
+      "3 Track uPVC Windows with 1 Mosquito mesh and MS grill as per Design ",
+      "Opening percentage for Doors and Windows – 27% of built up area",
+    ],
+    "Kitchen ": [
+      "1 Number of SS Kitchen sink, Faucet and any additional accessories as per client’s requirement upto overall budget of Rs.15,000/",
+    ],
+    "Bathroom ": [
+      "Sanitary ware & CP fittings will be used of worth up to Rs.30000/- per Bathroom, Washbasin with Pillar cock, Wall mixer/Diverter, Health Faucet, Overhead shower with Arm,Concealed stopcock, CP fittings and Accessories (CPVC andPVC Pipes).",
+      "Ceramic Wall tiles worth up to Rs.80/sqft.",
+      "Anti-Skid Ceramic Floor tiles worth Rs.50/Sqft.",
+      "Ashirwad/Astral or Equivalent brand CPVC and PVC will be used in Plumbing. Height of the Wall tiles will be up to 7 feet above the Floor.",
+      "WPC water proof Frame and Shutter will be provided",
+      "Sanitary ware and CP fittings-Jaguar/Cera/Hindware or any Equivalent as per client’s choice.",
+      "Solar provision for all the Toilets."
+    ],
+    "Electrical Works ": [
+      "Switch and light points as per the design by the architect",
+      "Good quality conduits hidden in the walls and slabs",
+      "1 EV Charging point in the Parking Lot.",
+      "Fireproof Copper wire: Anchor or Equivalent.",
+      "",
+    ],
+    "Plumbing Works ": [
+      "Water inlet:Connection of Water inlet from the corporation",
+      "Water Outlet: Drainage septic tanks and outlet released to the site boundary",
+      "CPVC Pipes: Brands considered Ashirwad/astral or equivalent",
+      "3 Layered PVC Overhead Tank: Brand considered Sintex or equivalent , capacity of the decided based on the per capita consumption",
+    ],
+    "Painting Works ": [
+      "Internal Wall and Ceiling: JK Wall putty, primer coat, and Royale emulsion paint",
+      "External wall : Primar coat and Ultima emulsion weatherproof painting",
+      "Brands: Asian/Dulux/Berger",
+      "2 Coat Enamle painting for window MS Grills",
+    ],
+    "Fabrication works ": [
+      "Main gate in mild steel as per client’s selection worth up to Rs.32000/-",
+      "Internal Staircase and Balcony Railings: Providing SS(304 Grade) with glass railing on one side of the staircase up to Rs.350/sft",
+      "Providing External staircase railing in one side upto Rs 250/sft"
+    ],
+    "Contract Exclusions ": [
+      "Electrical Works: Fixtures, fittings (Like Geyser, exhaust, tubes, fans, bulbs, fancy fittings, auto Controller chimney, etc.) Main panel board. Cable from BESCOM point to Main panel board, Earthing, Temporary connection.",
+      "BWSSB, BESCOM expenses like road cutting, servicing, SANCTION plan, etc.",
+      "Power and Water. ",
+      "Any Government expenses.",
+      "Other fixtures like solar panels, Fancy fittings in plumbing like jet shower, cubical shower, and bathtub are not included.",
+      "Electrical panel board.",
+      "Interiors like Kitchen cabinet. Any internal paneling, Wardrobes, Lofts, Cots, ledges, TV cabinets, shelves, etc. will be as per discussion.",
+      "Masonry Works: Architectural finishes like wall cladding will be charged as per market rate.",
+      "Sloped roof & design roofs will be charged as per market rate.",
+      "Platform for overhead tank shall be charged based on the area and materials selected.",
+      "Grill work will be charged as per Market rate.",
+      "Gas Line, Solar Pipeline, CC Camera provision will be charged as per requirement.",
+      "Chain link steps/Staircase will be charged extra as per market rate.",
+      "If soil is bought from outside for filling, it will incur extra charges.",
+      "Additional sumping depth will be charged extra.",
+      "Additional height of Compound wall if more than 4 feet is required.",
+      "Temporary electricity and water for construction to be provided by the client.",
+      "Additional cost for BBMP/BDA approvals.",
+      "Additional cost to raise the building level more than 2 feet from the ground level.",
+      "Interiors works like kitchen cabinets, wardrobes, etc. are not included.",
+      "Electrical fixtures like fans, lightbulbs, exhaust fans, etc. are not included in the package.",
+      "Any work outside the site boundary is not included in the package.",
+      "Security fabrications are extra.",
+      "Designer elevation and landscaping costs are additional.",
+      "Any item/work not specifically mentioned in the package is an additional cost.",
+    ],
+    "Payment structure ": [
+      "Custom payment schedule will be provided considering project milestones and activities",
+    ],
+    "Construction Guarantee and warranty ": [
+      "Structural Warranty 10 years",
+      "Waterproofing warranty , 1 year"
+    ],
+   
   };
 
   return (
@@ -165,43 +293,43 @@ const Package = ({ title, originalPrice, discountedPrice, features }) => {
 
 const Packages = () => {
   const standardFeatures = [
-    "Steel",
-    "Cement",
-    "Blocks/Bricks",
-    "Concrete",
-    "Aggregates",
-    "Sand",
-    "Waterpoofing",
+    "Design & Drawings​",
+    "Core Construction Materials used",
+    "Elevation",
+    "Sump, Parapet wall other Items",
+    "Flooring Works",
+    "Walltiling works",
+    "Doors",
+    "Windows",
     "Kitchen",
     "Bathroom",
-    "Wood Work",
-    "Painting",
-    "Flooring",
-    "Electrical",
-    "Water Tanks",
-    "Fabrication",
-    "Parapet Wall",
+    "Electrical Works",
+    "Plumbing Works",
+    "Painting Works",
+    "Fabrication works",
     "Contract Exclusions",
+    "Payment structure",
+    "Construction Guarantee and warranty",
   ];
 
   const premiumFeatures = [
-    "Structural Material",
-    "Cement",
-    "Bricks",
-    "Concrete",
-    "Aggregates",
-    "Sand",
-    "Waterpoofing",
-    "Luxury Kitchen",
-    "Luxury Bathroom",
-    "Premium Doors",
-    "Paint",
-    "Flooring",
-    "Premium Electrical",
-    "Terrace",
-    "Micellaneous",
-    "ChickenMesh",
-    "Contract Exclusions",
+   "Design & Drawings ​",
+    "Core Construction Materials used ",
+    "Elevation",
+    "Sump, Parapet wall other Items ",
+    "Flooring Works ",
+    "Walltiling works ",
+    "Doors ",
+    "Windows ",
+    "Kitchen ",
+    "Bathroom ",
+    "Electrical Works ",
+    "Plumbing Works ",
+    "Painting Works ",
+    "Fabrication works ",
+    "Contract Exclusions ",
+    "Payment structure ",
+    "Construction Guarantee and warranty ",
   ];
 
   return (
