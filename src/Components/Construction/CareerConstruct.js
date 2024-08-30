@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import construction from './imagess/career-page-img.jpg'
 import architect from './imagess/career-page-img-1.webp'
 import potta from './imagess/CTA-Career-Page.webp'
@@ -32,6 +33,11 @@ function JoinUs() {
 }
 
 function CurrentJobOpenings() {
+
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/construction/contact'); // This will navigate to the Career page
+  }; 
   const jobs = [
     { title: 'Site Engineer', experience: '2 Years of Experience', description: 'Responsible for overseeing construction activities, ensuring adherence to project specifications and timelines. Collaborate with project managers and subcontractors to address site issues.' },
     { title: 'Senior Architect', experience: '4 Years of Experience', description: 'Lead architectural design projects, managing a team of architects and designers. Develop creative and innovative design solutions, ensuring compliance with building codes and client requirements.' },
@@ -48,7 +54,7 @@ function CurrentJobOpenings() {
             <h3 className="rightcon-job-card__title">{job.title}</h3>
             <p className="rightcon-job-card__description">{job.description}</p>
             <p className="rightcon-job-card__experience">{job.experience}</p>
-            <button className="rightcon-job-card__apply-btn">Apply Now</button>
+            <button className="rightcon-job-card__apply-btn"  onClick={handleClick}>Apply Now</button>
           </div>
         ))}
       </div>
@@ -72,12 +78,16 @@ function HowWeBuildOurTeam() {
 }
 
 function NextChapter() {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/construction/contact'); // This will navigate to the Career page
+  };
   return (
     <div className='wraping'>
     <section className="rightcon-next-chapter">
         <div className='flexing'>
       <h2 className="rightcon-next-chapter__title">Your next chapter begins here reach out, apply, and join the Rightcon family today!</h2>
-      <button className="rightcon-next-chapter__join-btn">Join Now</button>
+      <button className="rightcon-next-chapter__join-btn" onClick={handleClick}>Join Now</button>
       </div>
     </section>
     <img src={potta} alt="Students" className="rightcon-next-chapter__image" />
