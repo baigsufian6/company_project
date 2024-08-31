@@ -53,7 +53,7 @@ const Home = () => {
               Get Started
             </Link>
           </div>
-          <div className="heroine-image">{/* Add a heroine image here */}</div>
+          <div className="heroine-image"></div>
         </section>
 
         <section id="services" className="services">
