@@ -79,33 +79,26 @@ function ProjectConstruct() {
         <Slider {...settings}>
           <div className="design-card">
             <img src={image1} alt="Project Ramesh Residency" />
-            <h4>Project Ramesh Residency</h4>
-            <p>Location: Ramamurthy Nagar, Bangalore</p>
           </div>
+
           <div className="design-card">
             <img src={image2} alt="Project Dharmesh Residency" />
-            <h4>Project Dharmesh Residency</h4>
-            <p>Location: Bannerghatta Road, Bangalore</p>
           </div>
+
           <div className="design-card">
             <img src={image3} alt="Project Sridhar Residency" />
-            <h4>Project Sridhar Residency</h4>
-            <p>Location: Kalyan Nagar, Bangalore</p>
           </div>
+
           <div className="design-card">
             <img src={prop1} alt="Project Prop1" />
-            <h4>Project Prop1</h4>
-            <p>Location: Kalyan Nagar, Bangalore</p>
           </div>
+
           <div className="design-card">
             <img src={prop2} alt="Project Prop2" />
-            <h4>Project Prop2</h4>
-            <p>Location: Kalyan Nagar, Bangalore</p>
           </div>
+
           <div className="design-card">
             <img src={prop3} alt="Project Prop3" />
-            <h4>Project Prop3</h4>
-            <p>Location: Kalyan Nagar, Bangalore</p>
           </div>
         </Slider>
       </section>

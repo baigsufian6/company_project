@@ -186,6 +186,17 @@
   margin: 0 auto;
   color: #fac106;
 }
+
+@media (max-width: 767px) {
+.hero h1{
+  font-size: 3rem;
+}
+
+.hero{
+  height: 109vh;
+}
+
+}
 /* Packages Section Styles */
 .packages {
   padding: 4rem 2rem;
@@ -294,7 +305,7 @@
   margin: 0 auto;
   padding: 40px 20px;
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
 }
 
@@ -408,7 +419,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   margin: 0 10px;
-  height: 400px; /* Set a fixed height */
+  height: 250px; /* Set a fixed height */
   display: flex;
   flex-direction: column;
 }
@@ -510,7 +521,7 @@
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .design-card {
-    height: 350px;
+    height: 210px;
   }
   
   .design-card img {
@@ -691,12 +702,15 @@ p {
   }
   
   p {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
   
   .cta-button {
     font-size: 1rem;
     padding: 0.5rem 1.5rem;
+  }
+  .project-construct{
+    width:63vh;
   }
 }
 
@@ -913,6 +927,18 @@ p {
     max-width: 100%;
     margin-top: 20px;
     display: none;
+  }
+  .rightcon-join-us__title{
+    font-size: 32px;
+  }
+  .rightcon-join-us__subtitle{
+    font-size: 32px;
+  }
+  .rightcon-job-openings__title{
+    font-size: 32px;
+  }
+  .rightcon-next-chapter{
+    margin:-29px 0;
   }
 }
 
@@ -1217,6 +1243,34 @@ p {
   font-size: 1rem;
   color: #666;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+
+.our-story h1{
+  font-size: 1.5rem;
+}
+.our-story p{
+  font-size: 1rem;
+}
+.stat-item h3{
+  font-size: 1rem;
+}
+.what-sets-us-apart h1{
+  font-size: 1.5rem;
+}
+.feature-icon{
+  font-size: 2rem;
+}
+.feature-item h3 {
+  font-size: 1rem;
+}
+.feature-item{
+  width:84%;
+}
+.play-button{
+  font-size: 1rem;
+}
 }
 
 /* calculator */
