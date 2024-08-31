@@ -1,271 +1,191 @@
-// import React from 'react';
-// import  { useNavigate } from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import './Main.css';
-// import rohans from './images/rohans.png';
-
-// const Home = () => {
-//     const navigate = useNavigate();
-  
-//   return (
-//     <div className="headpart">
-//       {/* Header Section */}
-//       <header className="header">
-//         <div className="logo">
-//           <img src={rohans} alt="Rohan Infra Builders" />
-//           <h3>RIBD</h3>
-//         </div>
-//         <nav className="nav">
-//           <ul>
-//             <li><a href="#home">Home</a></li>
-//             <li><a href="#services">Services</a></li>
-//             <li><a href="#about">About Me</a></li>
-//             <li><a href="#reviews">Reviews</a></li>
-//             <li><a href="#contact">Contact</a></li>
-//           </ul>
-//         </nav>
-//         <button className="cta-button">Enquire</button>
-//       </header>
-
-//       {/* Main Content */}
-//       <main>
-//         {/* Hero Section */}
-//         <section className="hero">
-//           <div className="hero-content">
-//             <h3>Welcome!</h3>
-//             <h2>We are Rohan Infra Builders and Developers</h2>
-//             <div className="divider"></div>
-//             <h1>Let your Dreams Be your Wings.</h1>
-//             {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.</p> */}
-//             <div className="signature">
-//               <h4>Rohan Infra</h4>
-//               <img
-//                 src="https://websitedemos.net/real-estate-consultant-02/wp-content/uploads/sites/728/2020/11/signature-01-free-img.png"
-//                 alt="Signature"
-//               />
-//             </div>
-//           </div>
-//           <div className="hero-image">
-//             <img
-//               src="https://websitedemos.net/real-estate-consultant-02/wp-content/uploads/sites/728/2020/11/consultant-01-free-img.png"
-//               alt="Consultant"
-//             />
-//           </div>
-//         </section>
-
-       
-//         {/* Services Section */}
-//         <section className="services">
-//         <h1 >How may I help?</h1>
-//           <div className="service">
-//             <h3>What Are You Looking For?</h3>
-//             <div className="choice">
-//             <button className="btns" onClick={() => navigate("../Plots/work.js")}>Plots</button>
-//             <button className="btns">Construction</button>
-//             </div>
-//           </div>
-//           <div className="divider"></div>
-//           <div className="service-grid">
-//             {/* Add service items here */}
-//           </div>
-//         </section>
-
-//         {/* About Section */}
-//         <section className="about">
-//           <div className="about-content">
-//             <h3>About Us</h3>
-//             <h2>"Transforming Dreams into Reality: Rohan Infra Builders — Your Premier Choice for Quality Homes in Bangalore"</h2>
-//             <div className="divider"></div>
-//             <p>At Rohan Infra Builders and Developers, we turn your property dreams into reality. With over 21 successful projects across Bangalore, we are known for our trust, quality, and customer satisfaction.</p>
-//           </div>
-//           <div className="about-image">
-//             <img
-//               src="https://websitedemos.net/real-estate-consultant-02/wp-content/uploads/sites/728/2020/11/consultant-02-free-img.png"
-//               alt="About"
-//             />
-//           </div>
-//         </section>
-
-//         {/* Testimonials Section */}
-//         <section className="testimonials">
-//           <h2>What My Clients Say</h2>
-//           <div className="divider"></div>
-//           <div className="testimonial-grid">
-//             {/* Add testimonial items here */}
-//           </div>
-//         </section>
-//       </main>
-
-//       {/* Footer Section */}
-//       <footer className="footer">
-//         <div className="footer-content">
-//           <div className="footer-logo">
-//             <img className="rohan-img" src={rohans} alt="RIBD Logo" />
-//             <h2>RIBD</h2>
-//           </div>
-
-//           <div className="footer-contact">
-//             <h4>Contact</h4>
-//             <p>929-242-6868</p>
-//             <p>rohaninfrabuilderrs@gmail.com</p>
-//             <h4>Address</h4>
-//             <p>#342, 2nd and 3rd Floor, Dr. Rajkumar Road</p>
-//             <p>Beside AL-BEK Restaurant</p>
-//             <p>6th Block Rajajinagar, Bengaluru - 560010</p>
-//           </div>
-
-//           <div className="footer-social">
-//             <div className="facebook">
-//               <FontAwesomeIcon icon="fa-brands fa-square-facebook" />
-//             </div>
-//             <div className="insta">
-//               <FontAwesomeIcon icon="fa-brands fa-instagram" style={{ color: '#f8f9fc' }} />
-//             </div>
-//             <div className="twitter">
-//               <FontAwesomeIcon icon="fa-brands fa-square-twitter" style={{ color: '#ebedef' }} />
-//             </div>
-//           </div>
-//         </div>
-
-//         <div className="footer-bottom">
-//           <p>Copyright © 2024 Real Estate Company</p>
-//         </div>
-//       </footer>
-//     </div>
-//   );
-// };
-// export default Home;
-
-
-
-
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './Main.css';
-import rohans from './images/rohans.png';
+import React from "react";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./Main.css";
+import rohans from "./images/rohans.png";
+import construct from "./images/constructionImg.jpg";
+import plots from "./images/plotImg.jpg";
 
 const Home = () => {
   return (
-    <div className="headpart">
+    <div className="home-container">
       {/* Header Section */}
       <header className="header">
         <div className="logo">
           <img src={rohans} alt="Rohan Infra Builders" />
           <h3>RIBD</h3>
         </div>
+        <input type="checkbox" id="nav-toggle" className="nav-toggle" />
         <nav className="nav">
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <a href="#services">Services</a>
+            </li>
+            <li>
+              <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <a href="#about">About Us</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
           </ul>
         </nav>
-        <button className="cta-button">Enquire</button>
+        <label htmlFor="nav-toggle" className="nav-toggle-label">
+          <span></span>
+        </label>
       </header>
 
-      {/* Main Content */}
       <main>
-        {/* Hero Section */}
-        <section className="hero">
-          <div className="hero-content">
-            <h3>Welcome!</h3>
-            <h2>We are Rohan Infra Builders and Developers</h2>
-            <div className="divider"></div>
-            <h1>Let your Dreams Be your Wings.</h1>
-            <div className="signature">
-              <h4>Rohan Infra</h4>
-              <img
-                src="https://websitedemos.net/real-estate-consultant-02/wp-content/uploads/sites/728/2020/11/signature-01-free-img.png"
-                alt="Signature"
-              />
-            </div>
+        <section id="home" className="heroine">
+          <div className="heroine-content">
+            <h1 className="animate-text">
+              Building Dreams, Crafting Realities
+            </h1>
+            <p className="animate-text-delay">
+              Welcome to Rohan Infra Builders and Developers
+            </p>
+            <Link to="/construction" className="cta-button">
+              Get Started
+            </Link>
           </div>
-          <div className="hero-image">
-            <img
-              src="https://websitedemos.net/real-estate-consultant-02/wp-content/uploads/sites/728/2020/11/consultant-01-free-img.png"
-              alt="Consultant"
-            />
+          <div className="heroine-image">{/* Add a heroine image here */}</div>
+        </section>
+
+        <section id="services" className="services">
+          <h2>Our Services</h2>
+          <div className="service-cards">
+            <div className="service-card">
+              <img src={plots} alt="Plots" />
+              <h3>Plots</h3>
+              <p>Find your perfect plot in prime locations.</p>
+              <Link to="/plots" className="learn-more">
+                Learn More
+              </Link>
+            </div>
+            <div className="service-card">
+              <img src={construct} alt="Construction" />
+              <h3>Construction</h3>
+              <p>Build your dream home with our expert team.</p>
+              <Link to="/construction" className="learn-more">
+                Learn More
+              </Link>
+            </div>
           </div>
         </section>
 
-        {/* Services Section */}
-        <section className="services">
-          <h1>How may I help?</h1>
-          <div className="service">
-            <h3>What Are You Looking For?</h3>
-            <div className="choice">
-              <button className='chambu'><Link to="/plots" className="btns">Plots</Link></button>
-              <button><Link to="/construction" className="btns">Construction</Link></button>
-            </div>
-          </div>
-          <div className="divider"></div>
-          <div className="service-grid">
-            {/* Add service items here */}
+        <section id="projects" className="projects">
+          <h2>Featured Projects</h2>
+          <div className="project-slider">
+            {/* Add a slider component here with project images and details */}
           </div>
         </section>
 
-        {/* About Section */}
-        <section className="about">
+        <section id="about" className="about">
           <div className="about-content">
-            <h3>About Us</h3>
-            <h2>"Transforming Dreams into Reality: Rohan Infra Builders — Your Premier Choice for Quality Homes in Bangalore"</h2>
-            <div className="divider"></div>
-            <p>At Rohan Infra Builders and Developers, we turn your property dreams into reality. With over 21 successful projects across Bangalore, we are known for our trust, quality, and customer satisfaction.</p>
-          </div>
-          <div className="about-image">
-            <img
-              src="https://websitedemos.net/real-estate-consultant-02/wp-content/uploads/sites/728/2020/11/consultant-02-free-img.png"
-              alt="About"
-            />
+            <h2>About Rohan Infra</h2>
+            <p>
+              With over two decades of experience and 21 successful projects
+              across Bangalore, Rohan Infra Builders and Developers has
+              established itself as a trusted name in the construction industry.
+              Our commitment to quality, innovation, and customer satisfaction
+              sets us apart.
+            </p>
+            <div className="stats">
+              <div className="stat-item">
+                <span className="stat-number">21+</span>
+                <span className="stat-label">Projects Completed</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">500+</span>
+                <span className="stat-label">Happy Families</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">20+</span>
+                <span className="stat-label">Years of Excellence</span>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Testimonials Section */}
-        <section className="testimonials">
-          <h2>What My Clients Say</h2>
-          <div className="divider"></div>
-          <div className="testimonial-grid">
-            {/* Add testimonial items here */}
+        <section id="testimonials" className="testimonials">
+          <h2>What Our Clients Say</h2>
+          <div className="testimonial-carousel">
+            {/* Add a carousel component here with client testimonials */}
           </div>
+        </section>
+
+        <section id="contact" className="contact">
+          <h2>Get in Touch</h2>
+          <form className="contact-form">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <input type="tel" placeholder="Your Phone" />
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" className="submit-button">
+              Send Message
+            </button>
+          </form>
         </section>
       </main>
 
-      {/* Footer Section */}
       <footer className="footer">
         <div className="footer-content">
           <div className="footer-logo">
-            <img className="rohan-img" src={rohans} alt="RIBD Logo" />
+            <img src={rohans} alt="RIBD Logo" />
             <h2>RIBD</h2>
           </div>
-
+          <div className="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/services">Services</Link>
+              </li>
+              <li>
+                <Link to="/projects">Projects</Link>
+              </li>
+              <li>
+                <Link to="/about">About Us</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact</Link>
+              </li>
+            </ul>
+          </div>
           <div className="footer-contact">
-            <h4>Contact</h4>
+            <h3>Contact Us</h3>
             <p>929-242-6868</p>
-            <p>rohaninfrabuilderrs@gmail.com</p>
-            <h4>Address</h4>
+            <p>rohaninfrabuilders@gmail.com</p>
             <p>#342, 2nd and 3rd Floor, Dr. Rajkumar Road</p>
-            <p>Beside AL-BEK Restaurant</p>
             <p>6th Block Rajajinagar, Bengaluru - 560010</p>
           </div>
-
           <div className="footer-social">
-            <div className="facebook">
-              <FontAwesomeIcon icon={['fab', 'facebook-square']} />
-            </div>
-            <div className="insta">
-              <FontAwesomeIcon icon={['fab', 'instagram']} style={{ color: '#f8f9fc' }} />
-            </div>
-            <div className="twitter">
-              <FontAwesomeIcon icon={['fab', 'twitter-square']} style={{ color: '#ebedef' }} />
+            <h3>Follow Us</h3>
+            <div className="social-icons">
+              <a href="#" className="social-icon">
+                <FontAwesomeIcon icon={["fab", "facebook-square"]} />
+              </a>
+              <a href="#" className="social-icon">
+                <FontAwesomeIcon icon={["fab", "instagram"]} />
+              </a>
+              <a href="#" className="social-icon">
+                <FontAwesomeIcon icon={["fab", "twitter-square"]} />
+              </a>
             </div>
           </div>
         </div>
-
         <div className="footer-bottom">
-          <p>Copyright © 2024 Real Estate Company</p>
+          <p>
+            &copy; 2024 Rohan Infra Builders and Developers. All rights
+            reserved.
+          </p>
         </div>
       </footer>
     </div>
