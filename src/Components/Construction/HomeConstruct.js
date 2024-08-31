@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import  { useRef } from 'react';
-import { FaPlus , FaMinus} from 'react-icons/fa'; 
-import './construct.css';
-
-
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
+import { FaPlus, FaMinus } from "react-icons/fa";
+import "./construct.css";
 
 const Package = ({ title, originalPrice, discountedPrice, features }) => {
   const [expandedFeature, setExpandedFeature] = useState(null);
@@ -15,7 +13,7 @@ const Package = ({ title, originalPrice, discountedPrice, features }) => {
       "Architectural Visualization / 3D",
       "Electrical and Plumbing Drawings",
       "Structural drawings",
-      "Upto 2 Iterations allowed"
+      "Upto 2 Iterations allowed",
     ],
     "Core Construction Materials used": [
       "Steel (500 TMT Bars)-Minakshi/Sunvik",
@@ -25,16 +23,14 @@ const Package = ({ title, originalPrice, discountedPrice, features }) => {
       "Concrete  M20 Grade RMC/Machine Mix",
       "Waterproofing admixtures- Dr Fixit",
       "2 Course of SSM under the peripheral plinth Beam",
-      "Primer+2 Coats of Brushbond Waterproof+Screed Concrete finish in terrace"
+      "Primer+2 Coats of Brushbond Waterproof+Screed Concrete finish in terrace",
     ],
-    "Elevation": [
-      "Allocation of 0.5 % of Built up area cost",
-    ],
+    Elevation: ["Allocation of 0.5 % of Built up area cost"],
     "Sump, Parapet wall other Items": [
       "UG Sump  6″ concrete blocks with waterproof plastering",
       "Parapet wall 6″ concrete blocks of 3 feet height",
       "Column-wall joints plastered with chicken mesh",
-      "Floor to Floor height- 10 feet"
+      "Floor to Floor height- 10 feet",
     ],
     "Flooring Works": [
       "Living Room, Dining  Marble Finished Vitrified Tiles Rs 100/sft",
@@ -43,26 +39,26 @@ const Package = ({ title, originalPrice, discountedPrice, features }) => {
       "Balcony, sit-out, Foyer and outside passage area Antiskid tiles Rs 50/sft",
       "Toilet Flooring tiles up to Rs 50/sft (Anti skid)",
       "Parking area Tiles Rs 40/sft(Anti Skid)",
-      "Note: Material Selection/procurement as per clients/architects selection."
+      "Note: Material Selection/procurement as per clients/architects selection.",
     ],
     "Walltiling works": [
       "Ceramic wall tiles Upto Rs. 40/sft (2 Feet above kitchen Couter slab)",
       "Toilet wall dadoing up to 7 feet up to Rs 50/sft",
       "Kitchen countertop Upto Rs 100/sft",
     ],
-    "Doors": [
+    Doors: [
       "Main Door Teak door with teak frame of 5″ by 3″ , Worth upto Rs. 20,000/- including fixtures.",
       "Door hardware  Europa/ Dorma",
       "Standard number hinges and tower bolts used",
     ],
-    "Windows": [
+    Windows: [
       "3 Track uPVC Windows with 1 Mosquito mesh and MS grill worth Rs.400/sft",
       "Opening percentage for Doors and Windows 22% of built up area",
     ],
-    "Kitchen": [
+    Kitchen: [
       "1 Number of SS Kitchen sink, Faucet and any additional accessories as per client’s requirement upto overall budget of Rs.10,000/-",
     ],
-    "Bathroom": [
+    Bathroom: [
       "Sanitary ware and CP Fitting such as Wash basin, WC, Taps, and other accessories: Total Budget up to Rs 30,000/- per 1000 square foot of Built up area",
       "Brand  Parryware or equivalent",
     ],
@@ -112,29 +108,23 @@ const Package = ({ title, originalPrice, discountedPrice, features }) => {
       "Work outside of site boundary is not included here.",
       "Security fabrications are extra",
       "Designer elevation and landscaping cost is additional cost",
-      "Supplementary item/work not under package cost extra"
+      "Supplementary item/work not under package cost extra",
     ],
-    "Payment structure": [
-      "Custom payment schedule will be provided.",
-    ],
+    "Payment structure": ["Custom payment schedule will be provided."],
     "Construction Guarantee and warranty": [
       "Structural Warranty 10 years",
-      "Waterproofing warranty , 1 years"
+      "Waterproofing warranty , 1 years",
     ],
-    
-
-
-
 
     // ... (Premium Features)
-   "Design & Drawings ​": [
+    "Design & Drawings ​": [
       "Floor plan / 2D",
       "Architectural Visualization / 3D",
       "Electrical and Plumbing Drawings",
       "Structural drawings",
       "Upto 3 Iterations allowed",
       "3D External Walkthrough of the House",
-      "3D Cut Floor Plans with Furniture Layout"
+      "3D Cut Floor Plans with Furniture Layout",
     ],
     "Core Construction Materials used ": [
       "Steel (500-550 TMT Bars)-JSW steel",
@@ -144,17 +134,15 @@ const Package = ({ title, originalPrice, discountedPrice, features }) => {
       "Concrete – M25 Grade RMC/Machine Mix",
       "Waterproofing admixtures- Dr Fixit / FOSROC",
       "2 Course of SSM under the peripheral plinth Beam",
-      "Primer+2 Coats of Brushbond Waterproof+Screed Concrete+Polyurethane Membrane in Terrace"
+      "Primer+2 Coats of Brushbond Waterproof+Screed Concrete+Polyurethane Membrane in Terrace",
     ],
-    "Elevation ": [
-      "Allocation of 1.5 % of Built up area cost",
-    ],
+    "Elevation ": ["Allocation of 1.5 % of Built up area cost"],
     "Sump, Parapet wall other Items ": [
       "UG Sump – RCC Retaining walls with waterproof plastering",
       "4 Feet height compound wall – 4 Inch concrete blocks with plastering and painting as per the design.",
       "Parapet wall – 6″ concrete blocks of 3 feet height",
       "Column-wall joints plastered with chicken mesh",
-      "Floor to Floor height- 11 feet"
+      "Floor to Floor height- 11 feet",
     ],
     "Flooring Works ": [
       "Living, Rooms and Kitchen Flooring– Granite of value Up to Rs.140 per sqft",
@@ -162,7 +150,7 @@ const Package = ({ title, originalPrice, discountedPrice, features }) => {
       "Balcony, sit-out and outside passage area – Antiskid tiles Rs.80/sft",
       "Parking- Tiles Shall be Button Tile Flooring/Interlock Flooring of value Rs.35 to 40 per sqft.",
       "Toilet Flooring tiles up to Rs 85/sft (Anti skid)",
-      "Note: Material Selection/procurement as per clients/architects selection."
+      "Note: Material Selection/procurement as per clients/architects selection.",
     ],
     "Walltiling works ": [
       "Ceramic wall tiles – Upto Rs.80/ - Rs. 90/ sft (2 Feet above kitchen slab)",
@@ -173,7 +161,7 @@ const Package = ({ title, originalPrice, discountedPrice, features }) => {
       "Main Door and Pooja Door : Provision of 3.5*7ft door in teak wood upto Rs 60,000/- inclusive of all hardware fittings.",
       "Internal Doors : Provision of 3*7ft door in WPC upto Rs.15,000/- per door inclusive of all hardware fittings.",
       "Bathroom Door: Frame and shutter including all fittings up to Rs.10,000/- per door",
-      "Standard number hinges and tower bolts used as per clients wish"
+      "Standard number hinges and tower bolts used as per clients wish",
     ],
     "Windows ": [
       "3 Track uPVC Windows with 1 Mosquito mesh and MS grill as per Design ",
@@ -189,7 +177,7 @@ const Package = ({ title, originalPrice, discountedPrice, features }) => {
       "Ashirwad/Astral or Equivalent brand CPVC and PVC will be used in Plumbing. Height of the Wall tiles will be up to 7 feet above the Floor.",
       "WPC water proof Frame and Shutter will be provided",
       "Sanitary ware and CP fittings-Jaguar/Cera/Hindware or any Equivalent as per client’s choice.",
-      "Solar provision for all the Toilets."
+      "Solar provision for all the Toilets.",
     ],
     "Electrical Works ": [
       "Switch and light points as per the design by the architect",
@@ -213,7 +201,7 @@ const Package = ({ title, originalPrice, discountedPrice, features }) => {
     "Fabrication works ": [
       "Main gate in mild steel as per client’s selection worth up to Rs.32000/-",
       "Internal Staircase and Balcony Railings: Providing SS(304 Grade) with glass railing on one side of the staircase up to Rs.350/sft",
-      "Providing External staircase railing in one side upto Rs 250/sft"
+      "Providing External staircase railing in one side upto Rs 250/sft",
     ],
     "Contract Exclusions ": [
       "Electrical Works: Fixtures, fittings (Like Geyser, exhaust, tubes, fans, bulbs, fancy fittings, auto Controller chimney, etc.) Main panel board. Cable from BESCOM point to Main panel board, Earthing, Temporary connection.",
@@ -247,15 +235,13 @@ const Package = ({ title, originalPrice, discountedPrice, features }) => {
     ],
     "Construction Guarantee and warranty ": [
       "Structural Warranty 10 years",
-      "Waterproofing warranty , 1 year"
+      "Waterproofing warranty , 1 year",
     ],
-   
   };
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate('/construction/contact'); // This will navigate to the Career page
+    navigate("/construction/contact"); // This will navigate to the Career page
   };
-  
 
   return (
     <div className="package">
@@ -284,23 +270,24 @@ const Package = ({ title, originalPrice, discountedPrice, features }) => {
             {expandedFeature === index && (
               <div className="dropdown">
                 <ul>
-                  {allDropdownContents[feature] && allDropdownContents[feature].map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
+                  {allDropdownContents[feature] &&
+                    allDropdownContents[feature].map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
                 </ul>
               </div>
             )}
           </li>
         ))}
       </ul>
-      <button className="enquire-button" onClick={handleClick}>Enquire Now</button>
+      <button className="enquire-button" onClick={handleClick}>
+        Enquire Now
+      </button>
     </div>
   );
 };
 
 const Packages = () => {
-
-
   const standardFeatures = [
     "Design & Drawings​",
     "Core Construction Materials used",
@@ -322,7 +309,7 @@ const Packages = () => {
   ];
 
   const premiumFeatures = [
-   "Design & Drawings ​",
+    "Design & Drawings ​",
     "Core Construction Materials used ",
     "Elevation",
     "Sump, Parapet wall other Items ",
@@ -363,23 +350,32 @@ const Packages = () => {
   );
 };
 
-
 const HomeConstruct = () => {
   const navigate = useNavigate();
   const costCalculatorRef = useRef(null);
 
   const handleClick = () => {
-    navigate('/construction/contact'); // Navigate to Contact page
+    navigate("/construction/contact"); // Navigate to Contact page
   };
 
   return (
     <div className="construction-page">
       <main>
         <section className="hero">
-          <div className='hero-text'>
-            <h1>Constructing Foundations,<br /><span>Shaping Futures!</span></h1>
-            <p>Our construction service goes beyond building houses; it's about creating personalized sanctuaries, reflecting your lifestyle, taste, and dreams. Every corner narrates a unique story, yours.</p>
-            <button className="cta-button" onClick={handleClick}>Make it Reality</button>
+          <div className="hero-text">
+            <h1>
+              Constructing Foundations,
+              <br />
+              <span>Shaping Futures!</span>
+            </h1>
+            <p>
+              Our construction service goes beyond building houses; it's about
+              creating personalized sanctuaries, reflecting your lifestyle,
+              taste, and dreams. Every corner narrates a unique story, yours.
+            </p>
+            <button className="cta-button" onClick={handleClick}>
+              Make it Reality
+            </button>
           </div>
         </section>
 
@@ -394,18 +390,27 @@ const HomeConstruct = () => {
                 <div className="form-group">
                   <label htmlFor="package">Package Required*</label>
                   <select id="package">
-                    <option>Select the package</option>
+                    <option>Standard Package</option>
+                    <option>Premium Package</option>
                   </select>
                 </div>
                 <div className="form-group">
                   <label htmlFor="phone">Phone Number*</label>
-                  <input type="tel" id="phone" placeholder="Enter your phone number" />
+                  <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter your phone number"
+                  />
                 </div>
               </div>
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="name">Full Name*</label>
-                  <input type="text" id="name" placeholder="Enter your full name" />
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                  />
                 </div>
                 <div className="form-group">
                   <label htmlFor="location">Site Location*</label>
@@ -434,7 +439,9 @@ const HomeConstruct = () => {
                   </select>
                 </div>
               </div>
-              <button type="submit" className="cost-button">Get Cost Estimation</button>
+              <button type="submit" className="cost-button">
+                Get Cost Estimation
+              </button>
             </form>
           </section>
         </div>

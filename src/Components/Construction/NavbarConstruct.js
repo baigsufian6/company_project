@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import rohan from './imagess/rohans.png';
-import './construct.css';
+import React, { useState, useRef } from "react";
+import { Link } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa";
+import rohan from "./imagess/rohans.png";
+import "./construct.css";
 
 const NavbarConstruct = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +12,7 @@ const NavbarConstruct = () => {
 
   const handleClick = () => {
     if (costCalculatorRef.current) {
-      costCalculatorRef.current.scrollIntoView({ behavior: 'smooth' });
+      costCalculatorRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -28,11 +28,24 @@ const NavbarConstruct = () => {
       </div>
       <nav className={isOpen ? "nav-links open" : "nav-links"}>
         <ul>
-          <li><Link to="/construction">Home</Link></li>
-          <li><Link to="/construction/projects">Projects</Link></li>
-          <li><Link to="/construction/about">About Us</Link></li>
-          <li><Link to="/construction/careers">Careers</Link></li>
-          <li><Link to="/construction/contact">Contact Us</Link></li>
+          <li>
+            <Link to="/construction">Home</Link>
+          </li>
+          <li>
+            <Link to="/construction/projects">Projects</Link>
+          </li>
+          <li>
+            <Link to="/construction/about">About Us</Link>
+          </li>
+          <li>
+            <Link to="/construction/careers">Careers</Link>
+          </li>
+          <li>
+            <Link to="/construction/contact">Contact Us</Link>
+          </li>
+          <li>
+            <Link to="/plots">Plots</Link>
+          </li>
         </ul>
         <Link to="/construction/calculate" onClick={handleClick}>
           <button className="cta-navbar-button">Get Cost Estimation</button>

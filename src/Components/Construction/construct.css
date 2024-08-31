@@ -8,7 +8,7 @@
 /* Header Styles */
 .navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   padding: 1rem 2rem;
   background-color: white;
@@ -45,6 +45,9 @@
   margin: 10px;
   justify-content: center;
 }
+.nav-links a {
+  transition: background-color 0.3s ease;
+}
 .nav-links ul {
   display: flex;
   list-style-type: none;
@@ -74,6 +77,15 @@
 
 .nav-links.open {
   display: block;
+}
+
+.nav-links a:hover {
+  color: #ff6347; /* Change color on hover */
+  background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+  border-radius: 5px; /* Rounded corners for the highlight */
+}
+.cta-navbar-button:hover {
+  background-color: #e5534d; /* Darker shade of the button color on hover */
 }
 
 @media (max-width: 767px) {
@@ -1054,7 +1066,7 @@ p {
   border-radius: 0.5rem;
   overflow: hidden;
 }
-.dividers {
+.divi {
   display: none;
 }
 
@@ -1068,9 +1080,9 @@ p {
     font-size: 2rem;
   }
 
-  .dividers {
+  .divi {
     display: flex;
-    width: 1px;
+    width: 2px;
     height: 53rem;
     background-color: black;
     margin: 0 3rem;
