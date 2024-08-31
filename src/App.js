@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+import React from "react";
+import { BrowserRouter } from 'react-router-dom';  // Import BrowserRouter
+import Main from './Components/Plots/Main';
+
+const App = () => {
+    return (
+        <BrowserRouter> {/* Wrap the Main component with BrowserRouter */}
+            <Main />
+        </BrowserRouter>
+    );
+=======
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Components/Home.js';
@@ -16,6 +28,7 @@ function App() {
       </div>
     </Router>
   );
+>>>>>>> origin/main
 }
 
 export default App;
