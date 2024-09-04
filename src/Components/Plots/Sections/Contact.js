@@ -40,7 +40,7 @@ const Contact = ()=>{
                     <h1 data-aos='zoom-in' data-aos-delay='200' className='text-red-500 dark:text-white'>REACH US</h1>
 
                     <h1 data-aos='zoom-in' data-aos-delay='400' className='text-black text-[30px] font-semibold 
-                    leading-10 dark:text-white'>"Drop us a line at info@rohaninfra.com, and we'll be happy to assist you!"</h1>
+                    leading-10 dark:text-white'>"Drop us a line at rohaninfrabuilderrs@gmail.com, and we'll be happy to assist you!"</h1>
                    <p data-aos='zoom-in' data-aos-delay='600' className='text-xl text-gray-600 text-justify
                    dark:text-white'>At Rohan Infra, we’re excited to help you find your perfect
                     home or address any questions you might have. Your journey is important to us,

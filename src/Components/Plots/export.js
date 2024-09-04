@@ -15,6 +15,7 @@ import client3 from "./Assets/client3.png";
 import client4 from "./Assets/client4.png";
 import client5 from "./Assets/client5.png";
 import client6 from "./Assets/client6.png";
+import propp2 from './Assets/prop3.png'
 import { MdNoteAlt} from "react-icons/md";
 import { MdRealEstateAgent } from 'react-icons/md';
 import { MdOutlineHome } from 'react-icons/md';
@@ -29,45 +30,63 @@ import {
 import { GoLaw } from "react-icons/go";
 
 export const property = [
+  // {
+  //   images: new2,
+  //   address: "Kumblugodu",
+  //   name: "Rohan Chunchadri Layout",
+  //   // price: "2500/sft",
+  //   about:
+  //     "Explore ROHAN CHUNCHADRI LAYOUT in Kumbalgodu, Mysore Road – Premium plots with top amenities and a prime location.",
+  //     area: "All Dimensions are available",
+  //     owner: "ROHAN K N",
+  // },
+  // {
+  //   images: new1,
+  //   address: "Devanahalli",
+  //   name: "Rohan Hill View Enclave",
+  //   // price: "2500/sft",
+  //   about:
+  //     "An exclusive gated community with top-tier amenities and unmatched proximity to key destinations. Ready for registration",
+  //     area: "1200 sq ft",
+  //     owner: "ROHAN K N",
+  // },
+  // {
+  //   images: new3,
+  //   address: "Chandrappa Circle",
+  //   name: "Rohan Royal Residency",
+  //   // price: "2500/sft",
+  //   about:
+  //     "Premium plots with exceptional amenities, special launch pricing, and prime location. Ready for registration and construction .",
+  //     area: "1200 sq ft",
+  //     owner: "ROHAN K N",
+  // },
   {
-    images: new2,
-    address: "Kumblugodu",
-    name: "Rohan Chunchadri Layout",
-    // price: "2500/sft",
-    about:
-      "Explore ROHAN CHUNCHADRI LAYOUT in Kumbalgodu, Mysore Road – Premium plots with top amenities and a prime location.",
-      area: "All Dimensions are available",
-      owner: "ROHAN K N",
+    images: propp2,
+    address: "Nelmangla",
+    name: "Rohan Vaishnavi Villas",
+    area:"1200 sft"
+     
   },
   {
-    images: new1,
-    address: "Devanahalli",
-    name: "Rohan Hill View Enclave",
-    // price: "2500/sft",
-    about:
-      "An exclusive gated community with top-tier amenities and unmatched proximity to key destinations. Ready for registration",
-      area: "1200 sq ft",
-      owner: "ROHAN K N",
+    images: propp2,
+    address: "Nelmangla",
+    name: "Rohan Vaishnavi Villas",
+    area:"1200 sft"
+     
   },
   {
-    images: new3,
-    address: "Chandrappa Circle",
-    name: "Rohan Royal Residency",
-    // price: "2500/sft",
-    about:
-      "Premium plots with exceptional amenities, special launch pricing, and prime location. Ready for registration and construction .",
-      area: "1200 sq ft",
-      owner: "ROHAN K N",
+    images: propp2,
+    address: "Nelmangla",
+    name: "Rohan Vaishnavi Villas",
+    area:"1200 sft"
+     
   },
   {
     images: prop1,
     address: "Nelmangla",
     name: "Rohan Vaishnavi Villas",
-    // price: "2500/sft",
-    about:
-      "Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood",
-      area: "1200 sq ft",
-      owner: "ROHAN K N",
+    area:"1200 sft"
+     
   },
   {
     images: prop2,
@@ -95,9 +114,9 @@ export const property = [
     images: prop4,
     address: "BigBanyan Tree",
     name: "Rohan Golden Villas",
-    // price: "$ 876.13",
-    about:
-      "Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood",
+    // // price: "$ 876.13",
+    // about:
+    //   "Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood",
     // bed: 4,
     // bath: 3,
     area: "1200 sq ft",
@@ -109,8 +128,8 @@ export const property = [
     address: "Tavrekere",
     name: "Rohan Hill View",
     // price: "$ 675.23",
-    about:
-      "Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood",
+    // about:
+    //   "Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood",
     area: "1200 sq ft",
     owner: "Rohan K N",
   },
@@ -119,8 +138,8 @@ export const property = [
     address: "Devanhalli",
     name: "Rohan Antara",
     // price: "$ 341.83",
-    about:
-      "Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood",
+    // about:
+      // "Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood",
     area: "1200 sq ft",
     owner: "Rohan K N",
   },
@@ -158,7 +177,7 @@ export const service = [
 export const client = [
   {
     image: client5,
-    name: "MadhuPriya",
+    name: "Vishu Kumar",
     text: "Flawless!",
     feedback:
       "Great experience with smooth documentation and excellent location, but would have appreciated more updates on future development.",
@@ -168,35 +187,35 @@ export const client = [
     name: "Amba Bhavani",
     text: "Excellent team!",
     feedback:
-      "Buying a plot with Rohan Infra was smooth and stress-free. They provided clear guidance and got me a great deal. Highly satisfied with their service!",
+      " The entire process of purchasing a plot with RIBD was transparent. The sales team was very responsive and provided all the information we needed.",
   },
   {
     image: client2,
-    name: "Stella",
-    text: "*Seamless*",
+    name: "Prasanna",
+    text:"*Seamless*",
     feedback:
       "Rohan Infra made buying my plot a breeze. They were transparent and supportive throughout the process. Very happy with the outcome!",
   },
   {
     image: client3,
-    name: "Renita",
+    name: "Rajesh",
     text: "Exceptional",
     feedback:
-      "Smooth and professional experience—highly recommend for plot purchases.",
+      "The team was extremely professional and supportive throughout the process. They made the legal and registration process easy to understand, which gave us great peace of mind.",
   },
   {
     image: client4,
-    name: "Sandesh",
+    name: "Vinay Nagraj",
     text: "Impressive!",
     feedback:
-      "Top-notch service—made buying a plot hassle-free",
+      "We are very happy with the quality of the plot we purchased. The location is perfect, and all promised amenities were delivered. It exceeded our expectations!",
   },
   
   {
     image: client6,
-    name: "Sivay Ashbi",
+    name: "Madhu Priya",
     text: "Remarkable!",
     feedback:
-      "Effortless experience with clear guidance throughout the plot purchase",
+      "We are very happy with the quality of the plot we purchased. The location is perfect, and all promised amenities were delivered. It exceeded our expectations",
   },
 ];

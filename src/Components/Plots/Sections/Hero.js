@@ -35,12 +35,12 @@ import 'aos/dist/aos.css';
             <div data-aos="zoom-in" id='form' className={`${darkMode ? 'dark bg-grey-800' : 'light bg-white'} lg:w-[70%] w-full m-auto grid
              lg:grid-cols-4 grid-cols-1 justify-center items-center gap-6 p-8 rounded-xl -mt-14`}>
                 <div className="w-full">
-                    <h1 className="text-black font-semibold dark:text-white">Location</h1>
+                    <h1 className="text-black font-semibold dark:text-white text-xl">Location</h1>
                     <input type="text" placeholder="Enter an address, state,city or pincode" className="bg-white p-2 w-full mt-2 border-b-[1px] border[#c9c7c1]"/>
                 </div>
 
                 <div className="w-full">
-                    <h1 className="text-black font-semibold dark:text-white" >TYPE</h1>
+                    <h1 className="text-black font-semibold dark:text-white text-xl" >TYPE</h1>
                     <select name="selectOption" id="selectOption" className="bg-white p-2 border-b-[1px] w-full mt-2 border-[#c9c7c1] text-gray-500 text-md" >
                         <option value="disabled seleccted">select property</option>
                         <option value="option2">Sales</option>
@@ -49,7 +49,7 @@ import 'aos/dist/aos.css';
                 </div>
 
                 <div className="w-full">
-                    <h1 className="text-black font-semibold dark:text-white" >TYPE</h1>
+                    <h1 className="text-black font-semibold dark:text-white text-xl" >TYPE</h1>
                     <select name="selectOption" id="selectOption" className="bg-white p-2 border-b-[1px] w-full mt-2 border-[#c9c7c1] text-gray-500 text-md" >
                         <option value="disabled seleccted">Property Category</option>
                         <option value="option1">Plots</option>

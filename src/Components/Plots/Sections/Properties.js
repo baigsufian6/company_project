@@ -33,58 +33,7 @@ const Properties = () => {
                                 <div id='image-box' className='bg-cover bg-center h-[250px] rounded-xl p-4 flex flex-col justify-between items-end'
                                     style={{ backgroundImage: `url(${item.images})` }}>
                                     <div id='top' className='flex justify-between items-end w-full'>
-                                        <div>
-                                        <div><button className='px-3 py-1 bg-red-600 hover:bg-white hover:text-black rounded-xl'>Featured</button></div>
-                                        </div>
-                                        
-                                        
-
-                                        <div className='flex justify-between items-center gap-3'>
-                                            <button className='px-3 py-1 bg-red-600 hover:bg-white hover:text-black text-white rounded-full text-[13px]'>sales</button>
-                                            <button className='px-3 py-1 bg-red-600 hover:bg-white hover:text-black text-white rounded-full text-[13px]'>Active</button>
-                                        </div>
-                                    </div>
-                                    <div id='bottom' className='flex justify-between items-end w-full'>
-                                        <div className='flex justify-start items-center gap-2'>
-                                            <FaMapMarkerAlt className='size-4 text-white' />
-                                            <h1 className='text-white'>{item.address}</h1>
-                                        </div>
-
-                                        <div className='flex justify-center items-center gap-4'>
-                                            <FaVideo className='size-4 text-white' />
-                                            <FaCamera className='size-4 text-white ' />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className='px-6 py-3 flex flex-col justify-center items-start gap-2  w-full'>
-                                    <h1 className='text-xl text-black font-semibold dark:text-white'>
-                                        {item.name}
-                                    </h1>
-                                    <h1 className='text-2xl text-red-600 font-bold dark:text-white'>{item.price}</h1>
-                                    <p className='dark:text-white'>{item.about}</p>
-                                    <div id='icons' className='flex justify-center items-start gap-4'>
-                                        {/* <div className='flex justify-center items-center gap-2'>
-                                            <FaBath className='size-5 text-red-400' />
-                                            <h1 className='dark:text-white'>{item.bath}</h1>
-                                        </div>
-                                        <div className='flex justify-center items-center gap-2'>
-                                            <FaBed className='size-5 text-red-400' />
-                                            <h1 className='dark:text-white'>{item.bed}</h1>
-                                        </div> */}
-                                        <div className='flex justify-center items-center gap-2'>
-                                            <MdDashboard className='size-5 text-red-400' />
-                                            <h1 className='dark:text-white'>{item.area}</h1>
-                                        </div>
-                                    </div>
-                                    <div className='w-full h-[1px] bg-gray-200 mt-8'></div>
-
-                                    <div id='owner-info' className='flex justify-between items-center w-full mt-2'>
-                                        <div className='flex justify-center items-center gap-2'>
-                                            <FaUserCircle className='size-5 text-red-400' />
-                                            <h1 className='dark:text-white'>{item.owner}</h1>
-                                        </div>
-
-                                        <div className='flex justify-center items-center gap-4'>
+                                    <div className='flex justify-center items-center gap-4'>
                                             <div className='p-2 border-2 border-gray-200 hover:bg-black
                                              cursor-pointer transform hover:scale-110 transition-transform duration-300'>
                                                 <FaShareAlt className='size-4 text-red-400'/>
@@ -100,6 +49,50 @@ const Properties = () => {
                                                 <FaPlus className='size-4 text-red-400'/>
                                             </div>
                                         </div>
+                                        {/* <div>
+                                        <div><button className='px-3 py-1 bg-red-600 hover:bg-white hover:text-black rounded-xl'>Featured</button></div>
+                                        </div>
+                                        
+                                        
+
+                                        <div className='flex justify-between items-center gap-3'>
+                                            <button className='px-3 py-1 bg-red-600 hover:bg-white hover:text-black text-white rounded-full text-[13px]'>sales</button>
+                                            <button className='px-3 py-1 bg-red-600 hover:bg-white hover:text-black text-white rounded-full text-[13px]'>Active</button>
+                                        </div> */}
+                                    </div>
+                                    <div id='bottom' className='flex justify-between items-end w-full'>
+                                        <div className='flex justify-start items-center gap-2'>
+                                            <FaMapMarkerAlt className='size-4 text-white' />
+                                            <h1 className='text-white text-xl font-semibold'>{item.address}</h1>
+                                        </div>
+
+                                        <div className='flex justify-center items-center gap-4'>
+                                            {/* <FaVideo className='size-4 text-white' />
+                                            <FaCamera className='size-4 text-white ' /> */}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='px-6 py-3 flex flex-col justify-center items-start gap-2  w-full'>
+                                    <h1 className='text-xl text-black font-semibold dark:text-white'>
+                                        {item.name}
+                                    </h1>
+                                    <p className='dark:text-white text-xl'>{item.about}</p>
+                                    <div id='icons' className='flex justify-center items-start gap-4'>
+                                
+                                         <div className='flex justify-center items-center gap-2'>
+                                            <MdDashboard className='size-5 text-red-400' />
+                                            <h1 className='dark:text-white text-xl'>{item.area}</h1>
+                                        </div> 
+                                    </div>
+                                    {/* <div className='w-full h-[1px] bg-gray-200 mt-8'></div> */}
+
+                                    <div id='owner-info' className='flex justify-between items-center w-full mt-2'>
+                                        {/* <div className='flex justify-center items-center gap-2'>
+                                            <FaUserCircle className='size-5 text-red-400' />
+                                            <h1 className='dark:text-white text-xl'>{item.owner}</h1>
+                                        </div> */}
+
+                                       
                                     </div>
                                 </div>
                             </div>

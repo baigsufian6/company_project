@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { service } from "../export";
 import { useDarkMode } from "../DarkModeContext";
 import { FaHeart } from 'react-icons/fa';
@@ -17,6 +18,8 @@ const Service = () => {
     }, []);
 
     const { darkMode, toggleDarkMode } = useDarkMode();
+    const navigate = useNavigate();
+
 
     return (
         <div className={`${darkMode ? 'dark bg-black' : 'light bg-transparent'} pb-20`}>
@@ -25,8 +28,8 @@ const Service = () => {
                 className={`${darkMode ? 'dark bg-gray-800' : 'light bg-red-100'} lg:w-[95%] w-full h-fit m-auto rounded-xl flex flex-col justify-center items-start lg:px-20 px-6 py-20 gap-10`}
             >
                 <div className='flex flex-col justify-center items-start gap-4'>
-                    <h1 data-aos='zoom-in' className='text-red-500 dark:text-white'> OUR SERVICES</h1>
-                    <h1 data-aos='zoom-in' className='text-black text-[40px] font-semibold leading-10 dark:text-white'>
+                    <h1 data-aos='zoom-in' className='text-red-500 dark:text-white text-4xl'> OUR SERVICES</h1>
+                    <h1 data-aos='zoom-in' className='text-black text-[30px] font-semibold leading-10 dark:text-white'>
                         Top Real Estate <br /> services available
                     </h1>
                 </div>
@@ -51,7 +54,7 @@ const Service = () => {
                             <p className='text-lg text-slate-700 dark:text-white'>
                                 {item.desc}
                             </p>
-                            <button className='border-2 border-red-600 text-red-600 font-semibold p-0 dark:text-white'>
+                            <button className='border-2 border-red-600 text-red-600 font-semibold p-0 dark:text-white' onClick={()=>navigate('./Contact')}>
                                 READ MORE
                             </button>
                         </div>

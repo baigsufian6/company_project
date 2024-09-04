@@ -19,7 +19,7 @@ function Header() {
         { link: 'Service', path: 'services' },
         { link: 'Testimonials', path: 'testimonials' },
         { link: 'Career', path: 'career' },  // Added Career link
-        { link: 'Contact', path: 'contact' }
+        { link: 'Contact', path: '/contact' }
     ];
 
     return (

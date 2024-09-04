@@ -26,7 +26,7 @@ const DetailPage = () => {
             Welcome to Rohan Infra
           </h1>
           <p className="text-xl leading-relaxed">
-            At Rohan Infra, we believe that building homes is not just about constructing structures; it’s about creating environments where memories are made, lives are enriched, and communities thrive. With a legacy of excellence spanning over <span className="font-bold">[number of years]</span>, we have been at the forefront of the real estate industry, crafting spaces that reflect our commitment to quality, innovation, and customer satisfaction.
+            At Rohan Infra, we believe that building homes is not just about constructing structures; it’s about creating environments where memories are made, lives are enriched, and communities thrive. With a legacy of excellence spanning over <span className="font-bold">8 years</span>, we have been at the forefront of the real estate industry, crafting spaces that reflect our commitment to quality, innovation, and customer satisfaction.
           </p>
         </div>
 
@@ -36,7 +36,7 @@ const DetailPage = () => {
             Our Story
           </h2>
           <p className="text-xl leading-relaxed">
-            Founded in <span className="font-bold">[year of establishment]</span>, Rohan Infra began with a vision to transform the landscape of real estate by offering world-class properties that cater to the needs of modern families. Our journey started with a small team of dedicated professionals passionate about redefining the concept of urban living. Over the years, we have grown into a reputable name in the industry, known for our integrity, transparency, and unwavering focus on customer-centricity.
+            Founded in <span className="font-bold">2017</span>, Rohan Infra began with a vision to transform the landscape of real estate by offering world-class properties that cater to the needs of modern families. Our journey started with a small team of dedicated professionals passionate about redefining the concept of urban living. Over the years, we have grown into a reputable name in the industry, known for our integrity, transparency, and unwavering focus on customer-centricity.
           </p>
         </div>
 
@@ -101,7 +101,7 @@ const DetailPage = () => {
           </h2>
           <ul className="list-disc list-inside pl-5">
             <li className="text-xl leading-relaxed">
-              <span className="font-bold">Proven Track Record:</span> With <span className="font-bold">[number of completed projects]</span> projects completed successfully, we have a proven track record of delivering on our promises.
+              <span className="font-bold">Proven Track Record:</span> With <span className="font-bold">22+</span> projects completed successfully, we have a proven track record of delivering on our promises.
             </li>
             <li className="text-xl leading-relaxed">
               <span className="font-bold">Expert Team:</span> Our team of experienced architects, engineers, and project managers work tirelessly to bring your vision to life, ensuring every detail is perfect.

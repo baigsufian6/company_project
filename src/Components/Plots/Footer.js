@@ -14,21 +14,24 @@ const Footer = () => {
       <footer className={`${darkMode ? 'dark bg-black' : 'light bg-gray-800'}
         w-full m-auto lg:px-20 px-10 py-20 grid lg:grid-cols-3 grid-cols-1 justify-center
         items-start lg:gap-20 gap-10`}>
-        <div className='flex flex-col justify-center items-start gap-5'>
-          <h1 className='text-white text-2xl font-semibold'>Contact Us</h1>
-          <div className='flex justify-center items-center gap-3'>
-            <FaBuilding className='text-white text-2xl' />
-            <p className='text-slate-200'>Rajajinagar 6th Block</p>
-          </div>
-          <div className='flex justify-center items-center gap-3'>
-            <FaMobile className='text-white text-2xl' />
-            <p className='text-slate-200'>9742571664</p>
-          </div>
-          <div className='flex justify-center items-center gap-3'>
-            <IoMdMail className='text-white text-2xl' />
-            <p className='text-slate-200'>rohaninfrabuilderrs@gmail.com</p>
-          </div>
-        </div>
+<div className='flex flex-col items-start text-start gap-3'>
+  <h1 className='text-white text-2xl font-semibold'>Contact Us</h1>
+
+  <div className='flex items-center gap-3'>
+    <FaBuilding className='text-white text-2xl' />
+    <p className='text-slate-200 text-xl flex '>Rajajinagar 6th Block</p>
+  </div>
+
+  <div className='flex items-center gap-3'>
+    <FaMobile className='text-white text-2xl' />
+    <p className='text-slate-200 text-xl flex '>9742571664</p>
+  </div>
+
+  <div className='flex items-center gap-3'>
+    <IoMdMail className='text-white text-2xl' />
+    <p className='text-slate-200 text-xl flex '>rohaninfrabuilderrs@gmail.com</p>
+  </div>
+</div>
 
         <div className='flex flex-col justify-center items-start gap-5'>
           <h1 className='text-white text-2xl font-semibold'>Latest Properties</h1>
@@ -51,16 +54,16 @@ const Footer = () => {
         <div className='flex flex-col justify-center items-end gap-4'>
           <h1 className='text-white text-2xl font-semibold mb-4'></h1>
           <div id='social-icons' className='flex flex-row justify-center items-center gap-4'>
-            <div className='p-3 rounded-full bg-white hover:bg-red-600 hover:text-white cursor-pointer transform hover:scale-110 transition-transform duration-300'>
-              <FaFacebookF className='text-2xl' />
+            <div className='p-3 rounded-full bg-gray-600 hover:bg-red-600 hover:text-white cursor-pointer transform hover:scale-110 transition-transform duration-300'>
+              <FaFacebookF className='text-2xl' href="https://www.facebook.com/groups/3819238224985530/?ref=share&mibextid=NSMWBT&_rdr"/>
             </div>
-            <div className='p-3 rounded-full bg-white hover:bg-red-600 hover:text-white cursor-pointer transform hover:scale-110 transition-transform duration-300'>
+            <div className='p-3 rounded-full bg-gray-600 hover:bg-red-600 hover:text-white cursor-pointer transform hover:scale-110 transition-transform duration-300'>
               <FaInstagram className='text-2xl' />
             </div>
-            <div className='p-3 rounded-full bg-white hover:bg-red-600 hover:text-white cursor-pointer transform hover:scale-110 transition-transform duration-300'>
+            <div className='p-3 rounded-full bg-gray-600 hover:bg-red-600 hover:text-white cursor-pointer transform hover:scale-110 transition-transform duration-300'>
               <FaTwitter className='text-2xl' />
             </div>
-            <div className='p-3 rounded-full bg-white hover:bg-red-600 hover:text-white cursor-pointer transform hover:scale-110 transition-transform duration-300'>
+            <div className='p-3 rounded-full bg-gray-600 hover:bg-red-600 hover:text-white cursor-pointer transform hover:scale-110 transition-transform duration-300'>
               <FaYoutube className='text-2xl' />
             </div>
           </div>

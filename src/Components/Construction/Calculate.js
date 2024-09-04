@@ -13,6 +13,8 @@ function Calculate() {
                   <label htmlFor="package">Package Required*</label>
                   <select id="package">
                     <option>Select the package</option>
+                    <option>Standard Package</option>
+                    <option>Premium Package</option>
                   </select>
                 </div>
                 <div className="form-group">

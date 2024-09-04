@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin');
+
+
 module.exports = {
   content: [
     "./index.html",
@@ -6,8 +9,12 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        'red': '0 8px 10px rgba(255, 0, 0, 0.5)'      }
+    },
   },
   plugins: [],
+  
 }
 
