@@ -1,297 +1,210 @@
-<<<<<<< HEAD
-
-
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from 'react';
+import Slider from 'react-slick';
+import { useNavigate } from 'react-router-dom';
+import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { FaMapMarkerAlt, FaBuilding, FaBars, FaTimes } from 'react-icons/fa';
+import {  LayoutDashboard, Home as HomeIcon } from 'lucide-react';
+import plots from './images/plotImg.jpg';
+import consti from './images/slider_2.jpg';
+import prop1 from './images/prop1.webp';
+import prop2 from './images/prop2.webp';
+import prop4 from './images/prop4.webp';
+import prop5 from './images/prop5.webp';
+import layout from './images/Layout-300x243.jpg';
+import market from './images/1603747793-GettyImages-1061234002.webp';
+import rohan from './images/rohans.png';
 import './Main.css';
-import rohanlogo from './Plots/Assets/rohanlogo.png'; // or .jpg, .svg, etc.
-=======
-import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./Main.css";
-import rohans from "./images/rohans.png";
-import construct from "./images/constructionImg.jpg";
-import plots from "./images/plotImg.jpg";
-import good from "./images/prop1.webp";
-import good1 from "./images/prop2.webp";
-import good2 from "./images/prop3.webp";
-import good3 from "./images/prop4.webp";
 
-const projects = [
-  {
-    id: 1,
-    image: good,
-  },
-  {
-    id: 2,
-    image: good1,
-  },
-  {
-    id: 3,
-    image: good2,
-  },
-  {
-    id: 4,
-    image: good3,
-  },
-];
->>>>>>> aedda5a6bfb4f2d38613b69881fc3e75cdc017e5
+const ServiceCard = ({ title, description, icon: Icon, href, image }) => (
+  <div className="xpat-service-card bg-gray-100 p-8 rounded-lg shadow-md relative overflow-hidden cursor-pointer transition-all duration-300 hover:translate-y-[-10px] hover:bg-gray-900 hover:text-white group " onClick={() => window.location.href = href}>
+    <div className="relative z-10">
+      <Icon className="w-12 h-12 mb-4 transition-colors duration-300 group-hover:text-white" />
+      <h3 className="text-xl font-bold mb-2">{title}</h3>
+      <p className="mb-4">{description}</p>
+      <a href={href} className="inline-block font-bold text-blue-600 group-hover:text-white">
+        Read More
+      </a>
+    </div>
+    <img
+      src={image}
+      alt={title}
+      className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-20"
+    />
+  </div>
+);
 
-const Home = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-
-  const nextSlide = () => {
-    if (!isTransitioning) {
-      setIsTransitioning(true);
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
-    }
-  };
-
-  const prevSlide = () => {
-    if (!isTransitioning) {
-      setIsTransitioning(true);
-      setCurrentIndex(
-        (prevIndex) => (prevIndex - 1 + projects.length) % projects.length
-      );
-    }
-  };
-
-  const handleTransitionEnd = () => {
-    setIsTransitioning(false);
-  };
-
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 5000);
-    return () => clearInterval(interval);
-  }, []);
+const ServicesGrid = () => {
+  const services = [
+    {
+      title: "Plots",
+      description: "Find the perfect plot with prime locations tailored to your needs.",
+      icon: FaMapMarkerAlt,
+      href: "/plots",
+      image: plots
+    },
+    {
+      title: "Construction",
+      description: "Expert construction services built with precision and quality.",
+      icon: FaBuilding,
+      href: "/construction",
+      image: consti
+    },
+    {
+      title: "Layout Development",
+      description: "Get expert help in designing your ideal layout.",
+      icon: LayoutDashboard,
+      href: "/plots",
+      image: layout
+    },
+    {
+      title: "Residential Real Estate Marketing",
+      description: "Unlock the best market value for your plots with our expert sales strategies.",
+      icon: HomeIcon,
+      href: "/plots",
+      image: market
+    },
+  ];
 
   return (
-    <div className="home-container">
-      {/* Header Section */}
-      <header className="header">
-        <div className="logo">
-          <img src={rohanlogo} alt="Rohan Infra Builders" />
-          <h3>RIBD</h3>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+      {services.map((service, index) => (
+        <ServiceCard key={index} {...service} />
+      ))}
+    </div>
+  );
+};
+
+const Home = () => {
+
+  const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate('/construction'); // Navigates to /construction
+  };
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const sliderSettings = {
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    dots: true,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  };
+  return (
+    <div className="xpat-home">
+      <header className="xpat-header">
+      <img src={rohan} alt="Construction" className="xpat-logo" />
+
+      {/* Hamburger menu button (visible on small screens) */}
+      <div className="xpat-menu-icon" onClick={toggleMenu}>
+        {isMenuOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
+      </div>
+
+      {/* Navigation links */}
+      <nav className={`xpat-nav ${isMenuOpen ? 'active' : ''}`}>
+        <a href="#home">Home</a>
+        <a href="#aboutus">About us</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="/plots">Plots</a>
+        <a href="/construction">Construction</a>
+        <a href="#contactus">Contact us</a>
+      </nav>
+
+      <button className="xpat-appointment-btn">Get Appointment</button>
+    </header>
+
+      <section className="xpat-hero" id='home'>
+        <h1>An Expert Construction Service You Can Trust</h1>
+        <p>Creating architectural and creative solutions Creating architectural and creative solutions</p>
+        <button className="xpat-detail-btn" onClick={handleNavigation}>More Detail</button>
+      </section>
+
+      <section className="xpat-company" id='aboutus'>
+        <h2>Building Yours Dream Since 1995</h2>
+        <div className="xpat-company-content">
+          <div className="xpat-company-text">
+            <p>At Rohan Infra, we are dedicated to providing expert construction and plot selling services. Our commitment to excellence and precision ensures that every project we undertake is handled with the utmost care and professionalism.</p>
+            <p>We focus on delivering results that meet and exceed our clients' expectations, with attention to detail and a clear understanding of their needs. Our team is experienced, knowledgeable, and dedicated to achieving the best outcomes, making Rohan Infra a trusted name in the industry.</p>
+          </div>
+          <div className="xpat-company-image"></div>
         </div>
-        <input type="checkbox" id="nav-toggle" className="nav-toggle" />
-        <nav className="nav">
-          <ul>
-            <li>
-              <a href="#home">Home</a>
-            </li>
-            <li>
-              <a href="#services">Services</a>
-            </li>
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
-            <li>
-              <a href="#about">About Us</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
+      </section>
+
+      <section className="xpat-services" id='services'>
+        <h2 className="text-3xl font-bold mb-10 ">Our Services</h2>
+        <ServicesGrid />
+      </section>
+      
+      <section className="xpat-features">
+        <div className="xpat-features-content">
+          <h2>Services You More</h2>
+          <p>At Rohan Infra, we excel in construction and plot selling, ensuring every project is handled with precision and care. Our commitment to excellence turns your vision into reality.</p>
+          <ul className="xpat-features-list">
+            <li>Best Quality Work</li>
+            <li>Top Quality Equipment</li>
+            <li>Experienced Workers</li>
+            <li>Best Civil Engineers</li>
+            <li>Budget-Friendly</li>
+            <li>Great Understanding</li>
+            <li>Emergency Support</li>
+            <li>Responsible Reasonable</li>
           </ul>
-        </nav>
-        <label htmlFor="nav-toggle" className="nav-toggle-label">
-          <span></span>
-        </label>
-      </header>
-
-      <main>
-        {/* Home Section */}
-        <section id="home" className="heroine">
-          <div className="heroine-content">
-            <h1 className="animate-text">
-              Building Dreams, Crafting Realities
-            </h1>
-            <p className="animate-text-delay">
-              Welcome to Rohan Infra Builders and Developers
-            </p>
-            <Link to="/construction" className="cta-button">
-              Get Started
-            </Link>
-          </div>
-          <div className="heroine-image"></div>
-        </section>
-
-        {/* Services Section */}
-        <section id="services" className="services">
-          <h2>Our Services</h2>
-          <div className="service-cards">
-            <div className="service-card">
-              <img src={plots} alt="Plots" />
-              <h3>Plots</h3>
-              <p>Find your perfect plot in prime locations.</p>
-              <Link to="/plots" className="learn-more">
-                Learn More
-              </Link>
-            </div>
-            <div className="service-card">
-              <img src={construct} alt="Construction" />
-              <h3>Construction</h3>
-              <p>Build your dream home with our expert team.</p>
-              <Link to="/construction" className="learn-more">
-                Learn More
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Improved Featured Projects Section */}
-        <section id="projects" className="bg-gray-100 py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
-              Featured Projects
-            </h2>
-            <div className="relative overflow-hidden">
-              <div
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{
-                  transform: `translateX(-${currentIndex * (100 / 3)}%)`,
-                }}
-                onTransitionEnd={handleTransitionEnd}
-              >
-                {projects.concat(projects.slice(0, 2)).map((project, index) => (
-                  <div
-                    key={`${project.id}-${index}`}
-                    className="w-1/3 flex-shrink-0 px-2"
-                  >
-                    <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-48 object-cover"
-                      />
-                      <div className="p-4">
-                        <h3 className="text-lg font-semibold mb-2">
-                          {project.title}
-                        </h3>
-                        <p className="text-sm text-gray-600">
-                          {project.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <button
-                onClick={prevSlide}
-                className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors duration-200 z-10"
-                disabled={isTransitioning}
-              >
-                <ChevronLeft size={24} />
-              </button>
-              <button
-                onClick={nextSlide}
-                className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 transition-colors duration-200 z-10"
-                disabled={isTransitioning}
-              >
-                <ChevronRight size={24} />
-              </button>
-            </div>
-          </div>
-        </section>
-
-        {/* About Section */}
-        <section id="about" className="about">
-          <div className="about-content">
-            <h2>About Rohan Infra</h2>
-            <p>
-              With over two decades of experience and 21 successful projects
-              across Bangalore, Rohan Infra Builders and Developers has
-              established itself as a trusted name in the construction industry.
-              Our commitment to quality, innovation, and customer satisfaction
-              sets us apart.
-            </p>
-            <div className="stats">
-              <div className="stat-item">
-                <span className="stat-number">21+</span>
-                <span className="stat-label">Projects Completed</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">500+</span>
-                <span className="stat-label">Happy Families</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">20+</span>
-                <span className="stat-label">Years of Excellence</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonials Section */}
-        <section id="testimonials" className="testimonials">
-          <h2>What Our Clients Say</h2>
-          <div className="testimonial-carousel">
-            {/* Add a carousel component here with client testimonials */}
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section id="contact" className="contact">
-          <h2>Get in Touch</h2>
-          <form className="contact-form">
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <input type="tel" placeholder="Your Phone" />
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit" className="submit-button">
-              Send Message
-            </button>
-          </form>
-        </section>
-      </main>
-
-      {/* Footer */}
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-logo">
-<<<<<<< HEAD
-            <img className="rohan-img" src={rohanlogo} alt="RIBD Logo" />
-=======
-            <img src={rohans} alt="RIBD Logo" />
->>>>>>> aedda5a6bfb4f2d38613b69881fc3e75cdc017e5
-            <h2>RIBD</h2>
-          </div>
-          <div className="footer-links">
-            <h3>Quick Links</h3>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/services">Services</Link>
-              </li>
-              <li>
-                <Link to="/projects">Projects</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="footer-contact">
-            <h3>Contact Us</h3>
-            <p>Email: info@rohaninfra.com</p>
-            <p>Phone: +91 12345 67890</p>
-          </div>
+          <button className="xpat-contact-btn">Contact US</button>
         </div>
-        <div className="footer-bottom">
-          <p>
-            &copy; 2024 Rohan Infra Builders and Developers. All rights
-            reserved.
-          </p>
-        </div>
-      </footer>
+        <div className="xpat-features-image"></div>
+      </section>
+
+      <section className="xpat-projects" id='projects'>
+  <h2>Our Projects</h2>
+  <Slider {...sliderSettings} className="xpat-slider">
+    <div className="xpat-project-slide">
+      <img src={prop1} alt="Project 1" />
+    </div>
+    <div className="xpat-project-slide">
+      <img src={prop2} alt="Project 2" />
+    </div>
+    <div className="xpat-project-slide">
+      <img src={prop4} alt="Project 4" />
+    </div>
+    <div className="xpat-project-slide">
+      <img src={prop5} alt="Project 5" />
+    </div>
+  </Slider>
+</section>
+
+
+
+<section className="xpat-contact">
+  <div className="xpat-contact-content">
+    <h2>Contact Us</h2>
+    <form className="xpat-contact-form">
+      <input type="text" placeholder="Your Name" />
+      <input type="email" placeholder="Your Email" />
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit" className="xpat-submit-btn">Send Message</button>
+    </form>
+  </div>
+  <div className="xpat-contact-info">
+    <h3>Get In Touch</h3>
+    <p>Address: Rajajinagar, Bengaluru, Karnataka 560010</p>
+    <p>Phone: (+91) 6361285668</p>
+    <p>Email: rohaninfrabuilderrs@gmail.com</p>
+    <div className="xpat-social-icons">
+      <Facebook />
+      <Twitter />
+      <Instagram />
+      <Linkedin />
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };

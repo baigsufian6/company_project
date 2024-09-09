@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import {
-  Link as ScrollLink,
   animateScroll as scroll,
   scroller,
 } from "react-scroll";
@@ -16,16 +15,9 @@ function Header() {
   const toggleMenu = () => setIsMenuOpen((prev) => !prev);
   const closeMenu = () => setIsMenuOpen(false);
 
-<<<<<<< HEAD
-    const navItems = [
-        { link: 'Home', path: 'header' },
-        { link: 'About', path: 'about' },
-        { link: 'Properties', path: 'properties' },
-        { link: 'Service', path: 'services' },
-        { link: 'Testimonials', path: 'testimonials' },
-        { link: 'Career', path: 'career' },  // Added Career link
-        { link: 'Contact', path: '/contact' }
-=======
+
+    
+
   const scrollToTop = () => {
     scroll.scrollToTop();
     closeMenu();
@@ -51,7 +43,7 @@ function Header() {
       "testimonials",
       "career",
       "contact",
->>>>>>> aedda5a6bfb4f2d38613b69881fc3e75cdc017e5
+
     ];
     sections.forEach((section) => {
       const element = document.getElementById(section);
@@ -72,6 +64,7 @@ function Header() {
     { link: "Career", path: "career", isInternal: true },
     { link: "Contact", path: "contact", isInternal: true },
     { link: "Construction", path: "/construction", isInternal: false },
+    { link: "Home Page", path: "/", isInternal: false },
   ];
 
   return (

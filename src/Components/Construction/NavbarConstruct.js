@@ -46,6 +46,9 @@ const NavbarConstruct = () => {
           <li>
             <Link to="/plots">Plots</Link>
           </li>
+          <li>
+            <Link to="/">Home Page</Link>
+          </li>
         </ul>
         <Link to="/construction/calculate" onClick={handleClick}>
           <button className="cta-navbar-button">Get Cost Estimation</button>
