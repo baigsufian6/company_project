@@ -130,7 +130,7 @@ const AboutConstruct = () => {
           <div className="testimonial-author">
             <img src={col} alt="Steven cook" />
             <div className="testimonial-author-info">
-              <span className="testimonial-author-name">Steven cook</span>
+              <span className="testimonial-author-name">Steven Cook</span>
               <span className="testimonial-author-title">Architect</span>
             </div>
           </div>
