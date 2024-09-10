@@ -141,7 +141,7 @@ function NextChapter() {
         <div className="flexing">
           <h2 className="rightcon-next-chapter__title">
             Your next chapter begins here reach out, apply, and join the
-            Rightcon family today!
+            Rohan Infra family today!
           </h2>
           <button
             className="rightcon-next-chapter__join-btn"

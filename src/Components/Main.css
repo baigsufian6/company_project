@@ -81,6 +81,7 @@
   /* Show the hamburger menu icon */
   .xpat-menu-icon {
     display: block;
+    color: black;
   }
 
   /* Hide the appointment button on small screens */
@@ -99,6 +100,16 @@
   .xpat-features {
     flex-direction: column;
   }
+  .xpat-services{
+    padding: 0rem 2rem !important;
+  }
+  .xpat-hero h1{
+    font-size: 2.5rem !important;
+  }
+  .xpat-features-list{
+    display: flex !important;
+    flex-direction: column;
+  }
 }
 
 .xpat-hero {
@@ -113,29 +124,58 @@
   text-align: center;
   color: #fff;
   padding: 0 2rem;
+  position: relative;
+}
+
+.xpat-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay to improve text contrast */
+  z-index: 1;
 }
 
 .xpat-hero h1 {
-  font-size: 3.5rem;
+  font-size: 4rem; /* Larger font size for better visibility */
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* More pronounced text shadow */
+  z-index: 2; /* Ensure text is above overlay */
 }
 
 .xpat-hero p {
-  font-size: 1.2rem;
-  max-width: 600px;
+  font-size: 1.5rem; /* Larger font size for better readability */
+  max-width: 700px;
   margin-bottom: 2rem;
+  z-index: 2; /* Ensure text is above overlay */
 }
 
 .xpat-detail-btn {
-  background-color: #ffd700;
+  background-color: #e68a00; /* Updated color for better visibility */
   border: none;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 2rem; /* Increased padding for a more substantial button */
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.2rem; /* Increased font size for better readability */
+  color: #fff; /* Text color to contrast with the button background */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions for hover effects */
+  position: relative;
+  z-index: 2; /* Ensure button is above overlay */
 }
+
+.xpat-detail-btn:hover {
+  background-color: #e68a00; /* Darker shade on hover for visual feedback */
+  transform: translateY(-3px); /* Slight lift on hover for a 3D effect */
+}
+
+.xpat-detail-btn:active {
+  background-color: #e68a00; /* Even darker shade when button is pressed */
+  transform: translateY(0); /* Reset lift effect */
+}
+
 
 .xpat-company {
   padding: 4rem 2rem;
@@ -377,6 +417,8 @@
 .xpat-features {
   display: flex;
   align-items: stretch;
+  background-color: #f7f7f7;
+  padding: 2rem;
 }
 
 .xpat-features-content {
@@ -389,6 +431,16 @@
 .xpat-features-content h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: #ffd700; /* Gold for title to match construction theme */
+  text-transform: uppercase; /* Makes the title look bolder */
+  letter-spacing: 1px;
+}
+
+.xpat-features-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: #e0e0e0; /* Slightly lighter color for contrast */
 }
 
 .xpat-features-list {
@@ -402,6 +454,9 @@
 .xpat-features-list li {
   position: relative;
   padding-left: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
 }
 
 .xpat-features-list li::before {
@@ -409,6 +464,27 @@
   position: absolute;
   left: 0;
   color: #ffd700;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.xpat-contact-btn {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 0.75rem 2rem;
+  margin-top: 2rem;
+  color: #fff;
+  background-color: #ff9900; /* Construction-themed orange */
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a shadow for depth */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.xpat-contact-btn:hover {
+  background-color: #e68a00; /* Slightly darker on hover */
+  transform: translateY(-3px); /* Subtle lift effect */
 }
 
 .xpat-features-image {
@@ -416,7 +492,9 @@
   background-image: url('./images/slider_2.jpg');
   background-size: cover;
   background-position: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
 }
+
 
 .xpat-projects {
   padding: 2rem;
@@ -499,7 +577,7 @@
   .slick-slide img{
     display: flex;
     height: 170px;
-    width: 93px;
+    width: 79px;
   }
   
 }
@@ -509,8 +587,8 @@
 .xpat-contact {
   display: flex;
   flex-wrap: wrap;
-  background-color: #f9f9f9;
-  padding: 2rem;
+  background-color: #f4f4f4;
+  padding: 4rem 2rem; /* Increased padding for a more spacious layout */
   gap: 2rem;
 }
 
@@ -519,44 +597,67 @@
   max-width: 600px;
   background: #fff;
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.xpat-contact-content::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(135deg, #f9f9f9, #ffffff);
+  border-radius: 12px;
+  z-index: -1; /* Position the gradient behind the content */
 }
 
 .xpat-contact-content h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 1.5rem;
   color: #333;
+  font-weight: 600;
 }
 
 .xpat-contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.2rem; /* Increased gap for better spacing */
 }
 
 .xpat-contact-form input,
 .xpat-contact-form textarea {
-  padding: 1rem;
+  padding: 1.2rem; /* Increased padding for a more comfortable input area */
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.xpat-contact-form input:focus,
+.xpat-contact-form textarea:focus {
+  border-color: #ff5722; /* Highlight border on focus */
+  box-shadow: 0 0 8px rgba(255, 87, 34, 0.2); /* Subtle shadow on focus */
+  outline: none; /* Remove default outline */
 }
 
 .xpat-submit-btn {
-  background-color: #ffd700;
-  color: black;
+  background-color: #ff5722;
+  color: #fff;
   border: none;
   padding: 1rem;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
   font-size: 1rem;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .xpat-submit-btn:hover {
-  background-color: #a38b01;
+  background-color: #e64a19;
+  transform: translateY(-2px); /* Subtle lift effect */
 }
 
 .xpat-contact-info {
@@ -564,34 +665,36 @@
   background-color: #333;
   color: #fff;
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .xpat-contact-info h3 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .xpat-contact-info p {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem; /* Increased margin for better spacing */
 }
 
 .xpat-social-icons {
   display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  gap: 1.5rem;
+  margin-top: 2rem; /* Increased margin for better spacing */
 }
 
 .xpat-social-icons svg {
-  width: 24px;
-  height: 24px;
+  width: 30px; /* Larger icons for better visibility */
+  height: 30px;
   color: #fff;
-  transition: color 0.3s;
+  transition: color 0.3s, transform 0.3s;
 }
 
 .xpat-social-icons svg:hover {
-  color: #ffd700;
+  color: #ff5722;
+  transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
 
