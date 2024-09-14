@@ -8,6 +8,7 @@ import CareerConstruct from './CareerConstruct';
 import ContactConstruct from './ContactConstruct';
 import AboutConstruct from './AboutConstruct';
 import Calculate from './Calculate';
+import CostResultPage from './CostResultPage';
 
 function Page() {
   return (
@@ -20,6 +21,7 @@ function Page() {
         <Route path ="contact" element={<ContactConstruct />} />
         <Route path ="about" element={<AboutConstruct />} />
         <Route path ="calculate" element={<Calculate />} />
+        <Route path="cost-result" element={<CostResultPage />} />
         {/* Add more routes as needed */}
       </Routes>
       <FooterConstruct />

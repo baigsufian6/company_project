@@ -1,4 +1,4 @@
-import React from "react";
+import {React,useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import construction from "./imagess/career-page-img.jpg";
 import architect from "./imagess/career-page-img-1.webp";
@@ -6,6 +6,10 @@ import potta from "./imagess/CTA-Career-Page.webp";
 import "./construct.css";
 
 function CareerConstruct() {
+  useEffect(() => {
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="rightcon-career-main-page">
       <JoinUs />

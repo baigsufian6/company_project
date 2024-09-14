@@ -13,6 +13,7 @@ import prop5 from './images/prop5.webp';
 import layout from './images/Layout-300x243.jpg';
 import market from './images/1603747793-GettyImages-1061234002.webp';
 import rohan from './images/rohans.png';
+import video from './images/vids2.mp4';
 import './Main.css';
 
 const ServiceCard = ({ title, description, icon: Icon, href, image }) => (
@@ -125,11 +126,19 @@ const Home = () => {
         <button className="xpat-appointment-btn">Get Appointment</button>
       </header>
 
-      <section className="xpat-hero" id="home">
-        <h1>An Expert Construction Service You Can Trust</h1>
-        <p>Creating architectural and creative solutions Creating architectural and creative solutions</p>
-        <button className="xpat-detail-btn" onClick={() => navigate('/construction')}>More Detail</button>
-      </section>
+      <section className="video-hero" id="home">
+      <video autoPlay loop muted playsInline className="video-background">
+        <source src={video} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="hero-content">
+        <h1>An Expert Service <span>You Can Trust</span></h1>
+        <p>Creating architectural and creative solutions</p>
+        <button className="detail-btn" onClick={() => navigate('/construction')}>
+          More Detail
+        </button>
+      </div>
+    </section>
 
       <section className="xpat-company" id="aboutus">
         <h2>Building Your Dream Since 1995</h2>

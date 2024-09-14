@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useEffect} from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { MapPin, Phone, Mail } from "lucide-react";
 import "leaflet/dist/leaflet.css";
@@ -13,6 +13,12 @@ L.Icon.Default.mergeOptions({
 });
 
 function ContactConstruct() {
+  
+  useEffect(() => {
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
@@ -21,6 +27,7 @@ function ContactConstruct() {
   const center = [12.977743, 77.553056]; // Latitude and Longitude for Company, Bengaluru
 
   return (
+
     <div className="contact-page">
       <div className="contact-container">
         <div className="form-section">

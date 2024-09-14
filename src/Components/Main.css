@@ -14,7 +14,7 @@
   color: white;
   position: sticky; /* Makes the header sticky */
   top: 0; /* Sticks to the top of the viewport */
-  z-index: 1000;
+  z-index: 10000;
 }
 .xpat-logo {
   font-size: 2rem;
@@ -112,11 +112,11 @@
   }
 }
 
-.xpat-hero {
-  background-image: url('./images/slider_1.jpg');
-  background-size: cover;
-  background-position: center;
+.video-hero {
+  position: relative;
   height: 80vh;
+  width: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -124,10 +124,22 @@
   text-align: center;
   color: #fff;
   padding: 0 2rem;
-  position: relative;
 }
 
-.xpat-hero::before {
+.video-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+  object-fit: cover;
+  z-index: 1;
+}
+
+.video-hero::before {
   content: "";
   position: absolute;
   top: 0;
@@ -135,47 +147,58 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4); /* Dark overlay to improve text contrast */
-  z-index: 1;
+  z-index: 2;
 }
 
-.xpat-hero h1 {
-  font-size: 4rem; /* Larger font size for better visibility */
+.hero-content {
+  position: relative;
+  z-index: 3; /* Ensure content is above the overlay */
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
   margin-bottom: 1rem;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* More pronounced text shadow */
-  z-index: 2; /* Ensure text is above overlay */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
 }
 
-.xpat-hero p {
-  font-size: 1.5rem; /* Larger font size for better readability */
+.hero-content p {
+  font-size: 1.5rem;
   max-width: 700px;
-  margin-bottom: 2rem;
-  z-index: 2; /* Ensure text is above overlay */
+  margin: 0 auto 2rem;
 }
 
-.xpat-detail-btn {
-  background-color: #e68a00; /* Updated color for better visibility */
+.detail-btn {
+  background-color: #e68a00;
   border: none;
-  padding: 0.75rem 2rem; /* Increased padding for a more substantial button */
+  padding: 0.75rem 2rem;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
-  font-size: 1.2rem; /* Increased font size for better readability */
-  color: #fff; /* Text color to contrast with the button background */
-  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions for hover effects */
-  position: relative;
-  z-index: 2; /* Ensure button is above overlay */
+  font-size: 1.2rem;
+  color: #fff;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.xpat-detail-btn:hover {
-  background-color: #e68a00; /* Darker shade on hover for visual feedback */
-  transform: translateY(-3px); /* Slight lift on hover for a 3D effect */
+.detail-btn:hover {
+  background-color: #ff9900;
+  transform: translateY(-3px);
 }
 
-.xpat-detail-btn:active {
-  background-color: #e68a00; /* Even darker shade when button is pressed */
-  transform: translateY(0); /* Reset lift effect */
+.detail-btn:active {
+  background-color: #cc7a00;
+  transform: translateY(0);
 }
 
+@media (max-width: 767px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+}
 
 .xpat-company {
   padding: 4rem 2rem;
@@ -673,6 +696,7 @@
   font-size: 2rem;
   margin-bottom: 1rem;
   font-weight: 600;
+  color: white;
 }
 
 .xpat-contact-info p {

@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useEffect} from 'react';
 import './construct.css';
 import home from './imagess/sad1.png'
 import jon from './imagess/john.jpg';
@@ -11,6 +11,10 @@ import { FaCalendarAlt, FaBuilding, FaHandshake, FaTrophy, FaQuoteLeft } from 'r
 
 
 const AboutConstruct = () => {
+  useEffect(() => {
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="about-construct">
       <div className="about-section">
@@ -46,7 +50,7 @@ const AboutConstruct = () => {
         <FaCalendarAlt size={30} />
       </div>
       <div className="timeline-content">
-        <div className="timeline-date">1995</div>
+        <div className="timeline-date">2017</div>
         <div className="timeline-description">
           <h3>Company Founded</h3>
           <p>Started with a vision to revolutionize the construction industry with quality and innovation.</p>
@@ -58,10 +62,10 @@ const AboutConstruct = () => {
         <FaBuilding size={30} />
       </div>
       <div className="timeline-content">
-        <div className="timeline-date">2005</div>
+        <div className="timeline-date">2018-2019</div>
         <div className="timeline-description">
-          <h3>First Office in Bengaluru</h3>
-          <p>Opened our first office in Bengaluru to expand our services and reach more clients.</p>
+          <h3> Early Growth</h3>
+          <p>Within two years, we achieved remarkable growth, expanding our client base and completing major projects.</p>
         </div>
       </div>
     </div>
@@ -70,10 +74,10 @@ const AboutConstruct = () => {
         <FaHandshake size={30} />
       </div>
       <div className="timeline-content">
-        <div className="timeline-date">2015</div>
+        <div className="timeline-date">2020-2021</div>
         <div className="timeline-description">
-          <h3>Expansion to Real Estate</h3>
-          <p>Broadened our services to include residential real estate, providing comprehensive solutions.</p>
+          <h3>Expansion & Innovation</h3>
+          <p>Despite the global challenges of 2020, we innovated and adapted. Our commitment to delivering quality led to new offerings, partnerships, and an expansion into new regions.</p>
         </div>
       </div>
     </div>
@@ -82,10 +86,10 @@ const AboutConstruct = () => {
         <FaTrophy size={30} />
       </div>
       <div className="timeline-content">
-        <div className="timeline-date">2024</div>
+        <div className="timeline-date">2022 & Beyond</div>
         <div className="timeline-description">
-          <h3>30 Years of Excellence</h3>
-          <p>Celebrated three decades of success, innovation, and commitment to our clients.</p>
+          <h3>Achievements</h3>
+          <p>Highlight the most recent achievements, such as industry awards, cutting-edge innovations, or global expansion. </p>
         </div>
       </div>
     </div>

@@ -16,7 +16,7 @@
   background-color: #f5f5f5;
   position: sticky;
   top: 0px;
-  z-index: 100;
+  z-index: 100000;
 }
 
 .navbar-container {
@@ -163,7 +163,7 @@
 
 /* Hero Section Styles */
 .hero {
-  background-image: url("./imagess/construction.jpg");
+  background-image: url("./imagess/slider_1.jpg");
   background-size: cover;
   color: white;
   padding: 4rem 2rem;
@@ -178,7 +178,7 @@
 .hero {
   position: relative;
   height: 100vh;
-  background: url('./imagess//construction.jpg') no-repeat center center;
+  background: url('./imagess//slider_1.jpg') no-repeat center center;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -192,7 +192,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
   z-index: 1;
 }
 
@@ -570,8 +570,8 @@
 /* Footer page */
 
 footer {
-  color: rgb(255, 255, 255);
-  padding: 2rem;
+  color: black;
+  padding: 3rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -583,9 +583,11 @@ footer {
   width: 100%;
   max-width: 1200px;
   margin-bottom: 2rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: auto;
+  padding: 1.5rem;
   background-color: #120760;
-  height: 14rem;
-  border-radius: 10xp;
+  border-radius: 15px;
 }
 
 .footer-left,
@@ -596,23 +598,29 @@ footer {
 }
 
 .footer-left img {
-  height: 65px;
+  height: 80px;
   margin-bottom: 1rem;
 }
 
 .footer-left p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-bottom: 1rem;
+  color: white;
 }
 
-.social-icons{
+.social-icons {
   display: flex;
+  gap: 1rem;
 }
 
 .social-icons a {
   color: white;
-  margin-right: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffd700;
 }
 
 .footer-middle ul {
@@ -621,36 +629,54 @@ footer {
 }
 
 .footer-middle ul li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.7rem;
 }
 
 .footer-middle ul li a {
   text-decoration: none;
   color: white;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-middle ul li a:hover {
+  color: #ffd700;
 }
 
 .footer-right p {
   margin-bottom: 1rem;
+  font-size: 1rem;
+  color: white;
 }
 
 .newsletter-form {
   display: flex;
+  margin-top: 1rem;
 }
 
 .newsletter-form input {
   flex: 1;
-  padding: 0.5rem;
-  border: none;
+  padding: 0.75rem;
+  border: 1px solid #ffd700;
   border-radius: 5px 0 0 5px;
+  background-color: #fff;
+  color: #333;
 }
 
 .newsletter-form button {
   background-color: #ffd700;
   color: #2b3990;
-  border: none;
-  padding: 0.5rem 1rem;
+  border: 1px solid #ffd700;
+  padding: 0.75rem 1.25rem;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #e0c300;
+  color: #fff;
 }
 
 .footer-bottom {
@@ -659,8 +685,10 @@ footer {
   width: 100%;
   max-width: 1200px;
   border-top: 1px solid white;
-  padding-top: 1rem;
+  padding-top: 1.5rem;
   font-size: 0.9rem;
+  color: white;
+  margin-top: 1rem;
   color: black;
 }
 
@@ -668,18 +696,22 @@ footer {
   color: white;
   text-decoration: none;
   margin-left: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffd700;
 }
 
 @media (max-width: 768px) {
   .footer-contents {
     flex-direction: column;
     align-items: center;
-    width: 117%;
-    justify-content: center;
-    justify-items: center;
-    height: auto;
+    width: 100%;
+    padding: 1rem;
   }
 }
+
 
 /* project navbar link page */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
@@ -691,6 +723,7 @@ footer {
   background-position: center;
   position: relative;
   font-family: "Poppins", sans-serif;
+  width: 100%; /* Ensure full width */
 }
 
 .content-overlay {
@@ -704,6 +737,8 @@ footer {
   color: white;
   text-align: center;
   padding: 20px;
+  width: 100%; /* Ensure full width */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
 h1 {
@@ -746,24 +781,28 @@ p {
 }
 
 @media (max-width: 768px) {
-  h1,
-  h2 {
-    font-size: 2.5rem;
+    h1, h2 {
+    font-size: 2rem; /* Slightly smaller for better fit */
   }
-
+  
   p {
     font-size: 1rem;
   }
-
+  
   .cta-button {
     font-size: 1rem;
     padding: 0.5rem 1.5rem;
   }
+  
   .project-construct {
-    width: 67vh;
+    height: auto; /* Allow height to adjust based on content */
+    min-height: 100vh; /* Ensure it's at least full viewport height */
   }
-  .content-overlay{
-    width: min-content;
+  
+  .content-overlay {
+    width: 100%; /* Full width on small screens */
+    height: 100%; /* Full height */
+    overflow-y: auto; /* Allow scrolling if content overflows */
   }
 }
 
@@ -1446,11 +1485,10 @@ p {
 
 .testimonials-slider {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   overflow-x: auto;
   padding: 2rem 0;
   scroll-snap-type: x mandatory;
-  justify-content: space-evenly;
 }
 
 .testimonial {
@@ -1458,7 +1496,7 @@ p {
   background-color: #f8f9fa;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   scroll-snap-align: start;
   position: relative;
   transition: transform 0.3s ease;
@@ -1629,17 +1667,282 @@ p {
 
 /* calculator */
 
-.cost-calculators {
-  max-width: 1000px;
-  margin: 30px auto;
-  padding: 40px 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+.cost-calculator, .cost-result-page {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f5f5f5;
   border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cost-calculator h2, .cost-result-page h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.cost-calculator h3 {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  flex: 1;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+input, select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.cost-button, .back-button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background-color:#000080;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cost-button:hover, .back-button:hover {
+  background-color: #ff9900;
+}
+
+.result-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.result-card h3 {
+  color: #e68a00;
+  margin-bottom: 1rem;
+}
+
+.details p {
+  margin-bottom: 0.5rem;
+}
+
+.back-button {
+  text-decoration: none;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
-  .cost-calculators {
-    margin: 30px;
+  .form-row {
+    flex-direction: column;
   }
 }
+
+/* CostResultPage.css */
+
+.cost-result-page {
+  background-color: #f0f4f8;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+}
+
+.result-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 900px;
+  overflow: hidden;
+}
+
+.result-header {
+  background-color: #2c3e50;
+  color: #ffffff;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+.company-logo img {
+  height: 50px;
+  width: auto;
+}
+
+.cost-highlight {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: #ffffff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.cost-label {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cost-value {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.result-content {
+  display: flex;
+  padding: 2rem;
+}
+
+.project-summary, .client-details {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+h3 {
+  color: #2c3e50;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 0.5rem;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.summary-item, .detail-item {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.summary-icon, .detail-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.summary-label, .detail-label {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 0.25rem;
+}
+
+.summary-value, .detail-value {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.next-steps {
+  background-color: #ecf0f1;
+  padding: 1.5rem 2rem;
+  margin-top: 1rem;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+.back-button, .contact-button {
+  padding: 0.75rem 0.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  min-width: 150px;
+  text-align: center;
+}
+.back-button {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+
+.back-button:hover {
+  background-color: #c0392b;
+}
+
+.contact-button {
+  background-color: #2ecc71;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-button:hover {
+  background-color: #27ae60;
+}
+
+.error-message {
+  color: #e74c3c;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .result-content {
+    flex-direction: column;
+  }
+  
+  .project-summary, .client-details {
+    padding: 1rem 0;
+  }
+  
+  .cost-value {
+    font-size: 2.5rem;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .back-button, .contact-button {
+    width: 80%;
+    max-width: 250px;
+  }
+}
+

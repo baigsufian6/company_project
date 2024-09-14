@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  --primary-color: #3a0ca3;
+  --secondary-color: #f72585;
+  --accent-color: #4cc9f0;
+  --text-color: #ffffff;
+  --dark-color: #16213e;
+  --light-color: #e9ecef;
+  --overlay-color: rgba(22, 33, 62, 0.7);
+  --transition-speed: 0.7s;
+  --cubic-bezier: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.plot-sales {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--dark-color);
+  color: var(--text-color);
+}
+
+.plot-sales__slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.plot-sales__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity var(--transition-speed) var(--cubic-bezier),
+              transform var(--transition-speed) var(--cubic-bezier);
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.1);
+  filter: brightness(0.7);
+}
+
+.plot-sales__slide--active {
+  opacity: 1;
+  transform: scale(1);
+  filter: brightness(1);
+}
+
+.plot-sales__slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, transparent 0%, var(--overlay-color) 100%);
+  opacity: 0;
+  transition: opacity var(--transition-speed) var(--cubic-bezier);
+}
+
+.plot-sales__slide--active::before {
+  opacity: 1;
+}
+
+.plot-sales__slide-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  text-align: left;
+  z-index: 10;
+  width: 50%;
+  max-width: 600px;
+  opacity: 0;
+  transition: opacity var(--transition-speed) var(--cubic-bezier),
+              transform var(--transition-speed) var(--cubic-bezier);
+}
+
+.plot-sales__slide--active .plot-sales__slide-content {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.plot-sales__slide-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin: 0 0 20px;
+  line-height: 1.2;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s var(--cubic-bezier) 0.2s,
+              transform 0.5s var(--cubic-bezier) 0.2s;
+}
+
+.plot-sales__slide--active .plot-sales__slide-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.plot-sales__slide-subtext {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s var(--cubic-bezier) 0.4s,
+              transform 0.5s var(--cubic-bezier) 0.4s;
+}
+
+.plot-sales__slide--active .plot-sales__slide-subtext {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.plot-sales__cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: var(--accent-color);
+  color: var(--dark-color);
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 50px;
+  transition: all 0.3s var(--cubic-bezier);
+  opacity: 0;
+  transform: translateY(20px);
+  overflow: hidden;
+  position: relative;
+}
+
+.plot-sales__slide--active .plot-sales__cta-button {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+
+.plot-sales__cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: all 0.5s;
+}
+
+.plot-sales__cta-button:hover::before {
+  left: 100%;
+}
+
+.plot-sales__cta-button:hover {
+  background-color: var(--secondary-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.plot-sales__nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: all 0.3s var(--cubic-bezier);
+  z-index: 20;
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.plot-sales__nav-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: all 0.5s;
+}
+
+.plot-sales__nav-button:hover::before {
+  left: 100%;
+}
+
+.plot-sales__nav-button:hover {
+  background-color: var(--primary-color);
+  box-shadow: 0 0 30px rgba(58, 12, 163, 0.6);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.plot-sales__nav-button--prev {
+  left: 30px;
+}
+
+.plot-sales__nav-button--next {
+  right: 30px;
+}
+
+.plot-sales__dots {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  z-index: 20;
+}
+
+.plot-sales__dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s var(--cubic-bezier);
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.plot-sales__dot::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  transition: all 0.5s;
+}
+
+.plot-sales__dot:hover::before {
+  left: 100%;
+}
+
+.plot-sales__dot:hover {
+  background-color: var(--primary-color);
+}
+
+.plot-sales__dot--active {
+  background-color: var(--accent-color);
+  transform: scale(1.3);
+}
+
+.plot-sales__progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  background-color: var(--accent-color);
+  width: 0;
+  transition: width 5s linear;
+}
+
+.plot-sales__progress-bar--active {
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .plot-sales__slide-content {
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .plot-sales__slide-text {
+    font-size: 3.5rem;
+  }
+
+  .plot-sales__slide-subtext {
+    font-size: 1.2rem;
+  }
+
+  .plot-sales__nav-button {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .plot-sales__slide-text {
+    font-size: 2.5rem;
+  }
+
+  .plot-sales__slide-subtext {
+    font-size: 1rem;
+  }
+
+  .plot-sales__nav-button {
+    width: 40px;
+    height: 40px;
+  }
+}
