@@ -17,7 +17,8 @@ const Calculator = () => {
     const loanAmt = (srValue * dimension * 0.8).toFixed(2);
     const registration = ((srValue * dimension * 0.066) + 40000).toFixed(2);
 
-    const interestRate = 0.09 / 12;
+    // EMI Calculation formula: EMI = [P * r * (1+r)^n] / [(1+r)^n-1]
+    const interestRate = 0.09 / 12; // Example 9% annual interest rate
     const emi5 = (loanAmt * interestRate * Math.pow(1 + interestRate, 60)) / (Math.pow(1 + interestRate, 60) - 1);
     const emi10 = (loanAmt * interestRate * Math.pow(1 + interestRate, 120)) / (Math.pow(1 + interestRate, 120) - 1);
     const emi15 = (loanAmt * interestRate * Math.pow(1 + interestRate, 180)) / (Math.pow(1 + interestRate, 180) - 1);
@@ -31,9 +32,9 @@ const Calculator = () => {
 
   return (
     <>
-      <div className="calc-container">
+      <div className="calculator-container">
         <h2>Plot Price and Loan Calculator</h2>
-        <div className="calc-form">
+        <div className="calculator-form">
           <label>
             Plot Price per Unit:
             <input
@@ -41,7 +42,6 @@ const Calculator = () => {
               value={plotPrice}
               onChange={(e) => setPlotPrice(parseFloat(e.target.value) || 0)}
               min="0"
-              className="calc-input"
             />
           </label>
           <label>
@@ -51,7 +51,6 @@ const Calculator = () => {
               value={dimension}
               onChange={(e) => setDimension(parseFloat(e.target.value) || 0)}
               min="0"
-              className="calc-input"
             />
           </label>
           <label>
@@ -61,32 +60,31 @@ const Calculator = () => {
               value={srValue}
               onChange={(e) => setSRValue(parseFloat(e.target.value) || 0)}
               min="0"
-              className="calc-input"
             />
           </label>
-          <button onClick={calculateValues} className='calc-btn'>Calculate</button>
+          <button onClick={calculateValues} className='alra-btn'>Calculate</button>
         </div>
         
         <h3>Results:</h3>
-        <div className="calc-result-row">
-          <div className="calc-result-item">
+        <div className="result-row">
+          <div className="result-item">
             <strong>Total Plot Price:</strong> ₹ {(plotPrice * dimension).toFixed(2)}
           </div>
-          <div className="calc-result-item">
+          <div className="result-item">
             <strong>Loan Amount:</strong> ₹ {loanAmount}
           </div>
-          <div className="calc-result-item">
+          <div className="result-item">
             <strong>Registration Fee:</strong> ₹ {registrationFee}
           </div>
         </div>
-        <div className="calc-result-row">
-          <div className="calc-result-item">
+        <div className="result-row">
+          <div className="result-item">
             <strong>EMI for 5 Years:</strong> ₹ {emi5Years} per month
           </div>
-          <div className="calc-result-item">
+          <div className="result-item">
             <strong>EMI for 10 Years:</strong> ₹ {emi10Years} per month
           </div>
-          <div className="calc-result-item">
+          <div className="result-item">
             <strong>EMI for 15 Years:</strong> ₹ {emi15Years} per month
           </div>
         </div>
