@@ -1,0 +1,356 @@
+/* General Styles */
+.full-home {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-logo img {
+  max-height: 50px;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+}
+
+.navbar-links li {
+  margin: 0 1rem;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+}
+
+.navbar-contact a {
+  color: #ff5722;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.login-btn {
+  background-color: #ff5722;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  color: #ff5722;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.hero-banner {
+  width: 50%;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+/* Project Section */
+.project-section {
+  display: flex;
+  padding: 2rem;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-info {
+  width: 50%;
+}
+
+.new-arrival {
+  background-color: #ff5722;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.new-arrival 
+h2 {
+  color: #111772;
+  margin: 1rem 0;
+}
+
+.read-more-btn {
+  background-color: #ff5722;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.project-image {
+  width: 50%;
+  position: relative;
+}
+
+.project-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.project-banner-text {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.project-banner-text h3 {
+  font-size: 1.5rem;
+}
+
+.project-banner-text p {
+  font-size: 1rem;
+}
+.what-we-do {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 32px;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.underline {
+  width: 60px;
+  height: 3px;
+  background-color: #0f1362;
+  margin: 0 auto 20px;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 40px;
+}
+
+.services-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.service-card {
+  flex: 1;
+  text-align: center;
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+  color: #161e76;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    flex-direction: column;
+  }
+}
+
+/* Goals & Mission Section */
+.goals-mission {
+  background-image: url('../Assets/burj.webp');
+  background-size: contain;
+  background-position: center;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.goals-mission::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(44, 62, 80, 0.9) 50%, rgba(44, 62, 80, 0.6) 100%);
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  color: transparent;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.goals-mission h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+.goalboxs-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.goalbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.goalbox .icon {
+  font-size: 2em;
+  color: #0a063c;
+}
+
+.goalbox h3 {
+  font-size: 1.2em;
+  margin: 2px;
+  color: #140e60;
+}
+
+.goalbox p {
+  margin: 10px 0 0;
+  line-height: 1.6;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .goals-mission {
+    min-height: auto;
+  }
+
+  .content-wrapper {
+    padding: 20px;
+  }
+
+  .goalboxs-wrapper {
+    gap: 20px;
+  }
+}
+
+/* How It Works Section */
+.how-it-works {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.how-it-works .title {
+  font-size: 32px;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.how-it-works .underline {
+  width: 60px;
+  height: 3px;
+  background-color: #181f6e;
+  margin: 0 auto 20px;
+}
+
+.how-it-works .subtitle {
+  color: #6b7280;
+  margin-bottom: 40px;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.home-step {
+  flex: 1;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 500px;
+}
+.home-step p{
+  color:#333;
+}
+
+.steps-container .icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+  color: #0e265a;
+}
+
+.step h3 {
+  font-size: 18px;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .steps-container {
+    flex-direction: column;
+  }
+}

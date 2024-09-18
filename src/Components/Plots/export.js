@@ -16,6 +16,13 @@ import client4 from "./Assets/client4.png";
 import client5 from "./Assets/client5.png";
 import client6 from "./Assets/client6.png";
 import propp2 from './Assets/prop3.png'
+import pp1 from './Assets/pp1.png';
+import pp2 from './Assets/pp2.png';
+import pp3 from './Assets/pp3.png';
+import pp4 from './Assets/pp4.png';
+import pp5 from './Assets/pp5.png';
+
+
 import { MdNoteAlt} from "react-icons/md";
 import { MdRealEstateAgent } from 'react-icons/md';
 import { MdOutlineHome } from 'react-icons/md';
@@ -30,101 +37,42 @@ import {
 import { GoLaw } from "react-icons/go";
 
 export const property = [
-  // {
-  //   images: new2,
-  //   address: "Kumblugodu",
-  //   name: "Rohan Chunchadri Layout",
-  //   // price: "2500/sft",
-  //   about:
-  //     "Explore ROHAN CHUNCHADRI LAYOUT in Kumbalgodu, Mysore Road – Premium plots with top amenities and a prime location.",
-  //     area: "All Dimensions are available",
-  //     owner: "ROHAN K N",
-  // },
-  // {
-  //   images: new1,
-  //   address: "Devanahalli",
-  //   name: "Rohan Hill View Enclave",
-  //   // price: "2500/sft",
-  //   about:
-  //     "An exclusive gated community with top-tier amenities and unmatched proximity to key destinations. Ready for registration",
-  //     area: "1200 sq ft",
-  //     owner: "ROHAN K N",
-  // },
-  // {
-  //   images: new3,
-  //   address: "Chandrappa Circle",
-  //   name: "Rohan Royal Residency",
-  //   // price: "2500/sft",
-  //   about:
-  //     "Premium plots with exceptional amenities, special launch pricing, and prime location. Ready for registration and construction .",
-  //     area: "1200 sq ft",
-  //     owner: "ROHAN K N",
-  // },
+  
   {
     images: propp2,
     address: "Nelmangla",
     name: "Rohan Vaishnavi Villas",
     area:"1200 sft"
      
-  },
-  {
-    images: propp2,
-    address: "Nelmangla",
-    name: "Rohan Vaishnavi Villas",
-    area:"1200 sft"
-     
-  },
-  {
-    images: propp2,
-    address: "Nelmangla",
-    name: "Rohan Vaishnavi Villas",
-    area:"1200 sft"
-     
-  },
-  {
-    images: prop1,
-    address: "Nelmangla",
-    name: "Rohan Vaishnavi Villas",
-    area:"1200 sft"
-     
-  },
-  {
-    images: prop2,
-    address: "Yelhanka",
-    name: "Rohan Premium Plots",
-    // price: "$ 345.18",
-    about:
-      "Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood",
-    area: "1200 sq ft",
-    owner: "ROHAN K N",
-  },
-  {
-    images: prop3,
-    address: "Devanhalli",
-    name: "Rohan Skill View Enclave",
-    // price: "$ 652.18",
-    about:
-      "Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood",
-    // bed: 4,
-    // bath: 3,
-    area: "1200 sq ft",
-    owner: "Rohan K N",
-  },
-  {
-    images: prop4,
-    address: "BigBanyan Tree",
-    name: "Rohan Golden Villas",
-    // // price: "$ 876.13",
-    // about:
-    //   "Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood",
-    // bed: 4,
-    // bath: 3,
-    area: "1200 sq ft",
-    owner: "Rohan K N",
   },
   
   {
-    images: prop5,
+    images: pp3,
+    address: "Yelhanka",
+    name: "Rohan Premium Plots",
+    // price: "$ 345.18",
+    // about:
+    //   "Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood",
+    area: "1200 sq ft",
+     
+  },
+  {
+    images: pp5,
+    address: "Devanhalli",
+      name: "Rohan Royal Villas",
+    area:"1200 sft"
+     
+  },
+  {
+    images: pp4,
+    address: "BigBanyan Tree",
+    name: "Rohan Golden Villas",
+
+    area: "1200 sq ft",
+    owner: "Rohan K N",
+  },
+  {
+    images: pp1,
     address: "Tavrekere",
     name: "Rohan Hill View",
     // price: "$ 675.23",
@@ -134,15 +82,59 @@ export const property = [
     owner: "Rohan K N",
   },
   {
-    images: prop6,
+    images: pp2,
     address: "Devanhalli",
     name: "Rohan Antara",
-    // price: "$ 341.83",
-    // about:
-      // "Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood",
     area: "1200 sq ft",
     owner: "Rohan K N",
   },
+  // {
+  //   images: prop2,
+  //   address: "Devanhalli",
+  //   name: "Rohan Skill View Enclave",
+  //   area: "1200 sq ft",
+  //   owner: "Rohan K N",
+  // },
+  // {
+  //   images: prop2,
+  //   address: "Yelhanka",
+  //   name: "Rohan Premium Plots",
+  //   // price: "$ 345.18",
+  //   // about:
+  //   //   "Beautiful, updated, ground level Co-op apartment in the desirable Bay Terrace neighborhood",
+  //   area: "1200 sq ft",
+  
+  // },
+  // {
+  //   images: prop3,
+  //   address: "Devanhalli",
+  //   name: "Rohan Skill View Enclave",
+  //   area: "1200 sq ft",
+  //   owner: "Rohan K N",
+  // },
+  // {
+  //   images: prop4,
+  //   address: "BigBanyan Tree",
+  //   name: "Rohan Golden Villas",
+
+  //   area: "1200 sq ft",
+  //   owner: "Rohan K N",
+  // },
+  
+  // {
+  //   images: prop5,
+  //   address: "Tavrekere",
+  //   name: "Rohan Hill View",
+  //   area: "1200 sq ft",
+  //   owner: "Rohan K N",
+  // },
+  // {
+  //   images: prop6,
+  //   address: "Devanhalli",
+  //   name: "Rohan Antara",
+  //   area: "1200 sq ft",
+  //   owner: "Rohan K N",
+  // },
 ];
 
 export const service = [

@@ -17,6 +17,7 @@
   position: sticky;
   top: 0px;
   z-index: 100000;
+  height: 5rem;
 }
 
 .navbar-container {
@@ -1029,52 +1030,53 @@ p {
   }
 }
 
-/* contact page */
-.contact-page {
+/* Contact Construct Page Styling */
+.contact-construct-page {
   background-color: #ffffff;
   padding: 2rem;
   font-family: Arial, sans-serif;
 }
 
-.contact-container {
+.contact-construct-container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
 
-.form-section {
+.contact-construct-form-section {
   flex: 1;
   margin-bottom: 2rem;
 }
 
-.contact-subtitle {
+.contact-construct-subtitle {
   font-size: 1.5rem;
   font-weight: bold;
   color: #fbbf24;
   margin-bottom: 0.5rem;
 }
 
-.contact-title {
+.contact-construct-title {
   font-size: 2.5rem;
   font-weight: bold;
   color: #1e3a8a;
   margin-bottom: 2rem;
   line-height: 1.2;
+  text-align: center;
 }
 
-.contact-form {
+.contact-construct-form {
   display: flex;
   flex-direction: column;
 }
 
-.form-row {
+.contact-construct-form-row {
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
 }
 
-.form-input {
+.contact-construct-form-input {
   flex: 1;
   padding: 0.75rem;
   border: 1px solid #e5e7eb;
@@ -1083,7 +1085,8 @@ p {
   border: 1px solid black;
 }
 
-.form-textarea {
+
+.contact-construct-form-textarea {
   width: 100%;
   padding: 0rem;
   border-radius: 0.375rem;
@@ -1094,7 +1097,7 @@ p {
   border: 1px solid black;
 }
 
-.form-submit {
+.contact-construct-form-submit {
   background-color: #1e3a8a;
   color: #ffffff;
   padding: 0.75rem 1.5rem;
@@ -1106,56 +1109,58 @@ p {
   transition: background-color 0.3s ease;
 }
 
-.form-submit:hover {
+.contact-construct-form-submit:hover {
   background-color: #1e40af;
 }
 
-.info-section {
+/* Info Section */
+.contact-construct-info-section {
   flex: 1;
 }
 
-.contact-info {
+.contact-construct-info {
   margin-bottom: 2rem;
 }
 
-.info-item {
+.contact-construct-info-item {
   display: flex;
   align-items: flex-start;
   margin-bottom: 1.5rem;
 }
 
-.info-icon {
+.contact-construct-info-icon {
   color: #1e3a8a;
   margin-right: 1rem;
   flex-shrink: 0;
 }
 
-.info-title {
+.contact-construct-info-title {
   font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
 }
 
-.map-container {
+.contact-construct-map-container {
   height: 300px;
   border-radius: 0.5rem;
   overflow: hidden;
 }
-.divi {
+
+.contact-construct-divider {
   display: none;
 }
 
 @media (min-width: 768px) {
-  .contact-container {
+  .contact-construct-container {
     flex-direction: row;
     gap: 2rem;
   }
 
-  .contact-title {
+  .contact-construct-title {
     font-size: 2rem;
   }
 
-  .divi {
+  .contact-construct-divider {
     display: flex;
     width: 2px;
     height: 53rem;
@@ -1163,12 +1168,12 @@ p {
     margin: 0 3rem;
   }
 
-  .form-section,
-  .info-section {
+  .contact-construct-form-section,
+  .contact-construct-info-section {
     flex: 1;
   }
 
-  .form-section {
+  .contact-construct-form-section {
     margin-bottom: 0;
   }
 }

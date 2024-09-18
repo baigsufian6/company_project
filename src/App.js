@@ -1,31 +1,25 @@
-import React from "react";  // Import BrowserRouter
-import Main from './Components/Plots/Main';
+import React from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './Components/Home.js';
+import Main from './Components/Plots/Main';
+import Home from './Components/Home';
 import Page from './Components/Construction/Page.js';
-// import Work from './Components/Plots/Main.js';
-
-
+import ChatBot from './Components/Chatbot';
 
 const App = () => {
-
   return (
     <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/construction/*" element={<Page />} />
-
-          <Route path="/plots/*" element={<Main />} />
-
-          <Route path="/plots" element={<Main />} />
-
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Home />
+            <ChatBot />
+          </>
+        } />
+        <Route path="/construction/*" element={<Page />} />
+        <Route path="/plots/*" element={<Main />} />
+      </Routes>
     </Router>
   );
-
 }
-
 
 export default App;

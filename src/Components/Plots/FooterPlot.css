@@ -1,0 +1,244 @@
+/* Base Styles (Mobile First) */
+
+/* Footer Container */
+.plot-footer {
+  background-color: #001f3f;
+  color: #fff;
+  padding: 20px 0;
+  text-align: left;
+}
+
+.plot-footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.plot-footer-logo-section,
+.plot-footer-links-section,
+.plot-footer-newsletter-section {
+  padding: 15px 0;
+}
+
+/* Logo */
+.plot-footer-logo {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.plot-footer-title {
+  font-size: 1.2rem;
+  color:#ffd700;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.plot-footer-subtitle {
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.plot-footer-description {
+  margin: 10px 0 20px;
+}
+
+/* Social Icons */
+.plot-footer-social-icons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.plot-social-icon {
+  color: #ffd700;
+  font-size: 1.3rem;
+}
+
+.plot-footer-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+.plot-footer-links li {
+  margin-bottom: 10px;
+}
+
+.plot-footer-links li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.plot-footer-links li a:hover {
+  color: #ffd700;
+}
+
+/* Newsletter */
+.plot-footer-newsletter-section {
+  text-align: left;
+}
+
+.plot-newsletter-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.plot-newsletter-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.plot-newsletter-input {
+  border-radius: 5px 0 0 5px;
+    border: none;
+    width: 90%;
+    height: 50px;
+    margin-top: 20px;
+
+}
+
+.plot-subscribe-btn {
+  background-color: #ffd700;
+  color: #001f3f;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.plot-subscribe-btn:hover {
+  background-color: #ffdd57;
+}
+
+/* Footer Bottom */
+.plot-footer-bottom {
+  background-color: #001533;
+  padding: 20px 15px;
+  text-align: center;
+}
+
+.plot-footer-bottom p {
+  margin: 0;
+}
+
+.plot-footer-bottom-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.plot-footer-bottom-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.plot-footer-bottom-links a:hover {
+  color: #ffd700;
+}
+
+/* Medium Devices (Tablets) */
+@media (min-width: 768px) {
+  .plot-footer-container {
+    flex-direction: row;
+    padding: 0 30px;
+    max-width: 1200px;
+  }
+
+  .plot-footer-logo-section,
+  .plot-footer-links-section,
+  .plot-footer-newsletter-section {
+    flex: 1;
+    padding: 20px;
+  }
+
+  /* Logo Section */
+  .plot-footer-logo {
+    width: 70px;
+  }
+
+  .plot-footer-title {
+    font-size: 1.5rem;
+  }
+
+  .plot-footer-social-icons {
+    justify-content: flex-start;
+  }
+
+  /* Newsletter */
+  .plot-newsletter-form {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .plot-newsletter-input {
+    width: 70%;
+    margin-top: 0;
+    height: 45px;
+  }
+
+  .plot-subscribe-btn {
+    border-radius: 0 5px 5px 0;
+    margin-top: 0;
+    height: 45px;
+  }
+
+  /* Footer Links */
+  .plot-footer-links-section {
+    padding-right: 40px;
+  }
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 1024px) {
+  .plot-footer-container {
+    padding: 0 50px;
+  }
+
+  .plot-footer-logo-section {
+    flex: 1.2;
+  }
+
+  .plot-footer-logo {
+    width: 80px;
+  }
+
+  .plot-footer-title {
+    font-size: 1.8rem;
+  }
+
+  .plot-footer-description {
+    font-size: 1rem;
+  }
+
+  .plot-footer-links-section {
+    flex: 1;
+  }
+
+  .plot-footer-links li a {
+    font-size: 1rem;
+  }
+
+  .plot-footer-newsletter-section {
+    flex: 1.5;
+  }
+
+  /* Newsletter Input */
+  .plot-newsletter-input {
+    width: 75%;
+    height: 50px;
+  }
+
+  .plot-subscribe-btn {
+    height: 50px;
+    padding: 10px 20px;
+  }
+}

@@ -1,4 +1,4 @@
-import {React, useEffect} from "react";
+import { React, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { MapPin, Phone, Mail } from "lucide-react";
 import "leaflet/dist/leaflet.css";
@@ -13,7 +13,7 @@ L.Icon.Default.mergeOptions({
 });
 
 function ContactConstruct() {
-  
+
   useEffect(() => {
     // Scroll to the top of the page
     window.scrollTo(0, 0);
@@ -27,72 +27,71 @@ function ContactConstruct() {
   const center = [12.977743, 77.553056]; // Latitude and Longitude for Company, Bengaluru
 
   return (
-
-    <div className="contact-page">
-      <div className="contact-container">
-        <div className="form-section">
-          <h2 className="contact-subtitle">Contact us</h2>
-          <h1 className="contact-title">
+    <div className="contact-construct-page">
+      <div className="contact-construct-container">
+        <div className="contact-construct-form-section">
+          <h2 className="contact-construct-subtitle">Contact us</h2>
+          <h1 className="contact-construct-title">
             We are here for you,
             <br />
             Get in touch With Us!
           </h1>
-          <form onSubmit={handleSubmit} className="contact-form">
-            <div className="form-row">
+          <form onSubmit={handleSubmit} className="contact-construct-form">
+            <div className="contact-construct-form-row">
               <input
                 type="text"
                 placeholder="Enter Your First Name"
-                className="form-input"
+                className="contact-construct-form-input"
               />
               <input
                 type="text"
                 placeholder="Enter Your Last Name"
-                className="form-input"
+                className="contact-construct-form-input"
               />
             </div>
-            <div className="form-row">
+            <div className="contact-construct-form-row">
               <input
                 type="tel"
                 placeholder="Enter Your Phone Number"
-                className="form-input"
+                className="contact-construct-form-input"
               />
               <input
                 type="email"
                 placeholder="Enter Your Email"
-                className="form-input"
+                className="contact-construct-form-input"
               />
             </div>
             <textarea
               placeholder="Message"
-              className="form-textarea"
+              className="contact-construct-form-textarea"
             ></textarea>
-            <button type="submit" className="form-submit">
+            <button type="submit" className="contact-construct-form-submit">
               Reach Us
             </button>
           </form>
         </div>
-        <hr className="divi"></hr>
+        <hr className="contact-construct-divider"></hr>
 
-        <div className="info-section">
-          <div className="contact-info">
-            <div className="info-item">
-              <Phone className="info-icon" />
+        <div className="contact-construct-info-section">
+          <div className="contact-construct-info">
+            <div className="contact-construct-info-item">
+              <Phone className="contact-construct-info-icon" />
               <div>
-                <h3 className="info-title">Talk to Us</h3>
+                <h3 className="contact-construct-info-title">Talk to Us</h3>
                 <p>+91 86187 24081</p>
               </div>
             </div>
-            <div className="info-item">
-              <Mail className="info-icon" />
+            <div className="contact-construct-info-item">
+              <Mail className="contact-construct-info-icon" />
               <div>
-                <h3 className="info-title">Email Us</h3>
+                <h3 className="contact-construct-info-title">Email Us</h3>
                 <p>rohaninfrabuilderrs@gmail.com</p>
               </div>
             </div>
-            <div className="info-item">
-              <MapPin className="info-icon" />
+            <div className="contact-construct-info-item">
+              <MapPin className="contact-construct-info-icon" />
               <div>
-                <h3 className="info-title">Visit Us</h3>
+                <h3 className="contact-construct-info-title">Visit Us</h3>
                 <p>
                   #342, 2nd and 3rd Floor Dr. Rajkumar Road Beside AL-BEK
                   Restaurant Block 6th Rajajinagar Bengaluru - 560010
@@ -102,7 +101,7 @@ function ContactConstruct() {
           </div>
 
           <div
-            className="map-container"
+            className="contact-construct-map-container"
             style={{
               height: "300px",
               borderRadius: "0.5rem",

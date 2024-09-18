@@ -1,0 +1,309 @@
+/* 
+.properties-container {
+    width: 90%;
+    margin: 2rem;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+}
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 4px;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: rgb(16, 35, 106);
+    font-family:'fantasy';
+}
+
+.section-subtitle {
+    font-size: 2rem;
+    font-weight: 600;
+    color: black;
+}
+
+.grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 8px;
+}
+
+.property-card {
+    background-color: white;
+    border-radius: 12px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.image-box {
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.icon-group {
+    display: flex;
+    gap: 4px;
+}
+
+.icon-box {
+    padding: 8px;
+    border: 2px solid gray;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.icon-box:hover {
+    background-color: black;
+    transform: scale(1.1);
+}
+
+.image-bottom {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+}
+
+.location-text {
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.property-details {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.property-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: black;
+}
+
+.property-description {
+    font-size: 1rem;
+    color: black;
+}
+
+.details-icons {
+    display: flex;
+    gap: 8px;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.detail-text {
+    font-size: 1rem;
+}
+ */
+
+
+
+
+ /* Properties section */
+ .properties-section {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+}
+
+.properties-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 4px;
+}
+
+.properties-title {
+    color: #140e53; /* Text color */
+}
+
+.properties-subtitle {
+    color: #000;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.properties-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.property-card {
+    background-color: #fff;
+    border-radius: 1rem;
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.property-card:hover {
+    transform: scale(1.05); /* Zoom-in effect on hover */
+}
+
+.property-image {
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    border-radius: 1rem;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.property-card-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.property-icons {
+    display: flex;
+    gap: 16px;
+}
+
+.property-icon {
+    padding: 8px;
+    border: 2px solid #e2e8f0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.property-icon:hover {
+    background-color: black;
+    transform: scale(1.1);
+}
+
+.icon-color {
+    color: #0b1357; /* Icon color */
+}
+
+.property-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.property-location {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.location-icon {
+    color: white;
+}
+
+.location-text {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.property-details {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.property-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: black;
+}
+
+.property-description {
+    color: #000;
+    font-size: 1rem;
+}
+
+.property-info {
+    display: flex;
+    gap: 16px;
+}
+
+.property-info-item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.property-area {
+    font-size: 1rem;
+    color: #000;
+}
+
+/* Modal Styles */
+.modal {
+    display: block; /* Show the modal */
+    position: fixed;
+    z-index: 1000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.modal-content:hover {
+    transform: scale(1.05); /* Zoom effect in modal */
+    transition: transform 0.3s ease;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}

@@ -35,15 +35,20 @@ const ImageCarousel = () => {
   };
 
   return (
-    <div className="relative w-full max-w-lg mx-auto overflow-hidden">
+    <div className="relative w-full max-w-full mx-auto overflow-hidden">
       {/* Images */}
-      <div className="flex transition-transform duration-500 ease-in-out transform" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+      <div className="flex transition-transform duration-500 ease-in-out transform" style={{ transform: `translateX(-${currentIndex * 100}%)`, width: `${images.length * 100}%` }}>
         {images.map((image, index) => (
           <img
             key={index}
             src={image}
             alt={`Slide ${index + 1}`}
             className="w-full"
+            style={{
+              height: '800px',  // Set a fixed height
+              objectFit: 'cover', // Ensures image covers the entire container while maintaining aspect ratio
+              flex: '0 0 100%',
+            }}
           />
         ))}
       </div>

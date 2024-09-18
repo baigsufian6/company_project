@@ -5,7 +5,7 @@ import locationMap from '../Assets/new2.png'; // Example image path
 
 const Project1 = () => {
   return (
-    <div className="max-w-7xl mx-auto p-8 bg-red-100 rounded-lg shadow-lg">
+    <div className="max-w-7xl mx-auto p-8 bg-white rounded-lg shadow-lg">
       {/* Project Banner */}
       <div className="mb-8 flex justify-center">
         <img src={projectBanner} alt="Project Banner" className="w-auto h-32 object-contain" />

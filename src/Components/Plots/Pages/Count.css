@@ -1,0 +1,28 @@
+.stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    
+  }
+  
+  .stat-item {
+    text-align: center;
+    margin: 10px;
+    font-family: var(--theme-highlight-font);
+  }
+  
+  .stat-target {
+    display: block;
+    font-size: 2em; /* Standard font size */
+    /* font-weight: bold; */
+  }
+  
+  .stat-text {
+    display: block;
+    font-size: 1.5em; /* Standard font size */
+    font-family: var(--theme-highlight-font);
+
+  }
+  

@@ -1,0 +1,162 @@
+/* .popular-areas-section {
+    width: 90%;
+    margin-top: 6rem;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.section-top {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: rgb(16, 13, 78);
+    text-align: center;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 6px;
+    width: 100%;
+}
+
+.project-box {
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    border-radius: 12px;
+    box-shadow: 0  10px 10px 0 rgba(28, 3, 90, 0.5); 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin: 10px;
+}
+
+.project-box:hover {
+    transform: scale(1.05);
+}
+
+.section-bottom {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 6px;
+    justify-items: center;
+}
+
+.stats-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+
+.stats-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: black;
+}
+
+.stats-text {
+    font-size: 1.25rem;
+    color: gray;
+}
+
+
+
+
+
+
+ */
+  .bolo{
+    margin-top: 4rem;
+  }
+
+ .popular-areas-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+  }
+  
+  .popular-areas-top {
+    margin-bottom: 40px;
+  }
+  
+  .popular-areas-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .popular-areas-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .area-card {
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .area-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .popular-areas-stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .stat-box {
+    width: 200px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .stat-box:hover {
+    transform: scale(1.05);
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+    color: #0b0b55;
+    margin-bottom: 10px;
+  }
+  
+  .stat-description {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .popular-areas-grid, .popular-areas-stats {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .area-card {
+      width: 90%;
+    }
+  }
+  

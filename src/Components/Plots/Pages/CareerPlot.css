@@ -1,0 +1,210 @@
+/* Or in your Marquee.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+/* Marquee.css */
+.marquee-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    background: #f0f0f0;
+    height: 60px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .marquee {
+    white-space: nowrap;
+    display: inline-block;
+    font-weight: bold;
+    font-weight: bolder;
+    font-family:monospace;
+    font-size: 24px; /* Adjust as needed */
+    color: #06032a; /* Text color */
+    position: absolute;
+    animation: marquee 10s linear infinite;
+  }
+  .marquee p{
+    color:#06032a;
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+
+
+.banner{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+.banner img{
+    width:50%;
+    padding: 5px;
+    height:500px;
+    box-shadow: 0 10px 10px 0 rgb(5, 5, 57);
+    
+}
+
+.positions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+  }
+  .cards{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height:350px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .position-item {
+    background-color: #f9f9f9;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 8px;
+    box-shadow: 0 20px 15px 0 rgba(8, 13, 47, 0.5);
+    width: 80%;
+    max-width: 600px;
+    height:max-content;
+    margin: 20px;
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .position-item:hover {
+    transform: translateY(-5px);
+    background-color: rgb(5, 5, 57);
+    color:#fff;
+
+  }
+  .position-item h3:hover{
+    color:#fff;
+  }
+
+  .position-item p:hover{
+    color:#fff;
+  }
+  
+  .position-item h3 {
+    font-size: 1.5rem;
+    color: #2a2a2a;
+    margin-bottom: 10px;
+  }
+  
+  .position-description,
+  .position-location,
+  .position-salary {
+    margin: 8px 0;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .apply-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .apply-link:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Form Container */
+.form-container {
+    background-color: #fff;
+    padding: 40px;
+    margin: 40px auto;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgb(45, 9, 86);
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    color: #06051f;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .form-row input,
+  .form-row select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .form-row input[type="file"] {
+    border: none;
+  }
+  
+  input:focus,
+  select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .submit-button {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  .submit-page{
+    background-color: rgb(170, 240, 248 ,0.1);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+
+  }
+  @media (min-width: 768px) {
+    .form-row {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .form-row input,
+    .form-row select {
+      width: 48%;
+    }
+  }
+  
