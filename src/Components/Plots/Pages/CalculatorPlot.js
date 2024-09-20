@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import './CalculatorPlot.css';
 import Footer from '../FooterPlot';
 
 const Calculator = () => {
+
+  useEffect(() => {
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+  }, []);
+
   const [plotPrice, setPlotPrice] = useState(0);
   const [dimension, setDimension] = useState(0);
   const [srValue, setSRValue] = useState(0);

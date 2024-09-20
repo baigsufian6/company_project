@@ -1,10 +1,16 @@
-import React from "react";
+import {React,useEffect} from "react";
 import Image1 from '../Assets/new1.png'; // Example image paths, replace with actual paths
 import Image2 from '../Assets/new2.png';
 import Image3 from '../Assets/new3.png';
 import ImageCarousel from "./Imagecorosel3"; // Ensure this is the path to your carousel component
 
 const ProjectDetails = () => {
+
+  useEffect(() => {
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="bg-blue-100 py-10 px-4 sm:px-6 lg:px-8">
       <div className="bg-white shadow-md rounded-lg p-6 mt-10 max-w-4xl mx-auto transform hover:scale-105 transition-transform duration-500 ease-out">

@@ -6,6 +6,12 @@ import './clientPlot.css'; // Import your custom CSS file
 import 'aos/dist/aos.css';
 
 const Clients = () => {
+
+    useEffect(() => {
+        // Scroll to the top of the page
+        window.scrollTo(0, 0);
+      }, []);
+      
     useEffect(() => {
         AOS.init({
             offset: 200,

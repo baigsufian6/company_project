@@ -19,6 +19,11 @@ import {faHome, faBuilding } from '@fortawesome/free-solid-svg-icons';
 
 const HomePlot = () => {
 
+  useEffect(() => {
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+  }, []);
+
   const plotData = [
     { image: img1, text: 'Discover Your Dream Plot' },
     { image: img2, text: 'Prime Locations Available' },

@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useEffect} from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
 import "leaflet/dist/leaflet.css";
@@ -15,6 +15,12 @@ L.Icon.Default.mergeOptions({
 });
 
 const Contact = () => {
+
+  useEffect(() => {
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here

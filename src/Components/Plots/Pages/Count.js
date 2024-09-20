@@ -2,6 +2,12 @@ import React, { useEffect, useState } from "react";
 import "./Count.css"; // Link to your CSS file
 
 const StatItem = ({ target, text }) => {
+
+  useEffect(() => {
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+  }, []);
+  
   const [count, setCount] = useState(0);
 
   useEffect(() => {

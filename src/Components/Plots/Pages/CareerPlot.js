@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CareerPlot.css'; // Import the CSS file
 import page1 from '../Assets/Email1.png';
 import page2 from '../Assets/Email2.png';
@@ -7,6 +7,12 @@ import Footer from '../FooterPlot';
 import Man from '../Assets/person2.png'
 
 const Career = () => {
+
+  useEffect(() => {
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+  }, []);
+
   // State for form data
   const [formData, setFormData] = useState({
     name: '',

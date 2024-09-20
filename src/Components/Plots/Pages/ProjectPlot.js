@@ -1,5 +1,5 @@
 // src/Pages/Project.js
-import React from 'react';
+import {React} from 'react';
 import PopularAreas from './PopularAreas';
 import Properties from './Properties';
 import { useState, useEffect } from "react";
@@ -14,6 +14,12 @@ import Footer from '../FooterPlot';
 
 
 const ProjectPlot = () => {
+
+  useEffect(() => {
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+  }, []);
+
     return (
         <>
           <div className='popular'>

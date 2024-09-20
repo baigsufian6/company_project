@@ -8,9 +8,9 @@ import Latest from './Pages/ProjectPlot';
 import Contact from './Pages/ContactPlot';
 import Calculator from './Pages/CalculatorPlot';
 import PopularAreas from './Pages/PopularAreas';
-import Project1 from './Pages/project1';
-import Project2 from './Pages/project2';
-import Project3 from './Pages/project3';
+import Project1 from './Pages/Project1';
+import Project2 from './Pages/Project2';
+import Project3 from './Pages/Project3';
 
 const Main = () => (
    <>
@@ -22,8 +22,7 @@ const Main = () => (
       <Route path="career" element={<Career />} />
       <Route path="contact" element={<Contact />} />
       <Route path="calculator" element={<Calculator />} />
-      <Route path="/" element={<PopularAreas />} />
-        <Route path="/project1" element={<Project1 />} />
+        <Route path="plots/project1" element={<Project1 />} />
         <Route path="/project2" element={<Project2 />} />
         <Route path="/project3" element={<Project3 />} />
       {/* Define other routes here */}

@@ -1,8 +1,14 @@
-import React from 'react';
+import {React, useEffect} from 'react';
 import ImageCarousel from './ImageCorosel2'; // Assuming this component displays a carousel of images
 import projectBanner from '../Assets/rohanlogo.png'; // Example image path
 
 const Project2 = () => {
+
+  useEffect(() => {
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="max-w-7xl mx-auto p-8 bg-white rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-500 ease-out">
       {/* Project Banner */}

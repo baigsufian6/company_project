@@ -1,5 +1,5 @@
 // src/AboutUs.js
-import React from 'react';
+import {React, useEffect} from 'react';
 import './AboutPlot.css'; // Create a separate CSS file for styling
 import logo from '../Assets/logo.jpg'; // Make sure the path to the logo image is correct
 import sufi from '../Assets/sufi.jpg';
@@ -16,6 +16,11 @@ import Count from './Count';
 import ghar from '../Assets/ghar.jpg'
 
 const AboutPlot = () => {
+
+  useEffect(() => {
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+  }, []);
   
   const steps = [
     { icon: faUser, title: 'Marketing', description: 'Marketing will be done through flyers,ads,social media.And client discussion will happen over through the phone call,sometimes direct conversion at Organisation.' },
