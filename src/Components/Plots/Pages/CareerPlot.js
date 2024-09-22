@@ -83,24 +83,27 @@ const Career = () => {
          <div className='position'>
          <h2>Available Positions</h2>
          </div>
-        <div className='cards'>
-        {jobPositions.map((position, index) => (
-          <div key={index} className="position-item">
-            <h3>{position.title}</h3>
-            <p className="position-description">{position.description}</p>
-            <p className="position-location">Location: {position.location}</p>
-            <p className="position-salary">workMode: {position.workMode}</p>
-            <a
-              href={position.applyLink}
-              className="apply-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Apply Now
-            </a>
-          </div>
-        ))}
-        </div>
+         <div className='cards'>
+  {jobPositions.map((position, index) => (
+    <div key={index} className="position-item">
+      <h3>{position.title}</h3>
+      <p className="position-description">{position.description}</p>
+      <p className="position-location">Location: {position.location}</p>
+      <p className="position-salary">Work Mode: {position.workMode}</p>
+      <button
+        className="apply-link"
+        onClick={() => {
+          const careersSection = document.getElementById('careers-page');
+          if (careersSection) {
+            careersSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}
+      >
+        Apply Now
+      </button>
+    </div>
+  ))}
+</div>
       </div>
 
       {/* Careers Page */}
@@ -109,7 +112,7 @@ const Career = () => {
         <div>
           <img src={Man}></img>
         </div>
-      <div className="careers-page">
+      <div id="careers-page" className="careers-page">
         {/* Form Container */}
         <div className="form-container">
           <h2>SEND YOUR RESUME</h2>

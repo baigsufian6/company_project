@@ -73,7 +73,7 @@ const AboutPlot = () => {
         <div className="text-content">
           <h2>Our Story</h2>
            <p className='aalu'>           
-            Founded in 2005, Rohan Infra Builders & Developers has grown into
+            Founded in 2017, Rohan Infra Builders & Developers has grown into
             one of the most trusted names in real estate. Our journey started
             with a vision to redefine urban living with innovative, sustainable
             projects. Over the years, we have expanded our portfolio to include

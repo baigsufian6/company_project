@@ -20,16 +20,16 @@ const FooterConstruct = () => {
             A Team of Seasoned construction Professionals driven by Passion.
           </p>
           <div className="social-icons">
-            <a href="/">
+            <a href="https://www.facebook.com/profile.php?id=61554191187502">
               <FaFacebookF />
             </a>
-            <a href="/">
+            <a href="https://www.instagram.com/rohaninfrabuilderrs?igsh=MTV5MTg2amJ2cXV2cg==">
               <FaInstagram />
             </a>
             <a href="/">
               <FaLinkedinIn />
             </a>
-            <a href="/">
+            <a href="https://youtube.com/@rohaninfrabuilderrs?si=PwFo7YBOsMje_JFu">
               <FaYoutube />
             </a>
           </div>

@@ -1,8 +1,9 @@
-import {React,useEffect} from "react";
+import {React,useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import construction from "./imagess/career-page-img.jpg";
 import architect from "./imagess/career-page-img-1.webp";
 import potta from "./imagess/CTA-Career-Page.webp";
+import { X ,Upload } from 'lucide-react';
 import "./construct.css";
 
 function CareerConstruct() {
@@ -52,6 +53,22 @@ function CurrentJobOpenings() {
   const handleClick = () => {
     navigate("/construction/contact"); // This will navigate to the Career page
   };
+
+  const [showApplyModal, setShowApplyModal] = useState(false);
+  const [selectedJob, setSelectedJob] = useState(null);
+  const [resume, setResume] = useState(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+  });
+
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    phone: '',
+  });
+
   const jobs = [
     {
       title: "Site Engineer",
@@ -79,25 +96,159 @@ function CurrentJobOpenings() {
     },
   ];
 
+  const handleApplyClick = (job) => {
+    setSelectedJob(job);
+    setShowApplyModal(true); // Show modal on button click
+  };
+
+  const handleFormChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleResumeUpload = (e) => {
+    setResume(e.target.files[0]); // Store uploaded resume
+  };
+
+  // Regex patterns for validation
+  const validateForm = () => {
+    let valid = true;
+    const newErrors = { name: '', email: '', phone: '' };
+
+    // Name should only contain alphabets and spaces
+    if (!/^[a-zA-Z\s]+$/.test(formData.name)) {
+      newErrors.name = 'Name should only contain alphabets and spaces.';
+      valid = false;
+    }
+
+    // Email validation (basic regex for email format)
+    if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address.';
+      valid = false;
+    }
+
+    // Phone number validation (10 digits)
+    if (!/^\d{10}$/.test(formData.phone)) {
+      newErrors.phone = 'Phone number should be 10 digits long.';
+      valid = false;
+    }
+
+    setErrors(newErrors);
+    return valid;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Validate form
+    if (!validateForm()) {
+      return; // Stop submission if validation fails
+    }
+
+    // Handle form submission (e.g., send data to backend)
+    alert(`Application submitted for ${selectedJob.title} with resume: ${resume?.name}`);
+    setShowApplyModal(false); // Close modal after submission
+  };
+
+
   return (
-    <section className="rightcon-job-openings">
-      <h2 className="rightcon-job-openings__title">Current Job Openings</h2>
-      <div className="rightcon-job-openings__list">
-        {jobs.map((job, index) => (
-          <div key={index} className="rightcon-job-card">
-            <h3 className="rightcon-job-card__title">{job.title}</h3>
-            <p className="rightcon-job-card__description">{job.description}</p>
-            <p className="rightcon-job-card__experience">{job.experience}</p>
-            <button
-              className="rightcon-job-card__apply-btn"
-              onClick={handleClick}
-            >
-              Apply Now
-            </button>
-          </div>
-        ))}
-      </div>
-    </section>
+    <div>
+      <section className="rightcon-job-openings">
+        <h2 className="rightcon-job-openings__title">Current Job Openings</h2>
+        <div className="rightcon-job-openings__list">
+          {jobs.map((job, index) => (
+            <div key={index} className="rightcon-job-card">
+              <h3 className="rightcon-job-card__title">{job.title}</h3>
+              <p className="rightcon-job-card__description">{job.description}</p>
+              <p className="rightcon-job-card__experience">{job.experience}</p>
+              <button
+                className="rightcon-job-card__apply-btn"
+                onClick={() => handleApplyClick(job)}
+              >
+                Apply Now
+              </button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {showApplyModal && (
+       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[100000]">
+       <div className="bg-white p-8 rounded-lg max-w-md w-full shadow-2xl">
+         <div className="flex justify-between items-center mb-6">
+           <h2 className="text-2xl font-bold text-blue-900">Apply for {selectedJob.title}</h2>
+           <button
+             onClick={() => setShowApplyModal(false)}
+             className="text-blue-900 hover:text-red-600 transition-colors duration-300"
+           >
+             <X size={24} />
+           </button>
+         </div>
+         <form onSubmit={handleSubmit} className="space-y-4">
+           <input
+             className="w-full p-3 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-blue-50 text-blue-900 placeholder-blue-400"
+             type="text"
+             name="name"
+             placeholder="Your Name"
+             value={formData.name}
+             onChange={handleFormChange}
+             required
+           />
+           {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+ 
+           <input
+             className="w-full p-3 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-blue-50 text-blue-900 placeholder-blue-400"
+             type="email"
+             name="email"
+             placeholder="Your Email"
+             value={formData.email}
+             onChange={handleFormChange}
+             required
+           />
+           {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+ 
+           <input
+             className="w-full p-3 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-blue-50 text-blue-900 placeholder-blue-400"
+             type="tel"
+             name="phone"
+             placeholder="Your Phone Number"
+             value={formData.phone}
+             onChange={handleFormChange}
+             required
+           />
+           {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
+ 
+           <div className="relative">
+             <input
+               id="file-upload"
+               className="sr-only"
+               type="file"
+               accept=".pdf,.doc,.docx"
+               onChange={handleResumeUpload}
+               required
+             />
+             <label
+               htmlFor="file-upload"
+               className="flex items-center justify-center w-full p-3 border border-blue-300 rounded-md cursor-pointer bg-blue-50 hover:bg-blue-100 transition-colors duration-300"
+             >
+               <Upload className="mr-2 text-blue-600" size={20} />
+               <span className="text-blue-600">Upload Resume</span>
+             </label>
+           </div>
+ 
+           <button
+             type="submit"
+             className="w-full bg-blue-600 text-white p-4 rounded-md hover:bg-blue-700 transition-colors duration-300 font-bold text-lg shadow-md"
+           >
+             Submit Application
+           </button>
+         </form>
+       </div>
+     </div>
+      )}
+    </div>
   );
 }
 

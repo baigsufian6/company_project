@@ -99,23 +99,25 @@ const Chatbot = () => {
 
   const AppointmentModal = () => (
     <div className={`fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[100000000000] ${showAppointmentModal ? '' : 'hidden'}`}>
-      <div className="bg-white p-6 rounded-lg max-w-md w-full">
-        <h2 className="text-xl font-bold mb-4">Book an Appointment</h2>
-        <p className="mb-4">Please fill out the form below to schedule an appointment with one of our real estate experts.</p>
-        <form onSubmit={(e) => {
-          e.preventDefault();
-          alert('Appointment booked successfully!');
-          setShowAppointmentModal(false);
-        }} className="space-y-4">
-          <input className="w-full p-2 border rounded" placeholder="Your Name" required />
-          <input className="w-full p-2 border rounded" type="email" placeholder="Your Email" required />
-          <input className="w-full p-2 border rounded" type="tel" placeholder="Your Phone Number" required />
-          <input className="w-full p-2 border rounded" type="date" required />
-          <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition-colors duration-300">Book Appointment</button>
-        </form>
-        <button onClick={() => setShowAppointmentModal(false)} className="mt-4 text-sm text-gray-500 hover:text-gray-700">Close</button>
-      </div>
+    <div className="bg-white p-6 rounded-lg max-w-md w-full relative">
+      <h2 className="text-xl font-bold mb-4">Book an Appointment</h2>
+      <p className="mb-4">Please fill out the form below to schedule an appointment with one of our real estate experts.</p>
+      <form onSubmit={(e) => {
+        e.preventDefault();
+        alert('Appointment booked successfully!');
+        setShowAppointmentModal(false);
+      }} className="space-y-4">
+        <input className="w-full p-2 border rounded" placeholder="Your Name" required />
+        <input className="w-full p-2 border rounded" type="email" placeholder="Your Email" required />
+        <input className="w-full p-2 border rounded" type="tel" placeholder="Your Phone Number" required />
+        <input className="w-full p-2 border rounded" type="date" required />
+        <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition-colors duration-300">Book Appointment</button>
+      </form>
+      <button onClick={() => setShowAppointmentModal(false)} className="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+        <X size={24} />
+      </button>
     </div>
+  </div>
   );
 
   return (
