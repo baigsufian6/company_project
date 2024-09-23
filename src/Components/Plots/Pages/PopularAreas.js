@@ -114,21 +114,21 @@ const PopularAreas = () => {
                             data-aos-delay="400" 
                             style={{ backgroundImage: `url(${area1})` }}
                             className="area-card"
-                            onClick={() => navigate('/plots/project1')}  // Correct path
+                            onClick={() => navigate('/plots/Project1')}  // Correct path
                         ></div>
                         <div 
                             data-aos="zoom-in" 
                             data-aos-delay="400" 
                             style={{ backgroundImage: `url(${area2})` }}
                             className="area-card"
-                            onClick={() => navigate('/project2')}  // Correct path
+                            onClick={() => navigate('plots/Project2')}  // Correct path
                         ></div>
                         <div 
                             data-aos="zoom-in" 
                             data-aos-delay="400" 
                             style={{ backgroundImage: `url(${area3})` }}
                             className="area-card"
-                            onClick={() => navigate('/project3')}  // Correct path
+                            onClick={() => navigate('plots/Project3')}  // Correct path
                         ></div>
                     </div>
                 </div>

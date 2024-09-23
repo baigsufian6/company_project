@@ -8,6 +8,9 @@ import Latest from './Pages/ProjectPlot';
 import Contact from './Pages/ContactPlot';
 import Calculator from './Pages/CalculatorPlot';
 import PopularAreas from './Pages/PopularAreas'; // Import PopularAreas
+import Project1 from './Pages/Project1';
+import Project2 from './Pages/Project2';
+import Project3 from './Pages/Project3';
 
 const Main = () => (
    <>
@@ -20,6 +23,9 @@ const Main = () => (
       <Route path="contact" element={<Contact />} />
       <Route path="calculator" element={<Calculator />} />
       <Route path="popular-areas" element={<PopularAreas />} /> {/* New route */}
+      <Route path="plots/Project1" element={<Project1 />} />
+      <Route path="plots/Project2" element={<Project2 />} />
+      <Route path="plots/Project3" element={<Project3 />} />
       {/* Define other routes here */}
     </Routes>
   </>
