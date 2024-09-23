@@ -81,6 +81,8 @@ const ServicesGrid = () => {
 };
 
 const Home = () => {
+
+  
   const [showAppointmentModal, setShowAppointmentModal] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -140,6 +142,13 @@ const Home = () => {
       behavior: 'smooth',
     });
   };
+
+
+  // Close menu
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
 
   // Appointment Modal component
   const AppointmentModal = () => (
@@ -225,13 +234,13 @@ const Home = () => {
 
         {/* Navigation links */}
         <nav className={`xpat-nav ${isMenuOpen ? 'active' : ''}`}>
-          <a href="#home">Home</a>
-          <a href="#aboutus">About us</a>
-          <a href="#services">Services</a>
-          <a href="#projects">Projects</a>
-          <a href="/plots">Plots</a>
-          <a href="/construction">Construction</a>
-          <a href="#contactus" onClick={handleContactClick}>Contact us</a>
+          <a href="#home" onClick={closeMenu}>Home</a>
+          <a href="#aboutus" onClick={closeMenu}>About us</a>
+          <a href="#services" onClick={closeMenu}>Services</a>
+          <a href="#projects" onClick={closeMenu}>Projects</a>
+          <a href="/plots" onClick={closeMenu}>Plots</a>
+          <a href="/construction" onClick={closeMenu}>Construction</a>
+          <a href="#contactus" onClick={handleContactClick} >Contact us</a>
         </nav>
 
         {/* Button to open Appointment Modal */}

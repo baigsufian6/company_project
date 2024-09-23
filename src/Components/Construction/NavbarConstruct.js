@@ -7,13 +7,17 @@ import "./construct.css";
 const NavbarConstruct = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleNavbar = () => setIsOpen(!isOpen);
-
   const costCalculatorRef = useRef(null);
 
   const handleClick = () => {
     if (costCalculatorRef.current) {
       costCalculatorRef.current.scrollIntoView({ behavior: "smooth" });
     }
+    setIsOpen(false); // Close navbar after clicking
+  };
+
+  const handleLinkClick = () => {
+    setIsOpen(false); // Close navbar after clicking any link
   };
 
   return (
@@ -29,25 +33,25 @@ const NavbarConstruct = () => {
       <nav className={isOpen ? "nav-links open" : "nav-links"}>
         <ul>
           <li>
-            <Link to="/construction">Home</Link>
+            <Link to="/construction" onClick={handleLinkClick}>Home</Link>
           </li>
           <li>
-            <Link to="/construction/projects">Projects</Link>
+            <Link to="/construction/projects" onClick={handleLinkClick}>Projects</Link>
           </li>
           <li>
-            <Link to="/construction/about">About Us</Link>
+            <Link to="/construction/about" onClick={handleLinkClick}>About Us</Link>
           </li>
           <li>
-            <Link to="/construction/careers">Careers</Link>
+            <Link to="/construction/careers" onClick={handleLinkClick}>Careers</Link>
           </li>
           <li>
-            <Link to="/construction/contact">Contact Us</Link>
+            <Link to="/construction/contact" onClick={handleLinkClick}>Contact Us</Link>
           </li>
           <li>
-            <Link to="/plots">Plots</Link>
+            <Link to="/plots" onClick={handleLinkClick}>Plots</Link>
           </li>
           <li>
-            <Link to="/">Home Page</Link>
+            <Link to="/" onClick={handleLinkClick}>Home Page</Link>
           </li>
         </ul>
         <Link to="/construction/calculate" onClick={handleClick}>

@@ -1028,6 +1028,9 @@ p {
   .rightcon-next-chapter {
     margin: -29px 0;
   }
+  .contact-construct-form-input {
+    font-size: 8px !important;
+  }
 }
 
 /* Contact Construct Page Styling */

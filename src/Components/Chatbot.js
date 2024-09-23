@@ -130,7 +130,7 @@ const Chatbot = () => {
             exit={{ scale: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
             onClick={toggleChat}
-            className="fixed bottom-8 right-8 bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50 group"
+            className="chatbot fixed bottom-8 right-8 bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50 group"
           >
             <MessageSquare size={32} className="group-hover:scale-110 transition-transform duration-300" />
             <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center animate-pulse">
@@ -284,6 +284,10 @@ const Chatbot = () => {
             opacity: 0.4;
           }
         }
+        @media (max-width: 600px) {
+          .chatbot {
+            display: none;
+          }
         
       `}</style>
     </>

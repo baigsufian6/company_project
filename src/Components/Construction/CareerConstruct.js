@@ -4,6 +4,7 @@ import construction from "./imagess/career-page-img.jpg";
 import architect from "./imagess/career-page-img-1.webp";
 import potta from "./imagess/CTA-Career-Page.webp";
 import { X ,Upload } from 'lucide-react';
+import { FaFile } from 'react-icons/fa';
 import "./construct.css";
 
 function CareerConstruct() {
@@ -55,6 +56,7 @@ function CurrentJobOpenings() {
   };
 
   const [showApplyModal, setShowApplyModal] = useState(false);
+  const [filename, setFilename] = useState("");
   const [selectedJob, setSelectedJob] = useState(null);
   const [resume, setResume] = useState(null);
   const [formData, setFormData] = useState({
@@ -152,6 +154,14 @@ function CurrentJobOpenings() {
     setShowApplyModal(false); // Close modal after submission
   };
 
+  const handleResumeUploads = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setFilename(file.name); // Update the filename state
+    }
+  };
+
+
 
   return (
     <div>
@@ -221,21 +231,30 @@ function CurrentJobOpenings() {
            {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
  
            <div className="relative">
-             <input
-               id="file-upload"
-               className="sr-only"
-               type="file"
-               accept=".pdf,.doc,.docx"
-               onChange={handleResumeUpload}
-               required
-             />
+           <input
+            id="file-upload"
+            className="sr-only"
+            type="file"
+            accept=".pdf,.doc,.docx"
+            onChange={handleResumeUploads}
+            required
+           />
              <label
                htmlFor="file-upload"
                className="flex items-center justify-center w-full p-3 border border-blue-300 rounded-md cursor-pointer bg-blue-50 hover:bg-blue-100 transition-colors duration-300"
              >
                <Upload className="mr-2 text-blue-600" size={20} />
                <span className="text-blue-600">Upload Resume</span>
-             </label>
+               {filename && (
+              <div className="mt-2 p-2 bg-blue-50 border border-blue-200 rounded-md">
+              <div className="flex items-center flex-wrap">
+              <FaFile className="text-blue-500 mr-2 mb-1" />
+              <p className="text-sm text-blue-700 font-medium mr-1">Uploaded File:</p>
+              <p className="text-sm text-blue-600 break-all">{filename}</p>
+              </div>
+              </div>
+              )}
+            </label>
            </div>
  
            <button
