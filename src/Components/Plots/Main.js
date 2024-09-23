@@ -22,9 +22,9 @@ const Main = () => (
       <Route path="career" element={<Career />} />
       <Route path="contact" element={<Contact />} />
       <Route path="calculator" element={<Calculator />} />
-        <Route path="plots/project1" element={<Project1 />} />
-        <Route path="/project2" element={<Project2 />} />
-        <Route path="/project3" element={<Project3 />} />
+        <Route path="plots/Project1" element={<Project1 />} />
+        <Route path="/Project2" element={<Project2 />} />
+        <Route path="/Project3" element={<Project3 />} />
       {/* Define other routes here */}
     </Routes>
   </>
