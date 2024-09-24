@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import Slider from 'react-slick';
 import emailjs from 'emailjs-com';
 import { useNavigate } from 'react-router-dom';
-import { FaMapMarkerAlt, FaBuilding, FaBars, FaTimes, FaFacebook,FaInstagram,FaLinkedin, FaYoutube } from 'react-icons/fa';
-import { LayoutDashboard, Home as HomeIcon } from 'lucide-react';
-import { X, Calendar, Mail, Phone, User } from 'lucide-react';
+import { FaMapMarkerAlt, FaBuilding, FaBars, FaTimes, FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { LayoutDashboard, Home as HomeIcon, X, Calendar, Mail, Phone, User } from 'lucide-react';
 import plots from './images/plotImg.jpg';
 import consti from './images/slider_2.jpg';
 import prop1 from './images/prop1.webp';
@@ -15,12 +14,13 @@ import layout from './images/Layout-300x243.jpg';
 import market from './images/1603747793-GettyImages-1061234002.webp';
 import rohan from './images/rohans.png';
 import video from './images/vids2.mp4';
-import ChatBot from './Chatbot';  // Adjust the path if necessary
+import ChatBot from './Chatbot';  // Ensure this path is correct
 import './Main.css';
 
+// ServiceCard component
 const ServiceCard = ({ title, description, icon: Icon, href, image }) => (
   <div
-    className="xpat-service-card bg-gray-100 p-8 rounded-lg shadow-md relative overflow-hidden cursor-pointer transition-all duration-300 hover:translate-y-[-10px] hover:bg-gray-900 hover:text-white group "
+    className="xpat-service-card bg-gray-100 p-8 rounded-lg shadow-md relative overflow-hidden cursor-pointer transition-all duration-300 hover:translate-y-[-10px] hover:bg-gray-900 hover:text-white group"
     onClick={() => window.location.href = href}
   >
     <div className="relative z-10">
@@ -39,6 +39,7 @@ const ServiceCard = ({ title, description, icon: Icon, href, image }) => (
   </div>
 );
 
+// ServicesGrid component
 const ServicesGrid = () => {
   const services = [
     {
@@ -80,9 +81,8 @@ const ServicesGrid = () => {
   );
 };
 
+// Main Home component
 const Home = () => {
-
-  
   const [showAppointmentModal, setShowAppointmentModal] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -91,41 +91,67 @@ const Home = () => {
     date: '',
     phone: ''
   });
-
-  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
-  // Handle form data changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert('Appointment booked successfully!');
-    setShowAppointmentModal(false);
-  };
-
-  // Send email using EmailJS
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData, 'YOUR_USER_ID')
+  const sendEmail = (templateParams, isAppointment = false) => {
+    emailjs.send('service_6i9br0x', 'template_po4448h', templateParams, 'V6XQV5b3ZjIxTPWFc')
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
-        alert('Message sent successfully!');
+        alert(isAppointment ? 'Appointment booked successfully!' : 'Message sent successfully!');
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+          date: '',
+          phone: ''
+        });
+        if (isAppointment) {
+          setShowAppointmentModal(false);
+        }
       }, (err) => {
         console.log('FAILED...', err);
         alert('Failed to send message. Please try again later.');
       });
   };
 
-  // Toggle navigation menu
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const handleAppointmentSubmit = (e) => {
+    e.preventDefault();
+    const templateParams = {
+      to_name: 'Rohan Infra',
+      from_name: formData.name,
+      from_email: formData.email,
+      from_phone: formData.phone,
+      appoint_date: `Appointment requested for ${formData.date}`,
+    };
+    sendEmail(templateParams, true);
   };
 
-  // Slider settings for projects
+  const handleContactSubmit = (e) => {
+    e.preventDefault();
+    const templateParams = {
+      to_name: 'Rohan Infra',
+      from_name: formData.name,
+      from_email: formData.email,
+      from_phone: formData.phone,
+      message: formData.message
+    };
+    sendEmail(templateParams);
+  };
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
+
+  const handleContactClick = () => {
+    document.querySelector('.xpat-contact').scrollIntoView({
+      behavior: 'smooth',
+    });
+  };
+
   const sliderSettings = {
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -135,21 +161,7 @@ const Home = () => {
     autoplay: true,
     autoplaySpeed: 3000,
   };
-
-  // Scroll to the Contact section
-  const handleContactClick = () => {
-    document.querySelector('.xpat-contact').scrollIntoView({
-      behavior: 'smooth',
-    });
-  };
-
-
-  // Close menu
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
-
+  
   // Appointment Modal component
   const AppointmentModal = () => (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[100000000000]">
@@ -164,7 +176,7 @@ const Home = () => {
           </button>
         </div>
         <p className="mb-6 text-gray-600">Schedule a meeting with one of our expert real estate agents.</p>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleAppointmentSubmit} className="space-y-4">
           <div className="relative">
             <User className="absolute top-3 left-3 text-gray-400" size={18} />
             <input
@@ -224,15 +236,12 @@ const Home = () => {
 
   return (
     <div className="xpat-home">
+      {/* Header Section */}
       <header className="xpat-header">
         <img src={rohan} alt="Construction" className="xpat-logo" />
-
-        {/* Hamburger menu button */}
         <div className="xpat-menu-icon" onClick={toggleMenu}>
           {isMenuOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
         </div>
-
-        {/* Navigation links */}
         <nav className={`xpat-nav ${isMenuOpen ? 'active' : ''}`}>
           <a href="#home" onClick={closeMenu}>Home</a>
           <a href="#aboutus" onClick={closeMenu}>About us</a>
@@ -240,10 +249,8 @@ const Home = () => {
           <a href="#projects" onClick={closeMenu}>Projects</a>
           <a href="/plots" onClick={closeMenu}>Plots</a>
           <a href="/construction" onClick={closeMenu}>Construction</a>
-          <a href="#contactus" onClick={handleContactClick} >Contact us</a>
+          <a href="#contactus" onClick={handleContactClick}>Contact us</a>
         </nav>
-
-        {/* Button to open Appointment Modal */}
         <button className="xpat-appointment-btn" onClick={() => setShowAppointmentModal(true)}>Get Appointment</button>
       </header>
 
@@ -302,7 +309,6 @@ const Home = () => {
       <section className="xpat-projects" id="projects">
         <h2>Our Projects</h2>
         <Slider {...sliderSettings} className="xpat-slider">
-          {/* Project slides */}
           <div className="xpat-project-slide">
             <img src={prop1} alt="Project 1" />
           </div>
@@ -319,16 +325,17 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="xpat-contact" id="contactus">
-        <div className="xpat-contact-content">
+      <section className="xpat-contact">
+        <div className="xpat-contact-content" id="contactus">
           <h2>Contact Us</h2>
-          <form className="xpat-contact-form" onSubmit={sendEmail}>
+          <form className="xpat-contact-form" onSubmit={handleContactSubmit}>
             <input 
               type="text" 
               placeholder="Your Name" 
               name="name" 
               value={formData.name}
               onChange={handleChange} 
+              required
             />
             <input 
               type="tel" 
@@ -337,7 +344,7 @@ const Home = () => {
               value={formData.phone}
               onChange={handleChange} 
               required 
-             />
+            />
             <input 
               type="email" 
               placeholder="Your Email" 
@@ -345,7 +352,14 @@ const Home = () => {
               value={formData.email}
               onChange={handleChange} 
               required 
-             />
+            />
+            <textarea
+              placeholder="Your Message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            />
             <button type="submit" className="xpat-submit-btn">Send Message</button>
           </form>
         </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { MessageSquare, Send, X, Minimize2, Maximize2, Calendar } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import emailjs from 'emailjs-com';
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,6 +10,12 @@ const Chatbot = () => {
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [showAppointmentModal, setShowAppointmentModal] = useState(false);
+  const [appointmentData, setAppointmentData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    date: '',
+  });
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
 
@@ -97,32 +104,85 @@ const Chatbot = () => {
     });
   };
 
-  const AppointmentModal = () => (
-    <div className={`fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[100000000000] ${showAppointmentModal ? '' : 'hidden'}`}>
-    <div className="bg-white p-6 rounded-lg max-w-md w-full relative">
-      <h2 className="text-xl font-bold mb-4">Book an Appointment</h2>
-      <p className="mb-4">Please fill out the form below to schedule an appointment with one of our real estate experts.</p>
-      <form onSubmit={(e) => {
-        e.preventDefault();
+  const handleAppointmentInputChange = (e) => {
+    setAppointmentData({ ...appointmentData, [e.target.name]: e.target.value });
+  };
+
+  const handleAppointmentSubmit = (e) => {
+    e.preventDefault();
+    const templateParams = {
+      to_name: 'Rohan Infra',
+      from_name: appointmentData.name,
+      from_email: appointmentData.email,
+      from_phone: appointmentData.phone,
+      appoint_date: `Appointment requested for ${appointmentData.date}`,
+    };
+
+    emailjs.send('service_6i9br0x', 'template_po4448h', templateParams, 'V6XQV5b3ZjIxTPWFc')
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
         alert('Appointment booked successfully!');
         setShowAppointmentModal(false);
-      }} className="space-y-4">
-        <input className="w-full p-2 border rounded" placeholder="Your Name" required />
-        <input className="w-full p-2 border rounded" type="email" placeholder="Your Email" required />
-        <input className="w-full p-2 border rounded" type="tel" placeholder="Your Phone Number" required />
-        <input className="w-full p-2 border rounded" type="date" required />
-        <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition-colors duration-300">Book Appointment</button>
-      </form>
-      <button onClick={() => setShowAppointmentModal(false)} className="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
-        <X size={24} />
-      </button>
+        setAppointmentData({ name: '', email: '', phone: '', date: '' });
+        handleUserInput('Appointment booked successfully');
+      }, (err) => {
+        console.log('FAILED...', err);
+        alert('Failed to book appointment. Please try again later.');
+      });
+  };
+
+  const AppointmentModal = () => (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[100000000000]">
+      <div className="bg-white p-6 rounded-lg max-w-md w-full relative">
+        <h2 className="text-xl font-bold mb-4">Book an Appointment</h2>
+        <p className="mb-4">Please fill out the form below to schedule an appointment with one of our real estate experts.</p>
+        <form onSubmit={handleAppointmentSubmit} className="space-y-4">
+          <input
+            className="w-full p-2 border rounded"
+            placeholder="Your Name"
+            required
+            name="name"
+            value={appointmentData.name}
+            onChange={handleAppointmentInputChange}
+          />
+          <input
+            className="w-full p-2 border rounded"
+            type="email"
+            placeholder="Your Email"
+            required
+            name="email"
+            value={appointmentData.email}
+            onChange={handleAppointmentInputChange}
+          />
+          <input
+            className="w-full p-2 border rounded"
+            type="tel"
+            placeholder="Your Phone Number"
+            required
+            name="phone"
+            value={appointmentData.phone}
+            onChange={handleAppointmentInputChange}
+          />
+          <input
+            className="w-full p-2 border rounded"
+            type="date"
+            required
+            name="date"
+            value={appointmentData.date}
+            onChange={handleAppointmentInputChange}
+          />
+          <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition-colors duration-300">Book Appointment</button>
+        </form>
+        <button onClick={() => setShowAppointmentModal(false)} className="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+          <X size={24} />
+        </button>
+      </div>
     </div>
-  </div>
   );
 
   return (
     <>
-       <AnimatePresence>
+      <AnimatePresence>
         {!isOpen && (
           <motion.button
             initial={{ scale: 0, opacity: 0 }}
@@ -244,7 +304,7 @@ const Chatbot = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      <AppointmentModal />
+      {showAppointmentModal && <AppointmentModal />}
       <style jsx>{`
         .typing-indicator {
           display: flex;

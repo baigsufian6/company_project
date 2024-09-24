@@ -1,8 +1,9 @@
-import { React, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { MapPin, Phone, Mail } from "lucide-react";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import emailjs from 'emailjs-com';
 
 // Fix for default marker icon
 delete L.Icon.Default.prototype._getIconUrl;
@@ -13,15 +14,50 @@ L.Icon.Default.mergeOptions({
 });
 
 function ContactConstruct() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
   useEffect(() => {
-    // Scroll to the top of the page
     window.scrollTo(0, 0);
   }, []);
 
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const sendEmail = (templateParams) => {
+    emailjs.send('service_6i9br0x', 'template_po4448h', templateParams, 'V6XQV5b3ZjIxTPWFc')
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Message sent successfully!');
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      }, (err) => {
+        console.log('FAILED...', err);
+        alert('Failed to send message. Please try again later.');
+      });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
+    const templateParams = {
+      to_name: 'Rohan Infra',
+      from_name: `${formData.firstName} ${formData.lastName}`,
+      from_email: formData.email,
+      from_phone: formData.phone,
+      message: formData.message
+    };
+    sendEmail(templateParams);
   };
 
   const center = [12.977743, 77.553056]; // Latitude and Longitude for Company, Bengaluru
@@ -40,30 +76,50 @@ function ContactConstruct() {
             <div className="contact-construct-form-row">
               <input
                 type="text"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
                 placeholder="Enter Your First Name"
                 className="contact-construct-form-input"
+                required
               />
               <input
                 type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
                 placeholder="Enter Your Last Name"
                 className="contact-construct-form-input"
+                required
               />
             </div>
             <div className="contact-construct-form-row">
               <input
                 type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
                 placeholder="Enter Your Phone Number"
                 className="contact-construct-form-input"
+                required
               />
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Enter Your Email"
                 className="contact-construct-form-input"
+                required
               />
             </div>
             <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               placeholder="Message"
               className="contact-construct-form-textarea"
+              required
             ></textarea>
             <button type="submit" className="contact-construct-form-submit">
               Reach Us

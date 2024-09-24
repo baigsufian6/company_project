@@ -1,6 +1,8 @@
-import {React, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import emailjs from 'emailjs-com';
+import { useNavigate } from 'react-router-dom';
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import './ContactPlot.css';
@@ -15,15 +17,64 @@ L.Icon.Default.mergeOptions({
 });
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+    phone: ''
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Scroll to the top of the page
     window.scrollTo(0, 0);
+    emailjs.init("V6XQV5b3ZjIxTPWFc"); // Replace with your actual User ID
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const sendEmail = async (templateParams) => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await emailjs.send(
+        'service_6i9br0x',  // Replace with your actual Service ID
+        'template_po4448h', // Replace with your actual Template ID
+        templateParams,
+        'V6XQV5b3ZjIxTPWFc'      // Replace with your actual User ID
+      );
+
+      console.log('SUCCESS!', response.status, response.text);
+      alert('Message sent successfully!');
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+        phone: ''
+      });
+    } catch (error) {
+      console.error('FAILED...', error);
+      setError('Failed to send message. Please try again later.');
+      alert('Failed to send message. Please try again later.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleContactSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
+    const templateParams = {
+      to_name: 'Rohan Infra',
+      from_name: formData.name,
+      from_email: formData.email,
+      from_phone: formData.phone,
+      message: formData.message
+    };
+    await sendEmail(templateParams);
   };
 
   const center = [12.977743, 77.553056]; // Latitude and Longitude for Bengaluru
@@ -38,22 +89,23 @@ const Contact = () => {
         <div className="rohan-contact-main-content">
           <div className="rohan-contact-form-container">
             <h2>Send us a message</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleContactSubmit}>
               <div className="rohan-contact-form-group">
-                <input type="text" className="rohan-contact-input" placeholder="Your Name" required />
+                <input type="text" name="name" className="rohan-contact-input" placeholder="Your Name" required value={formData.name} onChange={handleChange} />
               </div>
               <div className="rohan-contact-form-group">
-                <input type="email" className="rohan-contact-input" placeholder="Your Email" required />
+                <input type="email" name="email" className="rohan-contact-input" placeholder="Your Email" required value={formData.email} onChange={handleChange} />
               </div>
               <div className="rohan-contact-form-group">
-                <input type="tel" className="rohan-contact-input" placeholder="Your Phone" />
+                <input type="tel" name="phone" className="rohan-contact-input" placeholder="Your Phone" value={formData.phone} onChange={handleChange} />
               </div>
               <div className="rohan-contact-form-group">
-                <textarea className="rohan-contact-textarea" placeholder="Your Message" required></textarea>
+                <textarea name="message" className="rohan-contact-textarea" placeholder="Your Message" required value={formData.message} onChange={handleChange}></textarea>
               </div>
-              <button type="submit" className="rohan-contact-submit-btn">
+              {error && <div className="error-message">{error}</div>}
+              <button type="submit" className="rohan-contact-submit-btn" disabled={isLoading}>
                 <Send size={18} />
-                <span>Send Message</span>
+                <span>{isLoading ? 'Sending...' : 'Send Message'}</span>
               </button>
             </form>
           </div>
