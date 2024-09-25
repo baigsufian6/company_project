@@ -105,8 +105,7 @@ body {
   font-size: 0.9rem;
 }
 
-.new-arrival 
-h2 {
+.new-arrival h2 {
   color: #111772;
   margin: 1rem 0;
 }
@@ -147,6 +146,8 @@ h2 {
 .project-banner-text p {
   font-size: 1rem;
 }
+
+/* What We Do Section */
 .what-we-do {
   max-width: 1200px;
   margin: 0 auto;
@@ -183,6 +184,11 @@ h2 {
   text-align: center;
 }
 
+.service-card:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
 .icon {
   width: 64px;
   height: 64px;
@@ -205,13 +211,34 @@ h2 {
 @media (max-width: 768px) {
   .services-container {
     flex-direction: column;
+    gap: 20px; /* Adjust gap for smaller screens */
   }
+
+  .service-card h3 {
+    font-size: 18px; /* Smaller font size */
+  }
+
+  .service-card p {
+    font-size: 12px; /* Smaller font size */
+  }
+  @media (max-width: 480px) {
+    .plot-sales__slide-text {             /* Use flexbox for alignment */
+      justify-content: center !important;        /* Center horizontally */
+      align-items: center !important;            /* Center vertically if needed */
+      text-align: center !important;             /* Ensure text is centered */
+      margin: 0 auto !important;                 /* Auto margins to center the block */
+      width: 100%;                    /* Ensure it takes full width */
+      padding: 1rem;   
+      display: none;              /* Optional: Add some padding */
+    }
+  }
+  
 }
 
 /* Goals & Mission Section */
 .goals-mission {
   background-image: url('../Assets/burj.webp');
-  background-size: contain;
+  background-size: cover; /* Changed to cover for better fit */
   background-position: center;
   min-height: 600px;
   display: flex;
@@ -275,6 +302,7 @@ h2 {
 @media (max-width: 768px) {
   .goals-mission {
     min-height: auto;
+    padding: 20px; /* Adjust padding */
   }
 
   .content-wrapper {
@@ -282,7 +310,11 @@ h2 {
   }
 
   .goalboxs-wrapper {
-    gap: 20px;
+    gap: 20px; /* Adjust gap */
+  }
+
+  .goalbox h3 {
+    font-size: 1.1em; /* Smaller font size */
   }
 }
 
@@ -326,8 +358,9 @@ h2 {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 500px;
 }
-.home-step p{
-  color:#333;
+
+.home-step p {
+  color: #333;
 }
 
 .steps-container .icon {
@@ -351,6 +384,19 @@ h2 {
 
 @media (max-width: 768px) {
   .steps-container {
-    flex-direction: column;
+    flex-direction: column; /* Stack steps vertically */
+  }
+
+  .home-step {
+    width: 100%; /* Full width on small screens */
+    margin-bottom: 20px; /* Space between steps */
+  }
+
+  .step h3 {
+    font-size: 16px; /* Smaller font size */
+  }
+
+  .step p {
+    font-size: 12px; /* Smaller font size */
   }
 }

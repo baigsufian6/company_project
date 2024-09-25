@@ -307,3 +307,11 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+@media (max-width: 700px)
+{
+    .properties-grid{
+        display: flex;
+        flex-direction: column;
+    }
+}

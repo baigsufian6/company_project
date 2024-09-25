@@ -43,7 +43,6 @@ const Chatbot = () => {
             'Construction Services',
             'Custom Home Design',
             'Investment Advice',
-            'Book Appointment',
           ],
         },
       ]);
@@ -83,9 +82,6 @@ const Chatbot = () => {
         botResponse = "Our custom home design process involves:\n1. Initial consultation to understand your vision\n2. Conceptual design and 3D modeling\n3. Detailed architectural plans\n4. Interior design services\n5. Green building options\n\nWould you like to schedule a consultation with one of our design experts?";
       } else if (lowercaseInput.includes('investment')) {
         botResponse = "We offer comprehensive real estate investment advice:\n1. Market analysis and trends\n2. ROI projections for different property types\n3. Portfolio diversification strategies\n4. Tax implications of real estate investments\n\nWhat specific aspect of real estate investment are you most interested in?";
-      } else if (lowercaseInput.includes('appointment') || lowercaseInput.includes('book')) {
-        botResponse = "Certainly! I can help you book an appointment with one of our experts. Please click the 'Book Appointment' button below to open our scheduling system.";
-        setShowAppointmentModal(true);
       } else {
         botResponse = "I apologize, but I didn't quite understand your question. Could you please rephrase or choose one of the options below?";
       }
@@ -98,7 +94,6 @@ const Chatbot = () => {
           'Construction Services',
           'Custom Home Design',
           'Investment Advice',
-          'Book Appointment',
         ],
       }]);
     });
@@ -295,9 +290,7 @@ const Chatbot = () => {
                   <button onClick={handleSend} className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white p-2 rounded hover:bg-blue-700 transition-colors duration-300">
                     <Send size={16} />
                   </button>
-                  <button onClick={() => setShowAppointmentModal(true)} className="bg-green-500 text-white p-2 rounded hover:bg-green-600 transition-colors duration-300">
-                    <Calendar size={16} />
-                  </button>
+                  
                 </div>
               </>
             )}

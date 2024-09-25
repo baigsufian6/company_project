@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback  } from 'react';
 import Slider from 'react-slick';
 import emailjs from 'emailjs-com';
 import { useNavigate } from 'react-router-dom';
@@ -82,20 +82,33 @@ const ServicesGrid = () => {
 };
 
 // Main Home component
-const Home = () => {
+const Home = React.memo(() => {
   const [showAppointmentModal, setShowAppointmentModal] = useState(false);
-  const [formData, setFormData] = useState({
+  const [appointmentFormData, setAppointmentFormData] = useState({
     name: "",
     email: "",
-    message: "",
+    phone: "",
     date: '',
-    phone: ''
+  });
+  const [contactFormData, setContactFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
   });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleAppointmentChange = useCallback((e) => {
+    const { name, value } = e.target;
+    setAppointmentFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  }, []);
+
+  const handleContactChange = (e) => {
+    setContactFormData({ ...contactFormData, [e.target.name]: e.target.value });
   };
 
   const sendEmail = (templateParams, isAppointment = false) => {
@@ -103,15 +116,21 @@ const Home = () => {
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
         alert(isAppointment ? 'Appointment booked successfully!' : 'Message sent successfully!');
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
-          date: '',
-          phone: ''
-        });
         if (isAppointment) {
+          setAppointmentFormData({
+            name: "",
+            email: "",
+            phone: "",
+            date: '',
+          });
           setShowAppointmentModal(false);
+        } else {
+          setContactFormData({
+            name: "",
+            email: "",
+            phone: "",
+            message: "",
+          });
         }
       }, (err) => {
         console.log('FAILED...', err);
@@ -123,10 +142,10 @@ const Home = () => {
     e.preventDefault();
     const templateParams = {
       to_name: 'Rohan Infra',
-      from_name: formData.name,
-      from_email: formData.email,
-      from_phone: formData.phone,
-      appoint_date: `Appointment requested for ${formData.date}`,
+      from_name: appointmentFormData.name,
+      from_email: appointmentFormData.email,
+      from_phone: appointmentFormData.phone,
+      appoint_date: `Appointment requested for ${appointmentFormData.date}`,
     };
     sendEmail(templateParams, true);
   };
@@ -135,10 +154,10 @@ const Home = () => {
     e.preventDefault();
     const templateParams = {
       to_name: 'Rohan Infra',
-      from_name: formData.name,
-      from_email: formData.email,
-      from_phone: formData.phone,
-      message: formData.message
+      from_name: contactFormData.name,
+      from_email: contactFormData.email,
+      from_phone: contactFormData.phone,
+      message: contactFormData.message
     };
     sendEmail(templateParams);
   };
@@ -161,9 +180,14 @@ const Home = () => {
     autoplay: true,
     autoplaySpeed: 3000,
   };
+
+  const handleMoreDetailClick = () => {
+    setShowAppointmentModal(true); // Show the appointment modal
+    navigate('/construction'); // Navigate to the /construction route
+};
   
   // Appointment Modal component
-  const AppointmentModal = () => (
+  const AppointmentModal = React.memo(({ onClose }) => (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[100000000000]">
       <div className="bg-white p-8 rounded-lg max-w-md w-full shadow-2xl">
         <div className="flex justify-between items-center mb-6">
@@ -184,8 +208,8 @@ const Home = () => {
               placeholder="Your Name"
               required
               name="name"
-              value={formData.name}
-              onChange={handleChange}
+              value={appointmentFormData.name}
+              onChange={handleAppointmentChange}
             />
           </div>
           <div className="relative">
@@ -194,10 +218,10 @@ const Home = () => {
               className="w-full p-3 pl-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               type="email"
               placeholder="Your Email"
-              required
               name="email"
-              value={formData.email}
-              onChange={handleChange}
+              value={appointmentFormData.email}
+              onChange={handleAppointmentChange}
+              required
             />
           </div>
           <div className="relative">
@@ -208,8 +232,8 @@ const Home = () => {
               placeholder="Your Phone Number"
               required
               name="phone"
-              value={formData.phone}
-              onChange={handleChange}
+              value={appointmentFormData.phone}
+              onChange={handleAppointmentChange}
             />
           </div>
           <div className="relative">
@@ -219,8 +243,8 @@ const Home = () => {
               type="date"
               required
               name="date"
-              value={formData.date}
-              onChange={handleChange}
+              value={appointmentFormData.date}
+              onChange={handleAppointmentChange}
             />
           </div>
           <button
@@ -232,7 +256,8 @@ const Home = () => {
         </form>
       </div>
     </div>
-  );
+  ));
+
 
   return (
     <div className="xpat-home">
@@ -251,7 +276,7 @@ const Home = () => {
           <a href="/construction" onClick={closeMenu}>Construction</a>
           <a href="#contactus" onClick={handleContactClick}>Contact us</a>
         </nav>
-        <button className="xpat-appointment-btn" onClick={() => setShowAppointmentModal(true)}>Get Appointment</button>
+        <button className="xpat-appointment-btn" onClick={handleContactClick}>Get Appointment</button>
       </header>
 
       {/* Video Hero Section */}
@@ -263,7 +288,7 @@ const Home = () => {
         <div className="hero-content">
           <h1>An Expert Service <span>You Can Trust</span></h1>
           <p>Creating architectural and creative solutions</p>
-          <button className="detail-btn" onClick={() => setShowAppointmentModal(true)}>More Detail</button>
+          <button className="detail-btn" onClick={handleMoreDetailClick}>More Detail</button>
         </div>
       </section>
 
@@ -333,36 +358,37 @@ const Home = () => {
               type="text" 
               placeholder="Your Name" 
               name="name" 
-              value={formData.name}
-              onChange={handleChange} 
+              value={contactFormData.name}
+              onChange={handleContactChange} 
               required
             />
             <input 
               type="tel" 
               placeholder="Your Phone Number" 
               name="phone" 
-              value={formData.phone}
-              onChange={handleChange} 
+              value={contactFormData.phone}
+              onChange={handleContactChange} 
               required 
             />
             <input 
               type="email" 
               placeholder="Your Email" 
               name="email" 
-              value={formData.email}
-              onChange={handleChange} 
+              value={contactFormData.email}
+              onChange={handleContactChange} 
               required 
             />
             <textarea
-              placeholder="Your Message"
+              placeholder="Message"
               name="message"
-              value={formData.message}
-              onChange={handleChange}
+              value={contactFormData.message}
+              onChange={handleContactChange}
               required
             />
             <button type="submit" className="xpat-submit-btn">Send Message</button>
           </form>
         </div>
+
         <div className="xpat-contact-info">
           <h3>Get In Touch</h3>
           <p>Address: Rajajinagar, Bengaluru, Karnataka 560010</p>
@@ -389,7 +415,7 @@ const Home = () => {
       <ChatBot />
 
     </div>
-  );
-};
+);
+});
 
 export default Home;
