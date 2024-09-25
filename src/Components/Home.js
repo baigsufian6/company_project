@@ -265,7 +265,7 @@ const Home = React.memo(() => {
       <header className="xpat-header">
         <img src={rohan} alt="Construction" className="xpat-logo" />
         <div className="xpat-menu-icon" onClick={toggleMenu}>
-          {isMenuOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
+          {isMenuOpen ? <FaTimes size={25} /> : <FaBars size={25} />}
         </div>
         <nav className={`xpat-nav ${isMenuOpen ? 'active' : ''}`}>
           <a href="#home" onClick={closeMenu}>Home</a>

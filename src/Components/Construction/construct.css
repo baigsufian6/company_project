@@ -114,6 +114,7 @@
     justify-content: space-between;
     z-index: 10;
     width: 100%;
+    height: 62px;
   }
   .nav-links {
     position: absolute;
@@ -774,6 +775,7 @@ p {
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
+
 }
 
 .cta-button:hover {

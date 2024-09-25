@@ -3,32 +3,34 @@
   color: #333;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .xpat-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #f5f5f5;
-  color: white;
-  position: sticky; /* Makes the header sticky */
-  top: 0; /* Sticks to the top of the viewport */
+  padding: 5px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
   z-index: 10000;
+  animation: fadeIn 0.5s ease-out;
 }
+
 .xpat-logo {
   font-size: 2rem;
   font-weight: bold;
   color: #ffd700;
   height: 65px;
+  transition: transform 0.3s ease;
 }
 
-.xpat-nav a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-  padding: 8px 10px;
-  transition: color 0.3s;
+.xpat-logo:hover {
+  transform: scale(1.05);
 }
 
 .xpat-nav {
@@ -36,8 +38,32 @@
   gap: 25px;
 }
 
+.xpat-nav a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: bold;
+  padding: 8px 10px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.xpat-nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
 .xpat-nav a:hover {
   color: #007bff;
+}
+
+.xpat-nav a:hover::after {
+  width: 100%;
 }
 
 .xpat-menu-icon {
@@ -53,10 +79,36 @@
   cursor: pointer;
   font-weight: bold;
   color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(230, 138, 0, 0.3);
 }
 
 .xpat-appointment-btn:hover {
-  background-color: #0056b3;
+  background-color: #ff9900;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(230, 138, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .xpat-nav {
+    display: none;
+  }
+  .xpat-header{
+    height: 4rem;
+  }
+
+  .xpat-menu-icon {
+    display: block;
+  }
+
+  .xpat-header {
+    flex-wrap: wrap;
+  }
+
+  .xpat-appointment-btn {
+    margin-top: 10px;
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -77,6 +129,7 @@
   .xpat-nav.active {
     display: flex;
   }
+  
 
   /* Show the hamburger menu icon */
   .xpat-menu-icon {
