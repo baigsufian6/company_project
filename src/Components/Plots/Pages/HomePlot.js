@@ -7,10 +7,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Client from '../Pages/ClientsPlot';
 import './PlotSalesHomepage.css';
-import img1 from '../Assets/3dhome.jpeg';
+import img1 from '../Assets/bailey-anselme-Bkp3gLygyeA-unsplash.jpg';
 import img2 from '../Assets/image1.jpeg';
 import img3 from '../Assets/area3.jpg';
-import img4 from '../Assets/area5.png';
+import img4 from '../Assets/dillon-kydd-XGvwt544g8k-unsplash.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBullseye, faEye, faHandshake, faPoll } from '@fortawesome/free-solid-svg-icons';
 import { faUser, faFileAlt,fapoll, faChartLine, faClipboardCheck } from '@fortawesome/free-solid-svg-icons';
@@ -25,9 +25,9 @@ const HomePlot = () => {
   }, []);
 
   const plotData = [
-    { image: img1, text: 'Discover Your Dream Plot' },
+    { image: img1, text: 'Build Your Future Home' },
     { image: img2, text: 'Prime Locations Available' },
-    { image: img3, text: 'Build Your Future Home' },
+    { image: img3, text: 'Discover Your Dream Plot' },
     { image: img4, text: 'Invest in Premium Real Estate' },
   ];
 

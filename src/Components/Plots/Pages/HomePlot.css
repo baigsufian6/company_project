@@ -229,7 +229,8 @@ body {
       margin: 0 auto !important;                 /* Auto margins to center the block */
       width: 100%;                    /* Ensure it takes full width */
       padding: 1rem;   
-      display: none;              /* Optional: Add some padding */
+      display: flex;
+      width: 100%;              /* Optional: Add some padding */
     }
   }
   
