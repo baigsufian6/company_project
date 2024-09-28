@@ -8,6 +8,11 @@ import Latest from './Pages/ProjectPlot';
 import Contact from './Pages/ContactPlot';
 import Calculator from './Pages/CalculatorPlot';
 import PopularAreas from './Pages/PopularAreas'; // Import PopularAreas
+import Project1 from './Pages/chunchadri';
+import Project2 from './Pages/devanhalli';
+import Project3 from './Pages/bigbanyan';
+
+
 
 
 const Main = () => (
@@ -22,6 +27,11 @@ const Main = () => (
       <Route path="calculator" element={<Calculator />} />
       <Route path="popular-areas" element={<PopularAreas />} /> {/* New route */}
       {/* Define other routes here */}
+      <Route path="/" element={<PopularAreas />} />
+        <Route path="/chunchadri" element={<Project1 />} />
+        <Route path="/devanhalli" element={<Project2 />} />
+        <Route path="/bigbanyan" element={<Project3 />} />
+
     </Routes>
   </>
 );

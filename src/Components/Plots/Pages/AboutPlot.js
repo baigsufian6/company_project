@@ -13,7 +13,7 @@ import narendra from '../Assets/narendra.jpg';
 import ceo from '../Assets/ceo.jpg'
 import Footer from '../FooterPlot'
 import Count from './Count';
-import ghar from '../Assets/ghar.jpg'
+import ghar from '../Assets/Mission.png'
 
 const AboutPlot = () => {
 
