@@ -1197,12 +1197,16 @@ p {
 .contact-construct-form-row{
   display: flex;
   flex-direction: column;
+  margin-right: 15px;
 }
 .contact-construct-form-textarea{
   margin-left: 10px;
 }
 .contact-construct-form-submit {
   margin-left: 10px;
+}
+.contact-construct-form-textarea{
+  width: 94%;
 }
 }
 
