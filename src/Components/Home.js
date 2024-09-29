@@ -288,7 +288,7 @@ const Home = React.memo(() => {
         <div className="hero-content">
           <h1>An Expert Service <span>You Can Trust</span></h1>
           <p>Creating architectural and creative solutions</p>
-          <button className="detail-btn" onClick={handleMoreDetailClick}>More Detail</button>
+          <button className="detail-btn" onClick={handleContactClick}>More Detail</button>
         </div>
       </section>
 

@@ -1,11 +1,12 @@
 import {React, useEffect} from 'react';
 import './construct.css';
 import home from './imagess/sad1.png'
-import jon from './imagess/john.jpg';
-import rambo from './imagess/rambo.webp';
-import col from './imagess/cool.jpg';
+import jon from './imagess/prakash.jpg';
+import rambo from './imagess/shrinivas.jpg';
+import col from './imagess/ramesh.jpg';
 import { FaPhoneAlt, FaTools, FaDollarSign, FaCheckCircle } from 'react-icons/fa';
 import { FaCalendarAlt, FaBuilding, FaHandshake, FaTrophy, FaQuoteLeft } from 'react-icons/fa';
+import { Zap, Heart, Rocket } from 'lucide-react';
 
 
 
@@ -26,20 +27,23 @@ const AboutConstruct = () => {
         <h2>Our Story</h2>
         <h1>Your go-to hub for Righteous Construction Excellence</h1>
         <p>Rohan Infra is a homegrown construction gem founded on skill, openness, top-tier products, and dedicated customer care.</p>
-        <div className="our-stats">
-          <div className="stat-item">
-            <h3>100+</h3>
-            <p>Home Crafted</p>
-          </div>
-          <div className="stat-item">
-            <h3>150+</h3>
-            <p>Clients Satisfied</p>
-          </div>
-          <div className="stat-item">
-            <h3>50Cr+</h3>
-            <p>Budget Project Handled</p>
-          </div>
-        </div>
+        <div className="company-showcase">
+      <div className="showcase-card">
+        <Zap className="showcase-icon" />
+        <h3>Agile</h3>
+        <p>Quick turnaround on projects</p>
+      </div>
+      <div className="showcase-card">
+        <Heart className="showcase-icon" />
+        <h3>Personal touch</h3>
+        <p>Dedicated customer service</p>
+      </div>
+      <div className="showcase-card">
+        <Rocket className="showcase-icon" />
+        <h3>Innovative</h3>
+        <p>Cutting-edge solutions</p>
+      </div>
+    </div>
        
 
         <div className="timeline-section">
@@ -50,7 +54,7 @@ const AboutConstruct = () => {
         <FaCalendarAlt size={30} />
       </div>
       <div className="timeline-content">
-        <div className="timeline-date">2017</div>
+        <div className="timeline-date">2019</div>
         <div className="timeline-description">
           <h3>Company Founded</h3>
           <p>Started with a vision to revolutionize the construction industry with quality and innovation.</p>
@@ -62,7 +66,7 @@ const AboutConstruct = () => {
         <FaBuilding size={30} />
       </div>
       <div className="timeline-content">
-        <div className="timeline-date">2018-2019</div>
+        <div className="timeline-date">2021</div>
         <div className="timeline-description">
           <h3> Early Growth</h3>
           <p>Within two years, we achieved remarkable growth, expanding our client base and completing major projects.</p>
@@ -74,7 +78,7 @@ const AboutConstruct = () => {
         <FaHandshake size={30} />
       </div>
       <div className="timeline-content">
-        <div className="timeline-date">2020-2021</div>
+        <div className="timeline-date">2022</div>
         <div className="timeline-description">
           <h3>Expansion & Innovation</h3>
           <p>Despite the global challenges of 2020, we innovated and adapted. Our commitment to delivering quality led to new offerings, partnerships, and an expansion into new regions.</p>
@@ -86,7 +90,7 @@ const AboutConstruct = () => {
         <FaTrophy size={30} />
       </div>
       <div className="timeline-content">
-        <div className="timeline-date">2022 & Beyond</div>
+        <div className="timeline-date">2023 & Beyond</div>
         <div className="timeline-description">
           <h3>Achievements</h3>
           <p>Highlight the most recent achievements, such as industry awards, cutting-edge innovations, or global expansion. </p>
@@ -108,7 +112,7 @@ const AboutConstruct = () => {
           <div className="testimonial-author">
             <img src={jon} alt="Jane Doe" />
             <div className="testimonial-author-info">
-              <span className="testimonial-author-name">Jane Doe</span>
+              <span className="testimonial-author-name">Prakash Shetty</span>
               <span className="testimonial-author-title">Homeowner</span>
             </div>
           </div>
@@ -121,7 +125,7 @@ const AboutConstruct = () => {
           <div className="testimonial-author">
             <img src={rambo} alt="John Smith" />
             <div className="testimonial-author-info">
-              <span className="testimonial-author-name">John Smith</span>
+              <span className="testimonial-author-name">Shrinivas Murthy</span>
               <span className="testimonial-author-title">Real Estate Developer</span>
             </div>
           </div>
@@ -134,7 +138,7 @@ const AboutConstruct = () => {
           <div className="testimonial-author">
             <img src={col} alt="Steven cook" />
             <div className="testimonial-author-info">
-              <span className="testimonial-author-name">Steven Cook</span>
+              <span className="testimonial-author-name">Ramesh Kumar</span>
               <span className="testimonial-author-title">Architect</span>
             </div>
           </div>
