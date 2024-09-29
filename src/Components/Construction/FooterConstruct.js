@@ -73,11 +73,7 @@ const FooterConstruct = () => {
 
       <div className="footer-bottom">
         <p>© 2024 Rohan Infra All rights reserved.</p>
-        <div className="footer-links">
-          <a href="#privacy-policy">Privacy Policy</a>
-          <a href="#terms-of-service">Terms of Service</a>
-          <a href="#built-by">Built By Rohan Infra</a>
-        </div>
+        
       </div>
     </footer>
   );
