@@ -77,12 +77,6 @@ function CurrentJobOpenings() {
         "Responsible for overseeing construction activities, ensuring adherence to project specifications and timelines. Collaborate with project managers and subcontractors to address site issues.",
     },
     {
-      title: "Project Head",
-      experience: "4 Years of Experience",
-      description:
-        "Lead architectural design projects, managing a team of architects and designers. Develop creative and innovative design solutions, ensuring compliance with building codes and client requirements.",
-    },
-    {
       title: "Interns",
       experience: "Freshers",
       description:
@@ -306,18 +300,7 @@ function HowWeBuildOurTeam() {
         </li>
         <li className="rightcon-team-building__item">
           If you know an ex employee or have worked with one, ask for their
-          referral code and mention it when you apply via our hiring portal.
-        </li>
-        <li className="rightcon-team-building__item">
-          There's no humble way to put it - we receive hundreds of CVs every day
-          and we're grateful for your love but you might experience some delay
-          in our response.
-        </li>
-        <li className="rightcon-team-building__item">
-          Rest assured, if we do see a right fit, our HR team will reply to your
-          email within 7-14 working days. If unfortunately, the stars don't
-          align, don't lose hope, as we'll keep your CV on record for future
-          opportunities.
+          referral.
         </li>
       </ul>
     </section>

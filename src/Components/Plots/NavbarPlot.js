@@ -32,10 +32,6 @@ const Navbar = () => {
           <li><Link to="contact" onClick={handleLinkClick}>Contact</Link></li>
           <li><Link to="/construction" onClick={handleLinkClick}>Construction</Link></li>
           <li><Link to="/" onClick={handleLinkClick}>Home Page</Link></li>
-          <li className="custom-phone-info">
-            <FaPhoneAlt />
-            <a href="tel:+1234567890">+91 9742571664</a>
-          </li>
           <li>
             <Link to="calculator">
               <button className="custom-cta-navbar-button">Get Cost Estimation</button>

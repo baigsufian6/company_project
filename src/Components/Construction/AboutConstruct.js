@@ -112,7 +112,7 @@ const AboutConstruct = () => {
           <div className="testimonial-author">
             <img src={jon} alt="Jane Doe" />
             <div className="testimonial-author-info">
-              <span className="testimonial-author-name">Prakash Shetty</span>
+              <span className="testimonial-author-name">Raghaveandra</span>
               <span className="testimonial-author-title">Homeowner</span>
             </div>
           </div>
@@ -125,7 +125,7 @@ const AboutConstruct = () => {
           <div className="testimonial-author">
             <img src={rambo} alt="John Smith" />
             <div className="testimonial-author-info">
-              <span className="testimonial-author-name">Shrinivas Murthy</span>
+              <span className="testimonial-author-name">Chandrashekar</span>
               <span className="testimonial-author-title">Real Estate Developer</span>
             </div>
           </div>
@@ -138,7 +138,7 @@ const AboutConstruct = () => {
           <div className="testimonial-author">
             <img src={col} alt="Steven cook" />
             <div className="testimonial-author-info">
-              <span className="testimonial-author-name">Ramesh Kumar</span>
+              <span className="testimonial-author-name">Chandan</span>
               <span className="testimonial-author-title">Architect</span>
             </div>
           </div>
@@ -151,7 +151,7 @@ const AboutConstruct = () => {
 
       <div className="what-sets-us-apart">
         <h2>What Sets Us Apart</h2>
-        <h1>Anticipate More with Rightcon's Touch!</h1>
+        <h1>Anticipate More With Our Touch!</h1>
         <div className="features">
           <div className="feature-item">
             <FaPhoneAlt className="feature-icon" />
@@ -160,7 +160,7 @@ const AboutConstruct = () => {
           </div>
           <div className="feature-item">
             <FaTools className="feature-icon" />
-            <h3>No Subcontractors, Just Rightcon</h3>
+            <h3>No Subcontractors, Just Rohan Infra</h3>
             <p>From concept to completion, your project is handled with our in-house expertise.</p>
           </div>
           <div className="feature-item">

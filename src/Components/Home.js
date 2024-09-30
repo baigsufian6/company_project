@@ -271,7 +271,6 @@ const Home = React.memo(() => {
           <a href="#home" onClick={closeMenu}>Home</a>
           <a href="#aboutus" onClick={closeMenu}>About us</a>
           <a href="#services" onClick={closeMenu}>Services</a>
-          <a href="#projects" onClick={closeMenu}>Projects</a>
           <a href="/plots" onClick={closeMenu}>Plots</a>
           <a href="/construction" onClick={closeMenu}>Construction</a>
           <a href="#contactus" onClick={handleContactClick}>Contact us</a>
@@ -331,7 +330,7 @@ const Home = React.memo(() => {
       </section>
 
       {/* Projects Section */}
-      <section className="xpat-projects" id="projects">
+      {/* <section className="xpat-projects" id="projects">
         <h2>Our Projects</h2>
         <Slider {...sliderSettings} className="xpat-slider">
           <div className="xpat-project-slide">
@@ -347,7 +346,7 @@ const Home = React.memo(() => {
             <img src={prop5} alt="Project 4" />
           </div>
         </Slider>
-      </section>
+      </section> */}
 
       {/* Contact Section */}
       <section className="xpat-contact">
@@ -391,7 +390,8 @@ const Home = React.memo(() => {
 
         <div className="xpat-contact-info">
           <h3>Get In Touch</h3>
-          <p>Address: Rajajinagar, Bengaluru, Karnataka 560010</p>
+          <p>Address: #342, 2nd and 3rd Floor Dr. Rajkumar Road Beside AL-BEK Restaurant Block 6th Rajajinagar Bengaluru - 560010</p>
+          <br></br>
           <p>Phone: (+91) 6361285668</p>
           <p>Email: rohaninfrabuilderrs@gmail.com</p>
           <div className="xpat-social-icons">
@@ -404,7 +404,7 @@ const Home = React.memo(() => {
             <a href="https://www.instagram.com/rohaninfrabuilderrs?igsh=MTV5MTg2amJ2cXV2cg==" target="_blank" rel="noopener noreferrer">
             <FaInstagram />
             </a>
-            <FaLinkedin />
+            
           </div>
         </div>
       </section>

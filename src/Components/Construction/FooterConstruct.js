@@ -26,9 +26,6 @@ const FooterConstruct = () => {
             <a href="https://www.instagram.com/rohaninfrabuilderrs?igsh=MTV5MTg2amJ2cXV2cg==">
               <FaInstagram />
             </a>
-            <a href="/">
-              <FaLinkedinIn />
-            </a>
             <a href="https://youtube.com/@rohaninfrabuilderrs?si=PwFo7YBOsMje_JFu">
               <FaYoutube />
             </a>
