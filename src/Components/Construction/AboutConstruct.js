@@ -1,6 +1,6 @@
 import {React, useEffect} from 'react';
 import './construct.css';
-import home from './imagess/sad1.png'
+import home from './imagess/dad3.jpeg'
 import jon from './imagess/prakash.jpg';
 import rambo from './imagess/shrinivas.jpg';
 import col from './imagess/ramesh.jpg';
