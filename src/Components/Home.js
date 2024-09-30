@@ -296,8 +296,8 @@ const Home = React.memo(() => {
         <h2>Building Your Dream Since 2017</h2>
         <div className="xpat-company-content">
           <div className="xpat-company-text">
-            <p>At Rohan Infra, we are dedicated to providing expert construction and plot selling services. Our commitment to excellence and precision ensures that every project we undertake is handled with the utmost care and professionalism.</p>
-            <p>We focus on delivering results that meet and exceed our clients' expectations, with attention to detail and a clear understanding of their needs. Our team is experienced, knowledgeable, and dedicated to achieving the best outcomes, making Rohan Infra a trusted name in the industry.</p>
+            <p>At Rohan Infra, we specialize in both plot selling and construction services, delivering solutions that cater to a wide range of client needs. Our dedication to quality and precision ensures that every project, whether developing land or constructing buildings, is handled with care and professionalism.</p>
+            <p>We prioritize understanding our clients' goals and delivering results that not only meet but exceed their expectations. With an experienced and knowledgeable team, Rohan Infra stands as a trusted partner in the real estate and construction industries.</p>
           </div>
           <div className="xpat-company-image"></div>
         </div>
