@@ -596,6 +596,7 @@
 
 .slick-dots {
   bottom: -40px;
+  display: none !important;
 }
 
 .slick-dots li button:before {
