@@ -4,9 +4,11 @@ import './PlotSalesHomepage.css';
 import Footer from '../FooterPlot';
 import Client from '../Pages/ClientsPlot';
 import img1 from '../Assets/bailey-anselme-Bkp3gLygyeA-unsplash.jpg';
-import img2 from '../Assets/image1.jpeg';
-import img3 from '../Assets/area3.jpg';
-import img4 from '../Assets/dillon-kydd-XGvwt544g8k-unsplash.jpg';
+import img2 from '../Assets/chandra.jpeg';
+import img3 from '../Assets/layout2.jpeg';
+import img4 from '../Assets/layout3.jpeg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHandshake, faHammer, faBuilding, faLandmark } from '@fortawesome/free-solid-svg-icons';
 
 const HomePlot = () => {
   useEffect(() => {
@@ -15,9 +17,9 @@ const HomePlot = () => {
 
   const plotData = [
     { image: img1, text: 'Build Your Future Home' },
-    { image: img2, text: 'Prime Locations Available' },
-    { image: img3, text: 'Discover Your Dream Plot' },
-    { image: img4, text: 'Invest in Premium Real Estate' },
+    { image: img2 },
+    { image: img3 },
+    { image: img4 },
   ];
 
   const Hero = () => {
@@ -85,34 +87,33 @@ const HomePlot = () => {
           <div className="what-we-do">
             <h2 className="title">What We Do</h2>
             <div className="underline"></div>
-            <p className="subtitle">We Turn Dream Home Into Reality and Your Search For A Good Property Ends Here</p>
+            <p className="subtitle">We bring your dream home to life, where your search for the perfect property begins</p>
             
             <div className="services-container">
               <div className="service-card">
-                <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
+                <FontAwesomeIcon icon={faHammer} className="icon" style={{ color: '#003366' }} />
                 <h3>Construction</h3>
                 <p>Rohan Infra is one of the leading real estate companies in developing residential projects. Our aim is to create an environment that enhances the quality of life and provides peace, tranquility, and comfort.</p>
               </div>
-              
+
               <div className="service-card">
-                <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                </svg>
+                <FontAwesomeIcon icon={faLandmark} className="icon" style={{ color: '#003366' }} />
                 <h3>Real Estate</h3>
                 <p>With several real estate projects underway, Rohan Infra is a leading player in the industry, offering a range of dynamic and popular inventories that are customized to meet your specific needs and budget.</p>
               </div>
-              
+
               <div className="service-card">
-                <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="3" y1="9" x2="21" y2="9"></line>
-                  <line x1="9" y1="21" x2="9" y2="9"></line>
+                <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="#003366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="3" width="18" height="18" />
+                  <line x1="3" y1="9" x2="21" y2="9" />
+                  <line x1="3" y1="15" x2="21" y2="15" />
+                  <line x1="9" y1="3" x2="9" y2="21" />
+                  <line x1="15" y1="3" x2="15" y2="21" />
+                  <circle cx="6" cy="6" r="1" />
+                  <circle cx="18" cy="18" r="1" />
                 </svg>
                 <h3>Plots Development/Selling</h3>
-                <p>We have completed more than 30 projects and have brought joy and housing to over 1,000 families in various localities of Bangalore, including Surya City, Anekal, Electronic City, and Bannerhatta.</p>
+                <p>We have completed more than 21 projects and have brought joy and housing to over 1,000 families in various localities of Bangalore, including Devanahalli, Yelahanka, and Tavrekere.</p>
               </div>
             </div>
           </div>
@@ -141,13 +142,9 @@ const HomePlot = () => {
               </div>
               
               <div className="home-step">
-                <svg className="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                  <line x1="8" y1="21" x2="16" y2="21"></line>
-                  <line x1="12" y1="17" x2="12" y2="21"></line>
-                </svg>
+                <FontAwesomeIcon icon={faHandshake} className="icon" />
                 <h3>Close the Deal</h3>
-                <p>After the deal, you will get all the Registration documents and proper guidance for payment. You can pay the amount via Loan, Cash, Card, Cheque, or Online.</p>
+                <p>After the deal, you will get all the Registration documents and proper guidance for payment. Payment modes are Cash, Online, Card & Cheque</p>
               </div>
             </div>
           </div>

@@ -6,14 +6,11 @@ import { FaMapMarkerAlt, FaBuilding, FaBars, FaTimes, FaFacebook, FaInstagram, F
 import { LayoutDashboard, Home as HomeIcon, X, Calendar, Mail, Phone, User } from 'lucide-react';
 import plots from './images/plotImg.jpg';
 import consti from './images/slider_2.jpg';
-import prop1 from './images/prop1.webp';
-import prop2 from './images/prop2.webp';
-import prop4 from './images/prop4.webp';
-import prop5 from './images/prop5.webp';
 import layout from './images/Layout-300x243.jpg';
 import market from './images/1603747793-GettyImages-1061234002.webp';
 import rohan from './images/rohans.png';
 import video from './images/vids2.mp4';
+import rename from './images/rename.jpg'
 import ChatBot from './Chatbot';  // Ensure this path is correct
 import './Main.css';
 

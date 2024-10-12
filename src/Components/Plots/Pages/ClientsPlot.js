@@ -10,7 +10,7 @@ const Clients = () => {
     useEffect(() => {
         // Scroll to the top of the page
         window.scrollTo(0, 0);
-      }, []);
+    }, []);
       
     useEffect(() => {
         AOS.init({
@@ -24,9 +24,9 @@ const Clients = () => {
     return (
         <section id='testimonials' className='testimonials-container'>
             <div className='testimonials-header'>
-                <h1 data-aos='zoom-in' className='clients-title'>CLIENTS</h1>
+                <h1 data-aos='zoom-in' className='clients-title'>FEEDBACK</h1>
                 <h1 data-aos='zoom-in' className='clients-subtitle'>
-                    What Our Clients<br />Saying About Us
+                    Our Happy Clients<br />
                 </h1>
             </div>
 
@@ -42,7 +42,7 @@ const Clients = () => {
                             <div className="client-details">
                                 <img
                                     src={item.image}
-                                    alt={`${item.name}'s feedback`}
+                                    alt={`${item.name}'s feedback`}  
                                     className="client-image"
                                 />
                                 <div className="client-info">
