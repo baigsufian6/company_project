@@ -32,7 +32,7 @@ const PopularAreas = () => {
                             data-aos-delay="400" 
                             style={{ backgroundImage: `url(${area1})` }}
                             className="area-card"
-                            onClick={() => navigate('/plots/Project1')}  // Ensure this route exists
+                            onClick={() => navigate('/plots/Sultana')}  // Ensure this route exists
                         ></div>
                         <div 
                             data-aos="zoom-in" 
