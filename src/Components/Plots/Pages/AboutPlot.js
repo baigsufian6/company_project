@@ -2,8 +2,9 @@
 import {React, useEffect} from 'react';
 import './AboutPlot.css'; // Create a separate CSS file for styling
 import logo from '../Assets/logo.jpg'; // Make sure the path to the logo image is correct
-import sufi from '../Assets/sufi.jpg';
-import abt from '../Assets/about .jpg'
+import sufi from '../Assets/mission.jpg';
+import abt from '../Assets/fi.jpg';
+import company from '../Assets/abtt.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBullseye, faEye, faHandshake, faPoll } from '@fortawesome/free-solid-svg-icons';
 import { faUser, faFileAlt,fapoll, faChartLine, faClipboardCheck } from '@fortawesome/free-solid-svg-icons';
@@ -13,7 +14,7 @@ import narendra from '../Assets/narendra.jpg';
 import ceo from '../Assets/ceo.jpg'
 import Footer from '../FooterPlot'
 import Count from './Count';
-import ghar from '../Assets/ghar.jpg'
+
 
 const AboutPlot = () => {
 
@@ -23,9 +24,9 @@ const AboutPlot = () => {
   }, []);
   
   const steps = [
-    { icon: faUser, title: 'Marketing', description: 'Marketing will be done through flyers,ads,social media.And client discussion will happen over through the phone call,sometimes direct conversion at Organisation.' },
-    { icon: faFileAlt, title: 'Follow-up', description: 'Follow-up with the client for better clarification,coveying details about the plots/sites.' },
-    { icon: faHandshake, title: 'Schedule Site Visit', description: 'Schedule the site visit according to the availability of clients and convey the visting procedure to the clients like travell,location.' },
+    { icon: faUser, title: 'Marketing', description: 'Marketing will be done through flyers,ads,social media.And client discussion will happen over through the phone call,sometimes direct conversation at Organisation.' },
+    { icon: faFileAlt, title: 'Follow-up', description: 'Follow-up with the client for better clarification,conveying details about the plots/sites.' },
+    { icon: faHandshake, title: 'Schedule Site Visit', description: 'Schedule the site visit according to the availability of clients and convey the visting procedure to the clients.' },
     { icon: faPoll, title: 'Survey', description: 'We will provide brief descriptions about the plots/sites to the client at direct visit and do survey of the plots.' },
     { icon: faChartLine, title: 'Booking', description: 'Booking of plots/sites with client confirmation and provide more information about plots and its benefits & Aminities.' },
     { icon: faClipboardCheck, title: 'Registration', description: 'CRM Team will do the Registration and assist with the clients for payment,loan process,approval.' },
@@ -33,7 +34,7 @@ const AboutPlot = () => {
   return (
    <div className='plot-about-container'>
    <div className='sufi-img'>
-    <img src={sufi}></img>
+    <img src={logo}></img>
     </div>
     {/* <div className="about-us-container">
       {/* Left goalbox: Text Content */}
@@ -41,7 +42,7 @@ const AboutPlot = () => {
     <div className="about-section">
       <section className="about-us">
         <div className="text-content">
-          <h2>About Us</h2>
+          <h2>Rohan Infra</h2>
            <p className='aalu'>           
             Rohan Infra Builders & Developers is a leading real estate firm
             known for creating high-quality, innovative properties that meet
@@ -50,13 +51,13 @@ const AboutPlot = () => {
           </p>
         </div>
         <div className="image-content">
-          <img src={logo} alt="About Us" />
+          <img src={company} alt="About Us" />
         </div>
       </section>
 
       <section className="mission">
         <div className="image-content">
-          <img src={ghar} alt="Our Mission" />
+          <img src={sufi} alt="Our Mission" />
         </div>
         <div className="text-content">
           <h2>Our Mission: Building Dreams, Creating Homes</h2>
@@ -77,8 +78,8 @@ const AboutPlot = () => {
             one of the most trusted names in real estate. Our journey started
             with a vision to redefine urban living with innovative, sustainable
             projects. Over the years, we have expanded our portfolio to include
-            residential, commercial, and industrial properties, transforming
-            cityscapes and creating landmark developments across the country.
+            residential transforming
+            cityscapes and creating landmark developments across the state.
           </p>
         </div>
         <div className="image-content">
@@ -151,20 +152,20 @@ const AboutPlot = () => {
         <div className="founder-card">
           <img
             src={ceo} // Replace with actual image URL
-            alt="H V GURUMURTHI"
+            alt="rohan"
             className="founder-image"
           />
-          <h3 className="founder-name">Rohan K N</h3>
+          <h3 className="founder-name">ROHAN K N</h3>
           <p className="founder-title">FOUNDER AND CEO</p>
         </div>
 
         <div className="founder-card">
           <img
             src={narendra} // Replace with actual image URL
-            alt="K VINOD RAO"
+            alt="narendra"
             className="founder-image"
           />
-          <h3 className="founder-name">Narendra Babu</h3>
+          <h3 className="founder-name">NARENDRA BABU</h3>
           <p className="founder-title">CO-FOUNDER AND MANAGING DIRECTOR</p>
         </div>
       </div>

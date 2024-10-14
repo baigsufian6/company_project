@@ -230,17 +230,65 @@ body {
       align-items: center !important;            /* Center vertically if needed */
       text-align: center !important;             /* Ensure text is centered */
       margin: 0 auto !important;                 /* Auto margins to center the block */
-      width: 100%;                    /* Ensure it takes full width */
-      padding: 1rem;   
-      display: flex;              /* Optional: Add some padding */
+      width: 100% !important;                    /* Ensure it takes full width */
+      padding: 1rem !important;   
+      display: flex !important;              /* Optional: Add some padding */
     }
   }
   
 }
+.plot-sales__slide {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ensures full screen height */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.plot-sales__slide-background {
+  background-size: cover; /* Ensures the image covers the container */
+  background-position: center; /* Centers the image */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures proper scaling */
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.plot-sales__slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .plot-sales__slide-background {
+    background-size: cover; /* Use cover on small screens too */
+    object-fit: cover;
+    height: 100%; /* Ensure image takes full height on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .plot-sales__slide-background {
+    background-size: cover;
+    object-fit: contain;
+    height: auto; /* Allow height to adjust on very small screens */
+  }
+
+  .plot-sales__slide-text {
+    font-size: 1.5rem; /* Adjust text size for small screens */
+  }
+}
+
+
+
 
 /* Goals & Mission Section */
 .goals-mission {
-  background-image: url('../Assets/burj.webp');
+ 
   background-size: cover; /* Changed to cover for better fit */
   background-position: center;
   min-height: 600px;
@@ -371,6 +419,7 @@ body {
   height: 48px;
   margin-bottom: 20px;
   color: #0e265a;
+  display: inline-block;
 }
 
 .step h3 {

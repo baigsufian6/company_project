@@ -3,7 +3,7 @@ import './HomePlot.css';
 import './PlotSalesHomepage.css';
 import Footer from '../FooterPlot';
 import Client from '../Pages/ClientsPlot';
-import img1 from '../Assets/bailey-anselme-Bkp3gLygyeA-unsplash.jpg';
+import img1 from '../Assets/hello.jpeg';
 import img2 from '../Assets/chandra.jpeg';
 import img3 from '../Assets/layout2.jpeg';
 import img4 from '../Assets/layout3.jpeg';
@@ -55,20 +55,23 @@ const HomePlot = () => {
           <div className="plot-sales">
             <div className="plot-sales__slider" onTransitionEnd={handleTransitionEnd}>
               {plotData.map((plot, index) => (
-                <div
-                  key={index}
-                  className={`plot-sales__slide ${index === currentSlide ? 'plot-sales__slide--active' : ''}`}
-                  style={{
-                    backgroundImage: `url(${plot.image})`,
-                    transform: `translateX(${(index - currentSlide) * 100}%) scale(${index === currentSlide ? 1.05 : 1})`,
-                    opacity: index === currentSlide ? 1 : 0.5,
-                    transition: 'transform 1s ease-in-out, opacity 1s ease-in-out'
-                  }}
-                >
-                  <div className="plot-sales__slide-content">
-                    <h2 className="plot-sales__slide-text">{plot.text}</h2>
-                  </div>
-                </div>
+              <div
+              key={index}
+              className={`plot-sales__slide ${index === currentSlide ? 'plot-sales__slide--active' : ''}`}
+              style={{
+                backgroundImage: `url(${plot.image})`,
+                backgroundSize: 'cover', /* Ensures the image covers the container */
+                backgroundPosition: 'center', /* Centers the image */
+                transform: `translateX(${(index - currentSlide) * 100}%) scale(${index === currentSlide ? 1.05 : 1})`,
+                opacity: index === currentSlide ? 1 : 0.5,
+                transition: 'transform 1s ease-in-out, opacity 1s ease-in-out',
+              }}
+            >
+              <div className="plot-sales__slide-content">
+                <h2 className="plot-sales__slide-text">{plot.text}</h2>
+              </div>
+            </div>
+            
               ))}
             </div>
             <button className="plot-sales__nav plot-sales__nav--prev" onClick={prevSlide} disabled={isTransitioning}>&#10094;</button>

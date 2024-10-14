@@ -12,7 +12,7 @@ const ProjectDetails = () => {
   }, []);
 
   return (
-    <div className="bg-blue-100 py-10 px-4 sm:px-6 lg:px-8">
+    <div className="bg-whitesmoke-100 py-10 px-4 sm:px-6 lg:px-8">
       <div className="bg-white shadow-md rounded-lg p-6 mt-10 max-w-4xl mx-auto transform hover:scale-105 transition-transform duration-500 ease-out">
 
         {/* Project Header */}
