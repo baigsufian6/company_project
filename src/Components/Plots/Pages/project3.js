@@ -4,7 +4,7 @@ import Image2 from '../Assets/new2.png';
 import Image3 from '../Assets/new3.png';
 import ImageCarousel from "./Imagecorosel3"; // Ensure this is the path to your carousel component
 
-const ProjectDetails = () => {
+const Project3 = () => {
 
   useEffect(() => {
     // Scroll to the top of the page
@@ -109,4 +109,4 @@ const ProjectDetails = () => {
   );
 };
 
-export default ProjectDetails;
+export default Project3;
