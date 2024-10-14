@@ -39,14 +39,14 @@ const PopularAreas = () => {
                             data-aos-delay="400" 
                             style={{ backgroundImage: `url(${area2})` }}
                             className="area-card"
-                            onClick={() => navigate('/plots/Project2')}  // Ensure this route exists
+                            onClick={() => navigate('/plots/Sultan')}  // Ensure this route exists
                         ></div>
                         <div 
                             data-aos="zoom-in" 
                             data-aos-delay="400" 
                             style={{ backgroundImage: `url(${area3})` }}
                             className="area-card"
-                            onClick={() => navigate('/plots/Project3')}  // Ensure this route exists
+                            onClick={() => navigate('/plots/Sulta')}  // Ensure this route exists
                         ></div>
                     </div>
                 </div>
